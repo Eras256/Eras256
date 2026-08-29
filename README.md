@@ -24,11 +24,26 @@ that you can't click and check yourself.
 
 Both cards are rendered live from the GitHub API by
 [github-stats-extended](https://github.com/stats-organization/github-stats-extended),
-so the numbers move on their own rather than being typed in here. Two
-caveats worth stating: the counts above include my own repositories, while
-the upstream table further down counts only repositories I don't own; and
-the language shares are measured across my non-forked repositories, not
-across every commit I've pushed somewhere else.
+so the numbers move on their own rather than being typed in here. Some
+caveats worth stating, since several of these figures look like they
+disagree and don't:
+
+- The counts above include my own repositories. The upstream table further
+  down counts only repositories I don't own, so its numbers are smaller by
+  design.
+- **Commits and contributions are different metrics.** The card's *Total
+  Commits (last year)* counts public commits only. The number on my GitHub
+  profile page is the *contribution* total, which adds pull requests,
+  issues and reviews on top of commits — and private-repo activity too,
+  which GitHub lets you surface as a count without exposing the
+  repositories. A much larger number there is the two metrics measuring
+  different things, not an error in either.
+- *Contributed to (last year)* on the card is a twelve-month count over
+  every contribution type. The "19 repositories" in the upstream table is
+  all-time and counts only repositories where I opened a PR or an issue.
+  Different window, different definition.
+- Language shares are measured across my non-forked repositories, not
+  across every commit I've pushed somewhere else.
 
 ---
 
@@ -40,7 +55,7 @@ across every commit I've pushed somewhere else.
 | **[Nirium](https://github.com/Eras256/Nirium)** · [nirium.xyz](https://nirium.xyz) | Autonomous treasury and machine-to-machine payments on Stellar — Soroban contracts in Rust, an x402 payment layer, and MCP integration. Non-custodial: the client's wallet signs, the protocol never holds funds. Apache-2.0. |
 | **[nirium-sdk](https://github.com/nirium-protocol/nirium-sdk)** | The TypeScript and Python packages plus CLI behind Nirium — x402 `pay`/`serve`, MPP session budgets, IPFS audit anchoring. Apache-2.0. |
 | **[Contextio](https://github.com/contextio/Contextio)** · [contextio.xyz](https://contextio.xyz) | Legal Context Protocol (LCP) on Stellar — verifiable, non-custodial binding of legal context to treasury and payroll operations, with SEP-53 wallet auth. Apache-2.0. |
-| **[nirium-pollar-adapter](https://github.com/nirium-protocol/nirium-pollar-adapter)** | Adapter that lets a wallet onboarded through the Pollar SDK pay x402 requests and anchor audit receipts. MIT. |
+| **[nirium-pollar-adapter](https://github.com/nirium-protocol/nirium-pollar-adapter)** · [npm](https://www.npmjs.com/package/nirium-pollar-adapter) | Adapter that lets a wallet onboarded through the Pollar SDK pay x402 requests and anchor audit receipts. Published to npm, running against Stellar mainnet. MIT. |
 
 ---
 
@@ -76,7 +91,7 @@ as of **2026-08-29**; the live queries at the bottom always supersede it.
 ### Bug reports that landed
 
 - **[eas-sdk#132](https://github.com/ethereum-attestation-service/eas-sdk/issues/132)** — `getUIDsFromAttestReceipt` trusted log `topic0` without checking the emitter address, so a malicious resolver could inject spoofed UIDs in `multiAttest()`. *Closed as completed.*
-- **[x402#3171](https://github.com/x402-foundation/x402/issues/3171)** — `paymentRequirementsMatchAccepted` threw on a missing/null `payload.accepted`, leaking a raw internal error to the resource server. *Closed as completed.*
+- **[x402#3171](https://github.com/x402-foundation/x402/issues/3171)** — `paymentRequirementsMatchAccepted` threw on a missing/null `payload.accepted`, leaking a raw internal error to the resource server. I found and reported it; the code fix was written by [@JasonColapietro](https://github.com/JasonColapietro) in [#3180](https://github.com/x402-foundation/x402/pull/3180) ("Fixes #3171"), merged 2026-08-17. The merged patch is his work, not mine — my part was the report.
 - **[x402#3270](https://github.com/x402-foundation/x402/issues/3270)** — `HTTPFacilitatorClient.settle()/verify()` decoded the `EXTENSION-RESPONSES` header and then discarded it, so resource servers couldn't branch on extension outcomes. Picked up by another contributor as [#3278](https://github.com/x402-foundation/x402/pull/3278) ("Fixes #3270"), currently open.
 
 ### Still open
