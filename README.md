@@ -10,6 +10,28 @@ that you can't click and check yourself.
 
 ---
 
+## Activity
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api?username=Eras256&show_icons=true&show=reviews,prs_merged,prs_merged_percentage&rank_icon=percentile&theme=dark">
+  <img alt="Commits, pull requests, merged PRs, reviews and issues for Eras256" src="https://github-stats-extended.vercel.app/api?username=Eras256&show_icons=true&show=reviews,prs_merged,prs_merged_percentage&rank_icon=percentile">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/top-langs/?username=Eras256&layout=compact&langs_count=6&theme=dark">
+  <img alt="Most used languages for Eras256" src="https://github-stats-extended.vercel.app/api/top-langs/?username=Eras256&layout=compact&langs_count=6">
+</picture>
+
+Both cards are rendered live from the GitHub API by
+[github-stats-extended](https://github.com/stats-organization/github-stats-extended),
+so the numbers move on their own rather than being typed in here. Two
+caveats worth stating: the counts above include my own repositories, while
+the upstream table further down counts only repositories I don't own; and
+the language shares are measured across my non-forked repositories, not
+across every commit I've pushed somewhere else.
+
+---
+
 ## What I'm building
 
 | Project | What it actually is |
