@@ -73,7 +73,7 @@ hashes and reproduction steps lives in
 
 | PR | Repo | Merged |
 | --- | --- | --- |
-| [#3228](https://github.com/x402-foundation/x402/pull/3228) — scope EVM/SVM client signer derivation to the selected `--families`, fixing a crash in the official e2e conformance suite | `x402-foundation/x402` | 2026-08-31, by @phdargen. Closes [#3187](https://github.com/x402-foundation/x402/issues/3187). An earlier attempt, [#3219](https://github.com/x402-foundation/x402/pull/3219), was closed unmerged and superseded by this one. |
+| [#3228](https://github.com/x402-foundation/x402/pull/3228) — scope EVM/SVM client signer derivation to the selected `--families`, fixing a crash in the official e2e conformance suite | `x402-foundation/x402` | 2026-08-31 — authored by me, merged by @phdargen. Closes [#3187](https://github.com/x402-foundation/x402/issues/3187), which I also filed. An earlier attempt, [#3219](https://github.com/x402-foundation/x402/pull/3219), was closed unmerged and superseded by this one. |
 | [#103](https://github.com/stellar/stellar-dev-skill/pull/103) — point `ECOSYSTEM_CARDS` `copyValue` at raw content, not GitHub's blob HTML page | `stellar/stellar-dev-skill` | 2026-08-28, by @kaankacar |
 
 ### Open fix PRs
@@ -91,7 +91,7 @@ hashes and reproduction steps lives in
 ### Bug reports that landed
 
 - **[x402#3171](https://github.com/x402-foundation/x402/issues/3171)** — `paymentRequirementsMatchAccepted` threw on a missing/null `payload.accepted`. I found and reported it; the code fix was written by [@JasonColapietro](https://github.com/JasonColapietro) in [#3180](https://github.com/x402-foundation/x402/pull/3180), merged 2026-08-17. The merged patch is his work, not mine — my part was the report.
-- **[x402#3270](https://github.com/x402-foundation/x402/issues/3270)** — `HTTPFacilitatorClient.settle()/verify()` decoded the `EXTENSION-RESPONSES` header and then discarded it. I fixed this on Periplo's own side the same day rather than waiting on upstream. The finding then rippled into three independent upstream fixes, none written by me, all still open and unmerged as of 2026-08-31: [#3278](https://github.com/x402-foundation/x402/pull/3278) (TypeScript, @Bartok9), [#3301](https://github.com/x402-foundation/x402/pull/3301) (Go, @wnjoon), and [PhilBot402/x402#4](https://github.com/PhilBot402/x402/pull/4) (Python, draft, @PhilBot402, opened against a fork, not yet against the upstream repo).
+- **[x402#3270](https://github.com/x402-foundation/x402/issues/3270)** — `HTTPFacilitatorClient.settle()/verify()` decoded the `EXTENSION-RESPONSES` header and then discarded it. I fixed this on Periplo's own side the same day rather than waiting on upstream. **Closed 2026-08-31** — not the way it first looked like it would close. The actual fix was the maintainer's own separate PR, [#3306](https://github.com/x402-foundation/x402/pull/3306) (Python, @phdargen), introducing a dedicated `extension_responses`/`extensionResponses` field instead of reusing `extensions` — explicitly rejecting that shape (which my own workaround used, and so did the two community PRs this finding first prompted) as leaking a server-only sidechannel into buyer-facing data. [#3278](https://github.com/x402-foundation/x402/pull/3278) (TypeScript, @Bartok9) was revised to match before merging separately; [#3301](https://github.com/x402-foundation/x402/pull/3301) (Go, @wnjoon) and [PhilBot402/x402#4](https://github.com/PhilBot402/x402/pull/4) (Python, draft) remain open, likely needing the same adjustment. My own `/settle` still uses the old shape — migrating once `@x402/core` actually ships the new field (not yet: `latest` is still `2.24.0`, predating this fix).
 - **[eas-sdk#132](https://github.com/ethereum-attestation-service/eas-sdk/issues/132)** — `getUIDsFromAttestReceipt` trusted log `topic0` without checking the emitter address. *Closed as completed.* (General dependency finding, not tied to a specific product below.)
 
 ### Still open, awaiting maintainer response
@@ -218,7 +218,7 @@ SEP-53, CAP-71 delegated auth, MCP
   [#840 → #844](https://github.com/OpenZeppelin/stellar-contracts/pull/844).
   When someone else beats me to the fix, I say so and name them —
   [#3171 → #3180 by @JasonColapietro](https://github.com/x402-foundation/x402/pull/3180),
-  [#3270 → #3278/#3301/PhilBot402#4 by three other contributors](https://github.com/x402-foundation/x402/issues/3270).
+  [#3270 → #3306 by @phdargen](https://github.com/x402-foundation/x402/pull/3306) — the maintainer's own fix, rejecting the field shape my own workaround used.
 - When I'm not sure whether it's my bug or theirs, I say so in the issue
   rather than asserting a diagnosis I can't back
   ([#839](https://github.com/OpenZeppelin/stellar-contracts/issues/839) is
