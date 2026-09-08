@@ -7,14 +7,12 @@ transacting with real money. Built with my cofounder,
 every project below, expanding into marketing, and now shipping real code
 too (see the Nirium section for two merged PRs that are hers).
 
-Six projects, four chains. Here's my own read on why each one sits where
-it does — not a stated company policy, just my reasoning, correct me if
-I've got a project's own reason wrong:
+Six projects, four chains, each for a specific reason:
 
 | Project(s) | Chain | Why there |
 | --- | --- | --- |
-| Periplo, Nirium, Contextio | Stellar | Where this started — the SCF funding program, plus Soroban/SEP-41 rails cheap enough for agent-scale micropayments |
-| KUMPLY | Avalanche | Subnet architecture fits a regulated compliance product better than one shared chain does |
+| Periplo, Nirium, Contextio | Stellar | Payments: [$0.0007667 average transaction cost](https://stellar.org/) and 24/7 settlement, cheap enough for agent-scale micropayments, plus the SCF funding program this portfolio started in |
+| KUMPLY | Avalanche | Compliance for regulated institutions: purpose-built [Evergreen Subnets](https://www.avax.network/about/blog/avalanche-launches-evergreen-for-institutional-blockchain-deployments/) give KYC, permissioned validators, and controlled access — the same track that had [Progmat migrate $2B+ in security tokens](https://www.avax.network/institutions) in Feb 2026 and 29 institutions (Franklin Templeton, VanEck, WisdomTree among them) formalize the [Avalanche Payments Collective](https://www.avax.network/about/blog/avalanche-payments-collective) in Q2 2026, compliance named as one of its explicit categories |
 | Vouch402 | Base | Same chain as EAS (Ethereum Attestation Service), the attestation layer it settles proof-of-fulfillment to |
 | Prova | Solana | Sub-second finality, ~$0.0005 per attestation — the cost profile a high-frequency agent-receipt layer actually needs |
 
