@@ -1,14 +1,27 @@
 # `Eras256`
 
-I build payment and compliance infrastructure across **Stellar, Avalanche,
-Base, and Solana**. Most of what's documented below is Stellar/Soroban
-work: x402 and MPP payment rails, service discovery, and non-custodial
-treasury automation. This account is the personal contributor identity
-behind three real projects — **Periplo**, **Nirium**, and **Contextio** —
-plus the upstream fixes and bug reports that came out of building them.
-KUMPLY (Avalanche), Vouch402 (Base), and Prova (Solana) are all documented
-below with the same standard as everything else here — real links, and
-network status stated as it actually is, not as it's aspired to be.
+I build infrastructure for the agent economy — payment rails, service
+discovery, identity attestations, and audit trails for autonomous agents
+transacting with real money. Built with my cofounder,
+**[Monserrat Mendoza](https://github.com/M0nsxx)** — product and UX across
+every project below, expanding into marketing, and now shipping real code
+too (see the Nirium section for two merged PRs that are hers).
+
+Six projects, four chains. Here's my own read on why each one sits where
+it does — not a stated company policy, just my reasoning, correct me if
+I've got a project's own reason wrong:
+
+| Project(s) | Chain | Why there |
+| --- | --- | --- |
+| Periplo, Nirium, Contextio | Stellar | Where this started — the SCF funding program, plus Soroban/SEP-41 rails cheap enough for agent-scale micropayments |
+| KUMPLY | Avalanche | Subnet architecture fits a regulated compliance product better than one shared chain does |
+| Vouch402 | Base | Same chain as EAS (Ethereum Attestation Service), the attestation layer it settles proof-of-fulfillment to |
+| Prova | Solana | Sub-second finality, ~$0.0005 per attestation — the cost profile a high-frequency agent-receipt layer actually needs |
+
+Each one stays where it started until real demand justifies expanding it
+elsewhere. Contextio's mainnet and Prova's mainnet are both deliberately
+narrower than their testnet builds for that same reason — gated on
+evidence, not on a roadmap slide.
 
 Most of my public work is either a protocol implementation I maintain or a
 bug I found in something I depend on and then sent a patch for. Everything
@@ -49,6 +62,14 @@ actually matters, each one a link, not a claim:
   client's own wallet signs, or a role that by contract design cannot move
   funds, never a key of mine that can. Detail and a real example under
   "How I work" below.
+- **981 commits across these seven repos over 219 straight days**
+  (1 Feb – 8 Sep 2026), pulled from `git log`, not typed in: 20.8% of them
+  land on a weekend, 12.1% between 10pm and 6am local time. There's a real
+  gap from 3am–6am — not claiming literal around-the-clock, the data just
+  doesn't say that.
+- **Two Stellar Community Fund Instawards, both delivered against real
+  milestones**, not just awarded — the track record the rest of this
+  profile's execution claims actually rest on.
 
 ---
 
@@ -178,15 +199,26 @@ resource suggestions, not bounties). Of the 42 bounty asks:
 - **16 closed without any delivery.**
 
 A few of the stronger merged deliveries, cited by bounty issue alongside the
-PR that closed it, since that's better evidence than a bare PR link:
+PR that closed it and who actually opened that PR, since that's better
+evidence than a bare link:
 
-| Bounty issue | Delivering PR |
-| --- | --- |
-| [#39](https://github.com/nirium-protocol/nirium-sdk/issues/39) — harden the Python WebSocket signals client | [#47](https://github.com/nirium-protocol/nirium-sdk/pull/47), merged |
-| [#44](https://github.com/nirium-protocol/nirium-sdk/issues/44) — `nirium` CLI `pay`/`serve` commands | [#62](https://github.com/nirium-protocol/nirium-sdk/pull/62), merged |
-| [#45](https://github.com/nirium-protocol/nirium-sdk/issues/45) — resilient reconnecting WebSocket signals client | [#61](https://github.com/nirium-protocol/nirium-sdk/pull/61), merged |
-| [#51](https://github.com/nirium-protocol/nirium-sdk/issues/51) — GitHub Action to verify a Nirium audit-CID in CI | [#80](https://github.com/nirium-protocol/nirium-sdk/pull/80), merged |
-| [#65](https://github.com/nirium-protocol/nirium-sdk/issues/65) — audit trail forensic export bridge | [#69](https://github.com/nirium-protocol/nirium-sdk/pull/69), merged |
+| Bounty issue | Delivering PR | Author |
+| --- | --- | --- |
+| [#39](https://github.com/nirium-protocol/nirium-sdk/issues/39) — harden the Python WebSocket signals client | [#47](https://github.com/nirium-protocol/nirium-sdk/pull/47), merged | @Simultech369 — external |
+| [#51](https://github.com/nirium-protocol/nirium-sdk/issues/51) — GitHub Action to verify a Nirium audit-CID in CI | [#80](https://github.com/nirium-protocol/nirium-sdk/pull/80), merged | @Simultech369 — external |
+| [#65](https://github.com/nirium-protocol/nirium-sdk/issues/65) — audit trail forensic export bridge | [#69](https://github.com/nirium-protocol/nirium-sdk/pull/69), merged | @Santia2004 — external |
+
+Two more from that same list are worth pulling out separately rather than
+folding into "external bounty deliveries," because they aren't that —
+they're my cofounder's own first shipped code for this project, done
+through the same GrantFox process rather than around it:
+[#44](https://github.com/nirium-protocol/nirium-sdk/issues/44) (CLI
+`pay`/`serve` commands) via
+[#62](https://github.com/nirium-protocol/nirium-sdk/pull/62), and
+[#45](https://github.com/nirium-protocol/nirium-sdk/issues/45) (resilient
+reconnecting WebSocket signals client) via
+[#61](https://github.com/nirium-protocol/nirium-sdk/pull/61) — both merged,
+both by [Monserrat Mendoza](https://github.com/M0nsxx).
 
 One more worth naming separately because it isn't a bounty at all: **[#81](https://github.com/nirium-protocol/nirium-sdk/issues/81)** was a real fail-open vulnerability in the Next.js x402 example (any `X-PAYMENT` header granted access, valid or not), reported by an outside party and fixed the same way as everything above — a merged PR, [#84](https://github.com/nirium-protocol/nirium-sdk/pull/84).
 
