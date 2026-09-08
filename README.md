@@ -17,9 +17,10 @@ Six projects, four chains, each for a specific reason:
 | Prova | Solana | [Sub-second finality, ~$0.0004–0.0005 per transaction](https://solana.com/docs/core/fees) — the cost profile a high-frequency agent-receipt layer actually needs |
 
 Each one stays where it started until real demand justifies expanding it
-elsewhere. Contextio's mainnet and Prova's mainnet are both deliberately
-narrower than their testnet builds for that same reason — gated on
-evidence, not on a roadmap slide. If that expansion ever happens, the
+elsewhere. Contextio's mainnet is deliberately narrower than its testnet
+build, and Prova hasn't gone to mainnet at all yet — still Solana devnet
+only. Same reason for both: gated on evidence, not on a roadmap slide. If
+that expansion ever happens, the
 preference is to stay inside these same four networks first — where the
 tooling, the relationships, and the compliance homework are already done
 — over opening a fifth network cold. That's a stated preference, gated on
