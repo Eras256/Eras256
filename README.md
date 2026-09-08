@@ -1,10 +1,11 @@
 # `Eras256`
 
-I build payment infrastructure on **Stellar / Soroban**: x402 and MPP
-payment rails, service discovery, and non-custodial treasury automation.
-This account is the personal contributor identity behind three real
-projects — **Periplo**, **Nirium**, and **Contextio** — plus the upstream
-fixes and bug reports that came out of building them.
+I build payment and compliance infrastructure across **Stellar, Avalanche,
+Base, and Solana**. Most of what's documented below is Stellar/Soroban
+work: x402 and MPP payment rails, service discovery, and non-custodial
+treasury automation. This account is the personal contributor identity
+behind three real projects — **Periplo**, **Nirium**, and **Contextio** —
+plus the upstream fixes and bug reports that came out of building them.
 
 Most of my public work is either a protocol implementation I maintain or a
 bug I found in something I depend on and then sent a patch for. Everything
