@@ -13,8 +13,8 @@ Six projects, four chains, each for a specific reason:
 | --- | --- | --- |
 | Periplo, Nirium, Contextio | Stellar | Payments: [$0.0007667 average transaction cost](https://stellar.org/) and 24/7 settlement, cheap enough for agent-scale micropayments, plus the SCF funding program this portfolio started in |
 | Kumply | Avalanche | Compliance for regulated institutions: purpose-built [Evergreen Subnets](https://www.avax.network/about/blog/avalanche-launches-evergreen-for-institutional-blockchain-deployments/) give KYC, permissioned validators, and controlled access — the same track that had [Progmat migrate $2B+ in security tokens](https://www.avax.network/institutions) in Feb 2026 and 29 institutions (Franklin Templeton, VanEck, WisdomTree among them) formalize the [Avalanche Payments Collective](https://www.avax.network/about/blog/avalanche-payments-collective) in Q2 2026, compliance named as one of its explicit categories |
-| Vouch402 | Base | Same chain as EAS (Ethereum Attestation Service), the attestation layer it settles proof-of-fulfillment to |
-| Prova | Solana | Sub-second finality, ~$0.0005 per attestation — the cost profile a high-frequency agent-receipt layer actually needs |
+| Vouch402 | Base | Where the x402 agent-payment volume already is: an independent census puts [98.44% of all published x402 resources on Base](https://github.com/arturete58-sys/x402-observatory/blob/main/report-01-census.md), and [Base itself](https://www.base.org/) claims to be "the leading blockchain across the metrics that matter most" for onchain payments |
+| Prova | Solana | [Sub-second finality, ~$0.0004–0.0005 per transaction](https://solana.com/docs/core/fees) — the cost profile a high-frequency agent-receipt layer actually needs |
 
 Each one stays where it started until real demand justifies expanding it
 elsewhere. Contextio's mainnet and Prova's mainnet are both deliberately
