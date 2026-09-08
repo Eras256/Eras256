@@ -88,24 +88,13 @@ actually matters, each one a link, not a claim:
 Both cards are rendered live from the GitHub API by
 [github-stats-extended](https://github.com/stats-organization/github-stats-extended),
 so the numbers move on their own rather than being typed in here (checked
-live 2026-09-05, still serving). Some caveats worth stating, since several
-of these figures look like they disagree and don't:
-
-- The counts above include my own repositories. The tables further down
-  count only repositories I don't own, so those numbers are smaller by
-  design.
-- **Commits and contributions are different metrics.** The card's *Total
-  Commits (last year)* counts public commits only. The number on my GitHub
-  profile page is the *contribution* total, which adds pull requests,
-  issues and reviews on top of commits — and private-repo activity too,
-  which GitHub lets you surface as a count without exposing the
-  repositories. A much larger number there is the two metrics measuring
-  different things, not an error in either.
-- *Contributed to (last year)* on the card is a twelve-month count over
-  every contribution type. The per-project tables below are all-time and
-  count only repositories where I opened a PR or an issue.
-- Language shares are measured across my non-forked repositories, not
-  across every commit I've pushed somewhere else.
+live 2026-09-05, still serving). If a number here looks off against my
+GitHub profile page or the tables further down, it's almost always scope,
+not error: this card counts my own repos and public commits over the last
+year, the profile page's contribution count adds PRs/issues/reviews and
+private activity on top of that, and the per-project tables below are
+all-time and repos-I-don't-own only — three different, narrower slices of
+the same activity, not three inconsistent counts of the same thing.
 
 ---
 
@@ -188,9 +177,14 @@ hashes and reproduction steps lives in
 
 This is Nirium's own repo, so these are bounties Nirium posted, not upstream
 contributions Nirium made elsewhere. Full live audit as of **2026-09-05**:
-**44 issues** across three campaigns (Official Campaign, FWC26, Third
-Campaign). 42 of those are real bounty asks (the other 2 are unlabeled
-resource suggestions, not bounties). Of the 42 bounty asks:
+**44 issues** across three campaigns, 42 real bounty asks (2 unlabeled
+resource suggestions aren't bounties) — 20 delivered inside `nirium-sdk`
+itself, 2 delivered externally and still awaiting that project's own
+review, 4 closed and administratively recreated under a later campaign,
+16 closed without delivery.
+
+<details>
+<summary>Full breakdown — every delivery, who opened it, and the two that are my cofounder's</summary>
 
 - **20 delivered**, each with a merged PR inside `nirium-sdk` itself.
 - **2 delivered externally**, as real PRs against the target repo, both
@@ -224,6 +218,8 @@ One more worth naming separately because it isn't a bounty at all: **[#81](https
 
 Separately, [nirium-pollar-adapter#1](https://github.com/nirium-protocol/nirium-pollar-adapter/pull/1) (deferred wallet funding) merged 2026-08-29, and [nirium-sdk#68](https://github.com/nirium-protocol/nirium-sdk/pull/68) (restore `viem` as a direct dependency) merged 2026-08-26 — both real fixes by this account, not bounty deliveries.
 
+</details>
+
 ---
 
 ## Contextio
@@ -237,7 +233,12 @@ main repo as a private git dependency.
 
 **Contextio also runs a bounty-style program**, though not GrantFox-labeled
 like Nirium's: five open issues in `contextio/Contextio`, all opened by this
-account, none delivered yet —
+account, none delivered yet — two already have competing external PRs
+open and unreviewed.
+
+<details>
+<summary>All five issues and the two open external PRs</summary>
+
 [#1](https://github.com/contextio/Contextio/issues/1) (Python client parity),
 [#2](https://github.com/contextio/Contextio/issues/2) (Go client parity),
 [#3](https://github.com/contextio/Contextio/issues/3) (standalone offline LCP
@@ -249,6 +250,8 @@ Issue #5 already has two competing external submissions, both open and
 unreviewed: [#6](https://github.com/contextio/Contextio/pull/6) by
 @mayankbohara0-dev and [#7](https://github.com/contextio/Contextio/pull/7)
 by @CharoenwitKunna.
+
+</details>
 
 **Upstream, to `stellar/stellar-dev-skill`** (not owned by Contextio): three
 merged PRs adding and refining the Contextio SDK's community-skill listing —
@@ -307,15 +310,20 @@ clearly attributable to a single one:
 
 ![Stellar](https://img.shields.io/badge/Stellar-000000?style=flat-square&logo=stellar&logoColor=white)
 ![Soroban](https://img.shields.io/badge/Soroban-1f6feb?style=flat-square)
+![Avalanche](https://img.shields.io/badge/Avalanche-E84142?style=flat-square&logo=avalanche&logoColor=white)
+![Base](https://img.shields.io/badge/Base-0052FF?style=flat-square&logo=coinbase&logoColor=white)
+![Solana](https://img.shields.io/badge/Solana-9945FF?style=flat-square&logo=solana&logoColor=white)
 ![x402](https://img.shields.io/badge/x402-teal?style=flat-square)
 ![Rust](https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
+![Solidity](https://img.shields.io/badge/Solidity-363636?style=flat-square&logo=solidity&logoColor=white)
 
 **Protocols** — x402, MPP (Charge and Channel), SEP-41 / SAC, SEP-43,
-SEP-53, CAP-71 delegated auth, MCP
-**Chains** — Stellar / Soroban primarily; some EVM and Solana work
+SEP-53, CAP-71 delegated auth, MCP, EAS (Ethereum Attestation Service)
+**Chains** — Stellar/Soroban (Periplo, Nirium, Contextio), Avalanche
+(KUMPLY), Base (Vouch402), Solana (Prova)
 
 ---
 
