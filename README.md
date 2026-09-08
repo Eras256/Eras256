@@ -19,7 +19,12 @@ Six projects, four chains, each for a specific reason:
 Each one stays where it started until real demand justifies expanding it
 elsewhere. Contextio's mainnet and Prova's mainnet are both deliberately
 narrower than their testnet builds for that same reason — gated on
-evidence, not on a roadmap slide.
+evidence, not on a roadmap slide. If that expansion ever happens, the
+preference is to stay inside these same four networks first — where the
+tooling, the relationships, and the compliance homework are already done
+— over opening a fifth network cold. That's a stated preference, gated on
+both real demand and actual strategic fit, not a promise of when or
+whether it happens.
 
 Most of my public work is either a protocol implementation I maintain or a
 bug I found in something I depend on and then sent a patch for. Everything
