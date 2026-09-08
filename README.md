@@ -233,13 +233,41 @@ Periplo and Nirium have.
 
 ---
 
+## Elsewhere — KUMPLY, Vouch402, Prova
+
+Same standard as above, smaller footprint since these are newer:
+
+**KUMPLY (Avalanche)** — three open bug reports against a third-party
+community skills repo, [Ayomisco/avaxskills](https://github.com/Ayomisco/avaxskills),
+found while building on top of it: [#2](https://github.com/Ayomisco/avaxskills/issues/2)
+(a subnet-deployment skill cites CLI commands that don't exist in the real
+`ava-labs/avalanche-cli`), [#3](https://github.com/Ayomisco/avaxskills/issues/3)
+(a precompiles skill has the wrong genesis key name for `TxAllowList`),
+[#4](https://github.com/Ayomisco/avaxskills/issues/4) (a wagmi skill cites
+an outdated version and a deprecated hook). All still open.
+
+**Vouch402 (Base)** — [base/skills#152](https://github.com/base/skills/pull/152),
+an open PR adding a Vouch402 plugin listing to Base's own community skills
+catalog, same genre as the `stellar-dev-skill` PRs above. Also
+[eas-sdk#132](https://github.com/ethereum-attestation-service/eas-sdk/issues/132)
+(closed, fixed — detail above) and
+[foundry-rs/foundry#16209](https://github.com/foundry-rs/foundry/issues/16209)
+(`cast wallet new <name>` still fails with a bare account name, open),
+both found auditing tooling Vouch402 depends on.
+
+**Prova (Solana)** — [otter-sec/anchor#4960](https://github.com/otter-sec/anchor/pull/4960),
+an open PR bumping `heck` 0.3 → 0.5 to drop an unbounded `edition2024`
+dependency landmine in the Anchor framework Prova's on-chain program is
+built on. Not merged yet.
+
+---
+
 ## Other dependency bug reports
 
-Found using these libraries for one of the three projects above, but not
+Found using these libraries for Periplo, Nirium, or Contextio, but not
 clearly attributable to a single one:
 
 - **[Creit-Tech/Stellar-Wallets-Kit#105](https://github.com/Creit-Tech/Stellar-Wallets-Kit/issues/105)** — `signMessage()`'s JSDoc says SEP-43 hex, Freighter returns base64. Open.
-- **[foundry-rs/foundry#16209](https://github.com/foundry-rs/foundry/issues/16209)** — `cast wallet new <name>` still fails with a bare account name. Open.
 
 ---
 
