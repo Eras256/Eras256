@@ -6,12 +6,49 @@ work: x402 and MPP payment rails, service discovery, and non-custodial
 treasury automation. This account is the personal contributor identity
 behind three real projects — **Periplo**, **Nirium**, and **Contextio** —
 plus the upstream fixes and bug reports that came out of building them.
+KUMPLY (Avalanche) is documented below with the same standard as
+everything else here; Base and Solana work isn't written up on this
+profile yet.
 
 Most of my public work is either a protocol implementation I maintain or a
 bug I found in something I depend on and then sent a patch for. Everything
 below links to the actual issue, PR, or running service — no claim here
 that you can't click and check yourself. Where something is still open or
 unmerged, it's marked as such, not implied to be done.
+
+I write it this dense on purpose. Every project below moves someone else's
+funds or blocks their transaction, so I'd rather you check the receipts
+than take my word for anything. If a claim here can't be clicked and
+verified, it doesn't belong here.
+
+---
+
+## Highlights
+
+Skip the rest if you only have 90 seconds — this is the material that
+actually matters, each one a link, not a claim:
+
+- **Found and fixed a crash in x402's own official conformance suite**,
+  merged upstream the same week —
+  [x402-foundation/x402#3228](https://github.com/x402-foundation/x402/pull/3228).
+- **A skill PR survived ~16 real review rounds across 21 days before
+  merging** —
+  [stellar/stellar-dev-skill#97](https://github.com/stellar/stellar-dev-skill/pull/97) —
+  because I kept addressing feedback instead of abandoning it.
+- **When I was wrong, I said so and closed my own issue against myself**:
+  [OpenZeppelin/stellar-contracts#839](https://github.com/OpenZeppelin/stellar-contracts/issues/839)
+  turned out to be a construction bug in my own code, not a library gap —
+  confirmed with the maintainer's help, not asserted.
+- **KUMPLY's compliance contracts are live and verified on Avalanche**,
+  Fuji testnet and mainnet C-Chain read-only beta —
+  [`AttestationStore`](https://snowtrace.io/address/0xa116261Ed3a848A9E1cd34923D5A0442D1455F71)
+  on Snowtrace, source at
+  [kumplyprotocol/Kumply](https://github.com/kumplyprotocol/Kumply) — the
+  one non-Stellar project in this profile with its own paper trail.
+- **Every contract I ship is non-custodial by construction** — the
+  client's own wallet signs, or a role that by contract design cannot move
+  funds, never a key of mine that can. Detail and a real example under
+  "How I work" below.
 
 ---
 
@@ -53,6 +90,13 @@ of these figures look like they disagree and don't:
 
 ## What I'm building
 
+Periplo, Nirium, and Contextio are three separate Stellar products, not
+three names for one thing — but they share real upstream dependencies
+(same protocols, sometimes the literal same bug), so the contribution
+tables further down attribute each fix to the specific project it came
+from instead of merging them into one undifferentiated pile. If a note
+says "this one's Nirium's, not Periplo's," that's the reason.
+
 | Project | What it actually is |
 | --- | --- |
 | **[Periplo](https://github.com/Eras256/Periplo)** · [periplo.xyz](https://periplo.xyz) | An x402 payment facilitator for Stellar with a "Bazaar" discovery catalog, so an agent can find a payable service it has never seen before. Facilitator is live on `stellar:testnet` — [`GET /supported`](https://periplo-testnet.fly.dev/supported) responds without setup. Apache-2.0, TypeScript + Soroban. |
@@ -60,6 +104,7 @@ of these figures look like they disagree and don't:
 | **[nirium-sdk](https://github.com/nirium-protocol/nirium-sdk)** | The TypeScript and Python packages plus CLI behind Nirium — x402 `pay`/`serve`, MPP session budgets, IPFS audit anchoring. Also where Nirium runs its own GrantFox bounty program (see below). Apache-2.0. |
 | **[Contextio](https://github.com/contextio/Contextio)** · [contextio.xyz](https://contextio.xyz) | An AI agent that moves treasury and payroll funds for companies in Brazil, Argentina, and Colombia, binding every action to a verifiable Legal Context Protocol (LCP) document. Live on Stellar testnet (full autonomy) and mainnet (deliberately narrower: read-only data plus self-custody actions only, invitation-only while contracts await external audit). SEP-53 wallet sign-in. Originally a Stellar PULSO Hackathon submission, now aimed at the SCF Integration Track. Migrated from a personal repo to the `contextio` org. |
 | **[nirium-pollar-adapter](https://github.com/nirium-protocol/nirium-pollar-adapter)** · [npm](https://www.npmjs.com/package/nirium-pollar-adapter) | Adapter that lets a wallet onboarded through the Pollar SDK pay x402 requests and anchor audit receipts. Published to npm, running against Stellar mainnet. MIT. |
+| **[KUMPLY](https://github.com/kumplyprotocol/Kumply)** · [kumply.xyz](https://kumply.xyz) | On-chain KYC/KYB/KYA compliance attestations for Avalanche — no personal data stored on-chain, just `(tier, expiry, issuer, revocation status)`. Contracts live and verified on Fuji testnet (full read/write) and Avalanche mainnet C-Chain ([`AttestationStore`](https://snowtrace.io/address/0xa116261Ed3a848A9E1cd34923D5A0442D1455F71), read-only beta). 164 tests on every push. Apache-2.0. |
 
 ---
 
