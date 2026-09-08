@@ -72,7 +72,13 @@ actually matters, each one a link, not a claim:
   doesn't say that.
 - **Two Stellar Community Fund Instawards, both delivered against real
   milestones**, not just awarded — the track record the rest of this
-  profile's execution claims actually rest on.
+  profile's execution claims actually rest on. These exist because of a
+  real credential, not luck: Instawards require active participation in a
+  local [Stellar Ambassador Chapter](https://stellar.gitbook.io/ambassador-program) —
+  that's [the program's own stated eligibility rule](https://github.com/stellar/scf-handbook/blob/main/scf-awards/instawards/official-rules.md), not something I'm
+  claiming on my own. I'm a Starmaker-tier Stellar Ambassador; the program
+  was recently restructured and tier confirmations are still going out, so
+  I'm not citing a specific level until that settles.
 
 ---
 
@@ -282,7 +288,11 @@ found while building on top of it: [#2](https://github.com/Ayomisco/avaxskills/i
 `ava-labs/avalanche-cli`), [#3](https://github.com/Ayomisco/avaxskills/issues/3)
 (a precompiles skill has the wrong genesis key name for `TxAllowList`),
 [#4](https://github.com/Ayomisco/avaxskills/issues/4) (a wagmi skill cites
-an outdated version and a deprecated hook). All still open.
+an outdated version and a deprecated hook). All still open. Same pattern
+as the Instaward one above: KUMPLY's application to Avalanche's Team1
+Mini Grants program went in through a real channel, not cold — I'm an
+official Team1 LatAm collaborator. Applied, decision still pending; not
+claiming an award that hasn't happened.
 
 **Vouch402 (Base)** — [base/skills#152](https://github.com/base/skills/pull/152),
 an open PR adding a Vouch402 plugin listing to Base's own community skills
@@ -368,3 +378,5 @@ Snapshot above is accurate as of **2026-09-05**; these always supersede it:
 Open an issue on any repo above, or start with
 [periplo.xyz](https://periplo.xyz) · [nirium.xyz](https://nirium.xyz) ·
 [contextio.xyz](https://contextio.xyz)
+
+X: [@vaiossx](https://x.com/vaiossx) · Discord: `vaiossx`
