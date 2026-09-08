@@ -12,7 +12,7 @@ Six projects, four chains, each for a specific reason:
 | Project(s) | Chain | Why there |
 | --- | --- | --- |
 | Periplo, Nirium, Contextio | Stellar | Payments: [$0.0007667 average transaction cost](https://stellar.org/) and 24/7 settlement, cheap enough for agent-scale micropayments, plus the SCF funding program this portfolio started in |
-| KUMPLY | Avalanche | Compliance for regulated institutions: purpose-built [Evergreen Subnets](https://www.avax.network/about/blog/avalanche-launches-evergreen-for-institutional-blockchain-deployments/) give KYC, permissioned validators, and controlled access — the same track that had [Progmat migrate $2B+ in security tokens](https://www.avax.network/institutions) in Feb 2026 and 29 institutions (Franklin Templeton, VanEck, WisdomTree among them) formalize the [Avalanche Payments Collective](https://www.avax.network/about/blog/avalanche-payments-collective) in Q2 2026, compliance named as one of its explicit categories |
+| Kumply | Avalanche | Compliance for regulated institutions: purpose-built [Evergreen Subnets](https://www.avax.network/about/blog/avalanche-launches-evergreen-for-institutional-blockchain-deployments/) give KYC, permissioned validators, and controlled access — the same track that had [Progmat migrate $2B+ in security tokens](https://www.avax.network/institutions) in Feb 2026 and 29 institutions (Franklin Templeton, VanEck, WisdomTree among them) formalize the [Avalanche Payments Collective](https://www.avax.network/about/blog/avalanche-payments-collective) in Q2 2026, compliance named as one of its explicit categories |
 | Vouch402 | Base | Same chain as EAS (Ethereum Attestation Service), the attestation layer it settles proof-of-fulfillment to |
 | Prova | Solana | Sub-second finality, ~$0.0005 per attestation — the cost profile a high-frequency agent-receipt layer actually needs |
 
@@ -50,7 +50,7 @@ actually matters, each one a link, not a claim:
   [OpenZeppelin/stellar-contracts#839](https://github.com/OpenZeppelin/stellar-contracts/issues/839)
   turned out to be a construction bug in my own code, not a library gap —
   confirmed with the maintainer's help, not asserted.
-- **KUMPLY's compliance contracts are live and verified on Avalanche**,
+- **Kumply's compliance contracts are live and verified on Avalanche**,
   Fuji testnet and mainnet C-Chain read-only beta —
   [`AttestationStore`](https://snowtrace.io/address/0xa116261Ed3a848A9E1cd34923D5A0442D1455F71)
   on Snowtrace, source at
@@ -112,7 +112,7 @@ says "this one's Nirium's, not Periplo's," that's the reason.
 | **[nirium-sdk](https://github.com/nirium-protocol/nirium-sdk)** | The TypeScript and Python packages plus CLI behind Nirium — x402 `pay`/`serve`, MPP session budgets, IPFS audit anchoring. Also where Nirium runs its own GrantFox bounty program (see below). Apache-2.0. |
 | **[Contextio](https://github.com/contextio/Contextio)** · [contextio.xyz](https://contextio.xyz) | An AI agent that moves treasury and payroll funds for companies in Brazil, Argentina, and Colombia, binding every action to a verifiable Legal Context Protocol (LCP) document. Live on Stellar testnet (full autonomy) and mainnet (deliberately narrower: read-only data plus self-custody actions only, invitation-only while contracts await external audit). SEP-53 wallet sign-in. Originally a Stellar PULSO Hackathon submission, now aimed at the SCF Integration Track. Migrated from a personal repo to the `contextio` org. |
 | **[nirium-pollar-adapter](https://github.com/nirium-protocol/nirium-pollar-adapter)** · [npm](https://www.npmjs.com/package/nirium-pollar-adapter) | Adapter that lets a wallet onboarded through the Pollar SDK pay x402 requests and anchor audit receipts. Published to npm, running against Stellar mainnet. MIT. |
-| **[KUMPLY](https://github.com/kumplyprotocol/Kumply)** · [kumply.xyz](https://kumply.xyz) | On-chain KYC/KYB/KYA compliance attestations for Avalanche — no personal data stored on-chain, just `(tier, expiry, issuer, revocation status)`. Contracts live and verified on Fuji testnet (full read/write) and Avalanche mainnet C-Chain ([`AttestationStore`](https://snowtrace.io/address/0xa116261Ed3a848A9E1cd34923D5A0442D1455F71), read-only beta). 164 tests on every push. Apache-2.0. |
+| **[Kumply](https://github.com/kumplyprotocol/Kumply)** · [kumply.xyz](https://kumply.xyz) | On-chain KYC/KYB/KYA compliance attestations for Avalanche — no personal data stored on-chain, just `(tier, expiry, issuer, revocation status)`. Contracts live and verified on Fuji testnet (full read/write) and Avalanche mainnet C-Chain ([`AttestationStore`](https://snowtrace.io/address/0xa116261Ed3a848A9E1cd34923D5A0442D1455F71), read-only beta). 164 tests on every push. Apache-2.0. |
 | **Vouch402** · [vouch402.xyz](https://www.vouch402.xyz) | x402-metered on-chain risk intelligence for agents on Base, with a built-in proof-of-fulfillment attestation layer. Full quote-to-attestation flow run end-to-end on **Base mainnet**, not just testnet: [settled payment](https://basescan.org/tx/0x6e44081aa3f05c73f6c9c32dc456f0231c3a690a33159765917ff096d138659c), [fulfillment attestation](https://basescan.org/tx/0xe2b5002c923bd9b49afce698f9d0f7ebef66d24f8c1eafd22c0a64e7c5f7ebb7), [EAS schema](https://base.easscan.org/schema/view/0xfbd6000caf2aaa6f7e269c74b45a0f891ddfe3381356d8ebaefc46b1a524abac). Client packages on npm: [`vouch402-sdk`](https://www.npmjs.com/package/vouch402-sdk), [`vouch402`](https://www.npmjs.com/package/vouch402) (CLI), [`vouch402-mcp-server`](https://www.npmjs.com/package/vouch402-mcp-server). Source repo is private. |
 | **[Prova](https://github.com/Prova-Solana/Prova)** · [theprova.xyz](https://www.theprova.xyz) | Cryptographic, on-chain receipts for AI agent actions on Solana — one `attest()` call, one Ed25519-sealed record, verifiable without trusting the operator's own logs. **Solana devnet today**, not mainnet — stated plainly since the site's own copy could be read otherwise. SDKs (`prova-agent-sdk` etc.) published on npm at `0.1.7`. Apache-2.0. |
 
@@ -266,11 +266,11 @@ Periplo and Nirium have.
 
 ---
 
-## Elsewhere — KUMPLY, Vouch402, Prova
+## Elsewhere — Kumply, Vouch402, Prova
 
 Same standard as above, smaller footprint since these are newer:
 
-**KUMPLY (Avalanche)** — three open bug reports against a third-party
+**Kumply (Avalanche)** — three open bug reports against a third-party
 community skills repo, [Ayomisco/avaxskills](https://github.com/Ayomisco/avaxskills),
 found while building on top of it: [#2](https://github.com/Ayomisco/avaxskills/issues/2)
 (a subnet-deployment skill cites CLI commands that don't exist in the real
@@ -321,7 +321,7 @@ clearly attributable to a single one:
 **Protocols** — x402, MPP (Charge and Channel), SEP-41 / SAC, SEP-43,
 SEP-53, CAP-71 delegated auth, MCP, EAS (Ethereum Attestation Service)
 **Chains** — Stellar/Soroban (Periplo, Nirium, Contextio), Avalanche
-(KUMPLY), Base (Vouch402), Solana (Prova)
+(Kumply), Base (Vouch402), Solana (Prova)
 
 ---
 
