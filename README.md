@@ -140,7 +140,7 @@ says "this one's Nirium's, not Periplo's," that's the reason.
 | Project | What it actually is |
 | --- | --- |
 | **[Kumply](https://github.com/kumplyprotocol/Kumply)** · [kumply.xyz](https://kumply.xyz) | On-chain KYC/KYB/KYA compliance attestations for Avalanche — no personal data stored on-chain, just `(tier, expiry, issuer, revocation status)`. Contracts live and verified on Fuji testnet (full read/write) and Avalanche mainnet C-Chain ([`AttestationStore`](https://snowtrace.io/address/0xa116261Ed3a848A9E1cd34923D5A0442D1455F71), read-only beta). 164 tests on every push. Apache-2.0. |
-| **Vouch402** · [vouch402.xyz](https://www.vouch402.xyz) | x402-metered on-chain risk intelligence for agents on Base, with a built-in proof-of-fulfillment attestation layer. Full quote-to-attestation flow run end-to-end on **Base mainnet**, not just testnet: [settled payment](https://basescan.org/tx/0x6e44081aa3f05c73f6c9c32dc456f0231c3a690a33159765917ff096d138659c), [fulfillment attestation](https://basescan.org/tx/0xe2b5002c923bd9b49afce698f9d0f7ebef66d24f8c1eafd22c0a64e7c5f7ebb7), [EAS schema](https://base.easscan.org/schema/view/0xfbd6000caf2aaa6f7e269c74b45a0f891ddfe3381356d8ebaefc46b1a524abac). Client packages on npm: [`vouch402-sdk`](https://www.npmjs.com/package/vouch402-sdk), [`vouch402`](https://www.npmjs.com/package/vouch402) (CLI), [`vouch402-mcp-server`](https://www.npmjs.com/package/vouch402-mcp-server). Source repo is private. |
+| **Vouch402** · [vouch402.xyz](https://www.vouch402.xyz) | x402-metered on-chain risk intelligence for agents on Base, with a built-in proof-of-fulfillment attestation layer. Full quote-to-attestation flow run end-to-end on **Base mainnet**, not just testnet: [settled payment](https://basescan.org/tx/0x6e44081aa3f05c73f6c9c32dc456f0231c3a690a33159765917ff096d138659c), [fulfillment attestation](https://basescan.org/tx/0xe2b5002c923bd9b49afce698f9d0f7ebef66d24f8c1eafd22c0a64e7c5f7ebb7), [EAS schema](https://base.easscan.org/schema/view/0xfbd6000caf2aaa6f7e269c74b45a0f891ddfe3381356d8ebaefc46b1a524abac). Client packages on npm: [`vouch402-sdk`](https://www.npmjs.com/package/vouch402-sdk), [`vouch402`](https://www.npmjs.com/package/vouch402) (CLI), [`vouch402-mcp-server`](https://www.npmjs.com/package/vouch402-mcp-server). Source at [`Vouch402/Vouchx402`](https://github.com/Vouch402/Vouchx402), now public. |
 | **[Prova](https://github.com/Prova-Solana/Prova)** · [theprova.xyz](https://www.theprova.xyz) | Cryptographic, on-chain receipts for AI agent actions on Solana — one `attest()` call, one Ed25519-sealed record, verifiable without trusting the operator's own logs. **Solana devnet today**, not mainnet — stated plainly since the site's own copy could be read otherwise. SDKs (`prova-agent-sdk` etc.) published on npm at `0.1.7`. Apache-2.0. Built through two Colosseum hackathon cycles: [Prova](https://colosseum.com/arena/projects/explore/prova-1), and earlier [Oraculo](https://colosseum.com/arena/projects/explore/oraculo) at the Solana Cypherpunk Hackathon (Sep-Oct 2025), plus WayLearn's Solana Foundation-backed Solana Latam Labs Program (Jun-Aug 2026), taking 1st place in Mexico at the Dev3Pack Global Hackathon along the way. |
 | **[Periplo](https://github.com/Eras256/Periplo)** · [periplo.xyz](https://periplo.xyz) | An x402 payment facilitator for Stellar with a "Bazaar" discovery catalog, so an agent can find a payable service it has never seen before. Facilitator is live on `stellar:testnet` — [`GET /supported`](https://periplo-testnet.fly.dev/supported) responds without setup. Apache-2.0, TypeScript + Soroban. |
 | **[Nirium](https://github.com/Eras256/Nirium)** · [nirium.xyz](https://nirium.xyz) | Autonomous treasury and machine-to-machine payments on Stellar — Soroban contracts in Rust, an x402 + MPP payment layer, and MCP integration. Non-custodial: the client's wallet signs, or a scoped `RebalanceManager` role that by contract design can't withdraw or move funds; Nirium itself never holds a key that can. Apache-2.0. |
@@ -376,6 +376,20 @@ Found using these libraries for Periplo, Nirium, or Contextio, but not
 clearly attributable to a single one:
 
 - **[Creit-Tech/Stellar-Wallets-Kit#105](https://github.com/Creit-Tech/Stellar-Wallets-Kit/issues/105)** — `signMessage()`'s JSDoc says SEP-43 hex, Freighter returns base64. Open.
+
+---
+
+## Hackathons outside the portfolio
+
+Not part of the six-project portfolio above — separate weekend builds.
+No public results page for any of these to link to; noted here as
+self-reported rather than omitted, same disclosure standard as
+everywhere else in this profile. No GitHub repo either — source isn't
+public for any of the three.
+
+- **[ActivaChain](https://activachain.com)** — won ETH Uruguay 2025, built with [Monserrat](https://github.com/M0nsxx).
+- **[CreatorChain](https://creatorchain-mx.vercel.app/)** — won the Creator Economy track at ETH Mexico Monterrey 2025. Solo build.
+- **[BioShield Insurance](https://bioshield-insurance.vercel.app/)** — won the FDA track at Infinita City's DeSci Builder Hackathon 2025. Solo build.
 
 ---
 
