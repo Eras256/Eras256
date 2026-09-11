@@ -71,6 +71,13 @@ actually matters, each one a link, not a claim:
   ([@lbeder](https://github.com/lbeder)) 2026-08-27, fixed in
   [eas-sdk 2.10.0](https://www.npmjs.com/package/@ethereum-attestation-service/eas-sdk/v/2.10.0) —
   I verified the fix against that release myself before treating it as closed.
+- **Real, currently active roles across all three ecosystems this
+  portfolio touches beyond Stellar-native work** — official **Team1
+  LatAm collaborator** (Avalanche, ecosystem-wide, not tied to Kumply
+  specifically) and **Based Developer Ambassador** (Base, a real Discord
+  role, not an application in progress) — plus the **Starmaker-tier
+  Stellar Ambassador** credential below that the Instawards themselves
+  depend on. None of these are pending.
 - **Every contract I ship is non-custodial by construction** — the
   client's own wallet signs, or a role that by contract design cannot move
   funds, never a key of mine that can. Detail and a real example under
