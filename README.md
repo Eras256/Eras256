@@ -382,14 +382,27 @@ clearly attributable to a single one:
 ## Hackathons outside the portfolio
 
 Not part of the six-project portfolio above — separate weekend builds.
-No public results page for any of these to link to; noted here as
-self-reported rather than omitted, same disclosure standard as
-everywhere else in this profile. No GitHub repo either — source isn't
-public for any of the three.
+No GitHub repo for any of the three — source isn't public. Two have a
+public results announcement naming the winner directly (below); the
+third doesn't, and is disclosed as self-reported rather than omitted,
+same standard as everywhere else in this profile.
 
-- **[ActivaChain](https://activachain.com)** — won ETH Uruguay 2025, built with [Monserrat](https://github.com/M0nsxx).
-- **[CreatorChain](https://creatorchain-mx.vercel.app/)** — won the Creator Economy track at ETH Mexico Monterrey 2025. Solo build.
-- **[BioShield Insurance](https://bioshield-insurance.vercel.app/)** — won the FDA track at Infinita City's DeSci Builder Hackathon 2025. Solo build.
+- **[ActivaChain](https://activachain.com)** — won ETH Uruguay 2025, built
+  with [Monserrat](https://github.com/M0nsxx). Confirmed by [the event's
+  own tweet](https://x.com/EthereumUruguay/status/1968785973749170227):
+  "Felicitaciones @ActivaChain! Nos representarán en Devconnect" —
+  the top prize was a ticket + travel to Devconnect (Nov 2025).
+- **[CreatorChain](https://creatorchain-mx.vercel.app/)** — 1st place,
+  "Creatividad y Economías de Creadores" track, **and** 3rd place,
+  "Innovación en Arbitrum" track, both at ETH Mexico Monterrey 2025
+  (2025-11-13) — confirmed by [the event's own announcement for the
+  first](https://x.com/ethereum_mexico/status/1989005140838265067) and
+  [for the second](https://x.com/ethereum_mexico/status/1989005129178099826).
+  Solo build.
+- **[BioShield Insurance](https://bioshield-insurance.vercel.app/)** — won
+  the FDA track at Infinita City's DeSci Builder Hackathon 2025. Solo
+  build. No public results page or announcement found for this one —
+  self-reported.
 
 ---
 
