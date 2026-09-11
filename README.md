@@ -62,6 +62,15 @@ actually matters, each one a link, not a claim:
   on Snowtrace, source at
   [kumplyprotocol/Kumply](https://github.com/kumplyprotocol/Kumply) — the
   one non-Stellar project in this profile with its own paper trail.
+- **Found a real security vulnerability in the exact library Vouch402
+  depends on for every attestation it emits** —
+  [ethereum-attestation-service/eas-sdk#132](https://github.com/ethereum-attestation-service/eas-sdk/issues/132):
+  `getUIDsFromAttestReceipt` trusted a log's `topic0` without checking the
+  emitter address, letting a malicious resolver inject spoofed UIDs into a
+  `multiAttest()` batch. Closed as completed by the maintainer
+  ([@lbeder](https://github.com/lbeder)) 2026-08-27, fixed in
+  [eas-sdk 2.10.0](https://www.npmjs.com/package/@ethereum-attestation-service/eas-sdk/v/2.10.0) —
+  I verified the fix against that release myself before treating it as closed.
 - **Every contract I ship is non-custodial by construction** — the
   client's own wallet signs, or a role that by contract design cannot move
   funds, never a key of mine that can. Detail and a real example under
