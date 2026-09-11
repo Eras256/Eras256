@@ -45,10 +45,6 @@ verified, it doesn't belong here.
 Skip the rest if you only have 90 seconds — this is the material that
 actually matters, each one a link, not a claim:
 
-- **Three real applications currently under review, decisions pending on
-  all three, none claimed as awards here:** Kumply for Avalanche's Team1
-  Mini Grants, Vouch402 for Base Batches, and a Superteam/Solana
-  Foundation scholarship for Prova to attend Breakpoint 2026.
 - **Found and fixed a crash in x402's own official conformance suite**,
   merged upstream the same week —
   [x402-foundation/x402#3228](https://github.com/x402-foundation/x402/pull/3228).
