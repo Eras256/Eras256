@@ -13,8 +13,8 @@ Six projects, four chains, each for a specific reason:
 | --- | --- | --- |
 | Kumply | Avalanche | Compliance for regulated institutions: purpose-built [Evergreen Subnets](https://www.avax.network/about/blog/avalanche-launches-evergreen-for-institutional-blockchain-deployments/) give KYC, permissioned validators, and controlled access — the same track that had [Progmat migrate $2B+ in security tokens](https://www.avax.network/institutions) in Feb 2026 and 29 institutions (Franklin Templeton, VanEck, WisdomTree among them) formalize the [Avalanche Payments Collective](https://www.avax.network/about/blog/avalanche-payments-collective) in Q2 2026, compliance named as one of its explicit categories |
 | Vouch402 | Base | Where the x402 agent-payment volume already is: an independent census puts [98.44% of all published x402 resources on Base](https://github.com/arturete58-sys/x402-observatory/blob/main/report-01-census.md), and [Base itself](https://www.base.org/) claims to be "the leading blockchain across the metrics that matter most" for onchain payments |
-| Periplo, Nirium, Contextio | Stellar | Payments: [$0.0007667 average transaction cost](https://stellar.org/) and 24/7 settlement, cheap enough for agent-scale micropayments, plus the SCF funding program this portfolio started in |
 | Prova | Solana | [Sub-second finality, ~$0.0004–0.0005 per transaction](https://solana.com/docs/core/fees) — the cost profile a high-frequency agent-receipt layer actually needs |
+| Periplo, Nirium, Contextio | Stellar | Payments: [$0.0007667 average transaction cost](https://stellar.org/) and 24/7 settlement, cheap enough for agent-scale micropayments, plus the SCF funding program this portfolio started in |
 
 Each one stays where it started until real demand justifies expanding it
 elsewhere. Contextio's mainnet is deliberately narrower than its testnet
@@ -45,6 +45,10 @@ verified, it doesn't belong here.
 Skip the rest if you only have 90 seconds — this is the material that
 actually matters, each one a link, not a claim:
 
+- **Three real applications currently under review, decisions pending on
+  all three, none claimed as awards here:** Kumply for Avalanche's Team1
+  Mini Grants, Vouch402 for Base Batches, and a Superteam/Solana
+  Foundation scholarship for Prova to attend Breakpoint 2026.
 - **Found and fixed a crash in x402's own official conformance suite**,
   merged upstream the same week —
   [x402-foundation/x402#3228](https://github.com/x402-foundation/x402/pull/3228).
@@ -75,8 +79,8 @@ actually matters, each one a link, not a claim:
   portfolio touches beyond Stellar-native work** — official **Team1
   LatAm collaborator** (Avalanche, ecosystem-wide, not tied to Kumply
   specifically) and **Based Developer Ambassador** (Base, a real Discord
-  role, not an application in progress) — plus the **Starmaker-tier
-  Stellar Ambassador** credential below that the Instawards themselves
+  role, not an application in progress) — plus the **Starmaker Stellar
+  Ambassador** credential below that the Instawards themselves
   depend on. None of these are pending.
 - **Every contract I ship is non-custodial by construction** — the
   client's own wallet signs, or a role that by contract design cannot move
@@ -191,7 +195,10 @@ application in progress.
 **Prova (Solana)** — [otter-sec/anchor#4960](https://github.com/otter-sec/anchor/pull/4960),
 an open PR bumping `heck` 0.3 → 0.5 to drop an unbounded `edition2024`
 dependency landmine in the Anchor framework Prova's on-chain program is
-built on. Not merged yet.
+built on. Not merged yet. Separately, applied for a Superteam/Solana
+Foundation scholarship (flights, stay, event access, mentor access) to
+attend **Breakpoint 2026** — decision pending, not claimed as confirmed
+attendance.
 
 ---
 
