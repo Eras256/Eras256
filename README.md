@@ -123,7 +123,7 @@ says "this one's Nirium's, not Periplo's," that's the reason.
 | **Vouch402** · [vouch402.xyz](https://www.vouch402.xyz) | x402-metered on-chain risk intelligence for agents on Base, with a built-in proof-of-fulfillment attestation layer. Full quote-to-attestation flow run end-to-end on **Base mainnet**, not just testnet: [settled payment](https://basescan.org/tx/0x6e44081aa3f05c73f6c9c32dc456f0231c3a690a33159765917ff096d138659c), [fulfillment attestation](https://basescan.org/tx/0xe2b5002c923bd9b49afce698f9d0f7ebef66d24f8c1eafd22c0a64e7c5f7ebb7), [EAS schema](https://base.easscan.org/schema/view/0xfbd6000caf2aaa6f7e269c74b45a0f891ddfe3381356d8ebaefc46b1a524abac). Client packages on npm: [`vouch402-sdk`](https://www.npmjs.com/package/vouch402-sdk), [`vouch402`](https://www.npmjs.com/package/vouch402) (CLI), [`vouch402-mcp-server`](https://www.npmjs.com/package/vouch402-mcp-server). Source repo is private. |
 | **[Periplo](https://github.com/Eras256/Periplo)** · [periplo.xyz](https://periplo.xyz) | An x402 payment facilitator for Stellar with a "Bazaar" discovery catalog, so an agent can find a payable service it has never seen before. Facilitator is live on `stellar:testnet` — [`GET /supported`](https://periplo-testnet.fly.dev/supported) responds without setup. Apache-2.0, TypeScript + Soroban. |
 | **[Nirium](https://github.com/Eras256/Nirium)** · [nirium.xyz](https://nirium.xyz) | Autonomous treasury and machine-to-machine payments on Stellar — Soroban contracts in Rust, an x402 + MPP payment layer, and MCP integration. Non-custodial: the client's wallet signs, or a scoped `RebalanceManager` role that by contract design can't withdraw or move funds; Nirium itself never holds a key that can. Apache-2.0. |
-| **[nirium-sdk](https://github.com/nirium-protocol/nirium-sdk)** | The TypeScript and Python packages plus CLI behind Nirium — x402 `pay`/`serve`, MPP session budgets, IPFS audit anchoring. Also where Nirium runs its own GrantFox bounty program (see below). Apache-2.0. |
+| **[nirium](https://github.com/nirium-protocol/nirium)** | The TypeScript and Python packages plus CLI behind Nirium — x402 `pay`/`serve`, MPP session budgets, IPFS audit anchoring. Also where Nirium runs its own GrantFox bounty program (see below). Apache-2.0. |
 | **[Contextio](https://github.com/contextio/Contextio)** · [contextio.xyz](https://contextio.xyz) | An AI agent that moves treasury and payroll funds for companies in Brazil, Argentina, and Colombia, binding every action to a verifiable Legal Context Protocol (LCP) document. Live on Stellar testnet (full autonomy) and mainnet (deliberately narrower: read-only data plus self-custody actions only, invitation-only while contracts await external audit). SEP-53 wallet sign-in. Originally a Stellar PULSO Hackathon submission, now aimed at the SCF Integration Track. Migrated from a personal repo to the `contextio` org. |
 | **[nirium-pollar-adapter](https://github.com/nirium-protocol/nirium-pollar-adapter)** · [npm](https://www.npmjs.com/package/nirium-pollar-adapter) | Adapter that lets a wallet onboarded through the Pollar SDK pay x402 requests and anchor audit receipts. Published to npm, running against Stellar mainnet. MIT. |
 | **[Prova](https://github.com/Prova-Solana/Prova)** · [theprova.xyz](https://www.theprova.xyz) | Cryptographic, on-chain receipts for AI agent actions on Solana — one `attest()` call, one Ed25519-sealed record, verifiable without trusting the operator's own logs. **Solana devnet today**, not mainnet — stated plainly since the site's own copy could be read otherwise. SDKs (`prova-agent-sdk` etc.) published on npm at `0.1.7`. Apache-2.0. |
@@ -217,12 +217,12 @@ hashes and reproduction steps lives in
 | [#58](https://github.com/stellar/stellar-mpp-sdk/issues/58) — allow an external SEP-43 signer instead of a raw secret key | `stellar/stellar-mpp-sdk` | Open |
 | [#30](https://github.com/pollar-xyz/pollar-apps/pull/30) — Nirium x402 adapter demo (`apps/nirium`) | `pollar-xyz/pollar-apps` | **Merged 2026-08-31**, by @aleregex |
 
-### GrantFox bounty program (`nirium-protocol/nirium-sdk`)
+### GrantFox bounty program (`nirium-protocol/nirium`)
 
 This is Nirium's own repo, so these are bounties Nirium posted, not upstream
 contributions Nirium made elsewhere. Full live audit as of **2026-09-05**:
 **44 issues** across three campaigns, 42 real bounty asks (2 unlabeled
-resource suggestions aren't bounties) — 20 delivered inside `nirium-sdk`
+resource suggestions aren't bounties) — 20 delivered inside `nirium`
 itself, 2 delivered externally and still awaiting that project's own
 review, 4 closed and administratively recreated under a later campaign,
 16 closed without delivery.
@@ -230,10 +230,10 @@ review, 4 closed and administratively recreated under a later campaign,
 <details>
 <summary>Full breakdown — every delivery, who opened it, and the two that are my cofounder's</summary>
 
-- **20 delivered**, each with a merged PR inside `nirium-sdk` itself.
+- **20 delivered**, each with a merged PR inside `nirium` itself.
 - **2 delivered externally**, as real PRs against the target repo, both
   still open and awaiting that project's own review: [#75 → Fundable-Protocol/fundable-sdk#8](https://github.com/Fundable-Protocol/fundable-sdk/pull/8) and [#76 → wejoona/api#23](https://github.com/wejoona/api/pull/23). Both were opened by the same bounty contributor, **@Santia2004** — not by this account.
-- **4 were closed and administratively recreated** under a later campaign, same ask, new issue number: [#29→#43](https://github.com/nirium-protocol/nirium-sdk/issues/43), [#30→#44](https://github.com/nirium-protocol/nirium-sdk/issues/44), [#31→#45](https://github.com/nirium-protocol/nirium-sdk/issues/45), [#32→#46](https://github.com/nirium-protocol/nirium-sdk/issues/46).
+- **4 were closed and administratively recreated** under a later campaign, same ask, new issue number: [#29→#43](https://github.com/nirium-protocol/nirium/issues/43), [#30→#44](https://github.com/nirium-protocol/nirium/issues/44), [#31→#45](https://github.com/nirium-protocol/nirium/issues/45), [#32→#46](https://github.com/nirium-protocol/nirium/issues/46).
 - **16 closed without any delivery.**
 
 A few of the stronger merged deliveries, cited by bounty issue alongside the
@@ -242,25 +242,25 @@ evidence than a bare link:
 
 | Bounty issue | Delivering PR | Author |
 | --- | --- | --- |
-| [#39](https://github.com/nirium-protocol/nirium-sdk/issues/39) — harden the Python WebSocket signals client | [#47](https://github.com/nirium-protocol/nirium-sdk/pull/47), merged | @Simultech369 — external |
-| [#51](https://github.com/nirium-protocol/nirium-sdk/issues/51) — GitHub Action to verify a Nirium audit-CID in CI | [#80](https://github.com/nirium-protocol/nirium-sdk/pull/80), merged | @Simultech369 — external |
-| [#65](https://github.com/nirium-protocol/nirium-sdk/issues/65) — audit trail forensic export bridge | [#69](https://github.com/nirium-protocol/nirium-sdk/pull/69), merged | @Santia2004 — external |
+| [#39](https://github.com/nirium-protocol/nirium/issues/39) — harden the Python WebSocket signals client | [#47](https://github.com/nirium-protocol/nirium/pull/47), merged | @Simultech369 — external |
+| [#51](https://github.com/nirium-protocol/nirium/issues/51) — GitHub Action to verify a Nirium audit-CID in CI | [#80](https://github.com/nirium-protocol/nirium/pull/80), merged | @Simultech369 — external |
+| [#65](https://github.com/nirium-protocol/nirium/issues/65) — audit trail forensic export bridge | [#69](https://github.com/nirium-protocol/nirium/pull/69), merged | @Santia2004 — external |
 
 Two more from that same list are worth pulling out separately rather than
 folding into "external bounty deliveries," because they aren't that —
 they're my cofounder's own first shipped code for this project, done
 through the same GrantFox process rather than around it:
-[#44](https://github.com/nirium-protocol/nirium-sdk/issues/44) (CLI
+[#44](https://github.com/nirium-protocol/nirium/issues/44) (CLI
 `pay`/`serve` commands) via
-[#62](https://github.com/nirium-protocol/nirium-sdk/pull/62), and
-[#45](https://github.com/nirium-protocol/nirium-sdk/issues/45) (resilient
+[#62](https://github.com/nirium-protocol/nirium/pull/62), and
+[#45](https://github.com/nirium-protocol/nirium/issues/45) (resilient
 reconnecting WebSocket signals client) via
-[#61](https://github.com/nirium-protocol/nirium-sdk/pull/61) — both merged,
+[#61](https://github.com/nirium-protocol/nirium/pull/61) — both merged,
 both by [Monserrat Mendoza](https://github.com/M0nsxx).
 
-One more worth naming separately because it isn't a bounty at all: **[#81](https://github.com/nirium-protocol/nirium-sdk/issues/81)** was a real fail-open vulnerability in the Next.js x402 example (any `X-PAYMENT` header granted access, valid or not), reported by an outside party and fixed the same way as everything above — a merged PR, [#84](https://github.com/nirium-protocol/nirium-sdk/pull/84).
+One more worth naming separately because it isn't a bounty at all: **[#81](https://github.com/nirium-protocol/nirium/issues/81)** was a real fail-open vulnerability in the Next.js x402 example (any `X-PAYMENT` header granted access, valid or not), reported by an outside party and fixed the same way as everything above — a merged PR, [#84](https://github.com/nirium-protocol/nirium/pull/84).
 
-Separately, [nirium-pollar-adapter#1](https://github.com/nirium-protocol/nirium-pollar-adapter/pull/1) (deferred wallet funding) merged 2026-08-29, and [nirium-sdk#68](https://github.com/nirium-protocol/nirium-sdk/pull/68) (restore `viem` as a direct dependency) merged 2026-08-26 — both real fixes by this account, not bounty deliveries.
+Separately, [nirium-pollar-adapter#1](https://github.com/nirium-protocol/nirium-pollar-adapter/pull/1) (deferred wallet funding) merged 2026-08-29, and [nirium#68](https://github.com/nirium-protocol/nirium/pull/68) (restore `viem` as a direct dependency) merged 2026-08-26 — both real fixes by this account, not bounty deliveries.
 
 </details>
 
@@ -369,7 +369,7 @@ Snapshot above is accurate as of **2026-09-05**; these always supersede it:
 ·
 [all my issues](https://github.com/search?q=author%3AEras256+is%3Aissue&type=issues)
 ·
-[nirium-sdk's full bounty board](https://github.com/nirium-protocol/nirium-sdk/issues?q=is%3Aissue)
+[nirium's full bounty board](https://github.com/nirium-protocol/nirium/issues?q=is%3Aissue)
 ·
 [Contextio's open issues](https://github.com/contextio/Contextio/issues)
 
