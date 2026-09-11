@@ -135,7 +135,7 @@ says "this one's Nirium's, not Periplo's," that's the reason.
 | **[nirium](https://github.com/nirium-protocol/nirium)** | The TypeScript and Python packages plus CLI behind Nirium — x402 `pay`/`serve`, MPP session budgets, IPFS audit anchoring. Also where Nirium runs its own GrantFox bounty program (see below). Apache-2.0. |
 | **[Contextio](https://github.com/contextio/Contextio)** · [contextio.xyz](https://contextio.xyz) | An AI agent that moves treasury and payroll funds for companies in Brazil, Argentina, and Colombia, binding every action to a verifiable Legal Context Protocol (LCP) document. Live on Stellar testnet (full autonomy) and mainnet (deliberately narrower: read-only data plus self-custody actions only, invitation-only while contracts await external audit). SEP-53 wallet sign-in. Originally a Stellar PULSO Hackathon submission, now aimed at the SCF Integration Track. Migrated from a personal repo to the `contextio` org. |
 | **[nirium-pollar-adapter](https://github.com/nirium-protocol/nirium-pollar-adapter)** · [npm](https://www.npmjs.com/package/nirium-pollar-adapter) | Adapter that lets a wallet onboarded through the Pollar SDK pay x402 requests and anchor audit receipts. Published to npm, running against Stellar mainnet. MIT. |
-| **[Prova](https://github.com/Prova-Solana/Prova)** · [theprova.xyz](https://www.theprova.xyz) | Cryptographic, on-chain receipts for AI agent actions on Solana — one `attest()` call, one Ed25519-sealed record, verifiable without trusting the operator's own logs. **Solana devnet today**, not mainnet — stated plainly since the site's own copy could be read otherwise. SDKs (`prova-agent-sdk` etc.) published on npm at `0.1.7`. Apache-2.0. |
+| **[Prova](https://github.com/Prova-Solana/Prova)** · [theprova.xyz](https://www.theprova.xyz) | Cryptographic, on-chain receipts for AI agent actions on Solana — one `attest()` call, one Ed25519-sealed record, verifiable without trusting the operator's own logs. **Solana devnet today**, not mainnet — stated plainly since the site's own copy could be read otherwise. SDKs (`prova-agent-sdk` etc.) published on npm at `0.1.7`. Apache-2.0. Grew out of the Solana Cypherpunk Hackathon ([Oraculo](https://colosseum.com/arena/projects/explore/oraculo), Sep-Oct 2025) and WayLearn's Solana Foundation-backed Solana Latam Labs Program (Jun-Aug 2026), taking 1st place in Mexico at the Dev3Pack Global Hackathon along the way. |
 
 ---
 
@@ -152,7 +152,14 @@ an outdated version and a deprecated hook). All still open. Same pattern
 as the Instaward one above: KUMPLY's application to Avalanche's Team1
 Mini Grants program went in through a real channel, not cold — I'm an
 official Team1 LatAm collaborator. Applied, decision still pending; not
-claiming an award that hasn't happened.
+claiming an award that hasn't happened. Also shipped
+[AgentHub Protocol](https://www.npmjs.com/package/@vaiosx44/agenthub-sdk)
+for Avalanche's Hack2Build: Payments x402 hackathon — x402 micropayments
+(ERC-4337 smart accounts), on-chain agent reputation (ERC-8004), and a
+service marketplace with DeFi integrations (Trader Joe, Benqi, Aave V3).
+Real, SDK published on npm, contracts deployed to Fuji testnet — and
+dormant since January 2026, stated plainly rather than presented as
+active alongside Kumply.
 
 **Vouch402 (Base)** — [base/skills#152](https://github.com/base/skills/pull/152),
 an open PR adding a Vouch402 plugin listing to Base's own community skills
@@ -164,7 +171,9 @@ catalog, same genre as the `stellar-dev-skill` PRs below. Also
 both found auditing tooling Vouch402 depends on. Both KUMPLY and Vouch402
 are currently in active review — Avalanche's Team1 Mini Grants and Base
 Batches respectively — decisions still pending on both, not claimed as
-awards here.
+awards here. Separately, I hold the **Based Developer Ambassador** role
+in Base's own Discord — a real, currently active role, not an
+application in progress.
 
 **Prova (Solana)** — [otter-sec/anchor#4960](https://github.com/otter-sec/anchor/pull/4960),
 an open PR bumping `heck` 0.3 → 0.5 to drop an unbounded `edition2024`
