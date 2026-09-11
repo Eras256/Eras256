@@ -126,8 +126,9 @@ the same activity, not three inconsistent counts of the same thing.
 
 ## What I'm building
 
-Periplo, Nirium, and Contextio are three separate Stellar products, not
-three names for one thing — but they share real upstream dependencies
+Kumply, Vouch402, and Prova each stand on their own, one project per
+chain. Periplo, Nirium, and Contextio are three separate Stellar
+products, not three names for one thing — but they share real upstream dependencies
 (same protocols, sometimes the literal same bug), so the contribution
 tables further down attribute each fix to the specific project it came
 from instead of merging them into one undifferentiated pile. If a note
