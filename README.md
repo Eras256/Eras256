@@ -148,11 +148,12 @@ found while building on top of it: [#2](https://github.com/Ayomisco/avaxskills/i
 `ava-labs/avalanche-cli`), [#3](https://github.com/Ayomisco/avaxskills/issues/3)
 (a precompiles skill has the wrong genesis key name for `TxAllowList`),
 [#4](https://github.com/Ayomisco/avaxskills/issues/4) (a wagmi skill cites
-an outdated version and a deprecated hook). All still open. Same pattern
-as the Instaward one above: KUMPLY's application to Avalanche's Team1
-Mini Grants program went in through a real channel, not cold — I'm an
-official Team1 LatAm collaborator. Applied, decision still pending; not
-claiming an award that hasn't happened. Also shipped
+an outdated version and a deprecated hook). All still open. I'm an
+official **Team1 LatAm collaborator** — an Avalanche-ecosystem-wide role,
+not something tied to a single project — which is why KUMPLY's
+application to Team1 Mini Grants went in through a real channel, not
+cold. Applied, decision still pending; not claiming an award that hasn't
+happened. Also shipped
 [AgentHub Protocol](https://www.npmjs.com/package/@vaiosx44/agenthub-sdk)
 for Avalanche's Hack2Build: Payments x402 hackathon — x402 micropayments
 (ERC-4337 smart accounts), on-chain agent reputation (ERC-8004), and a
