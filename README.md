@@ -111,16 +111,9 @@ actually matters, each one a link, not a claim:
   <img alt="Most used languages for Eras256" src="https://github-stats-extended.vercel.app/api/top-langs/?username=Eras256&layout=compact&langs_count=6">
 </picture>
 
-Both cards are rendered live from the GitHub API by
-[github-stats-extended](https://github.com/stats-organization/github-stats-extended),
-so the numbers move on their own rather than being typed in here (checked
-live 2026-09-05, still serving). If a number here looks off against my
-GitHub profile page or the tables further down, it's almost always scope,
-not error: this card counts my own repos and public commits over the last
-year, the profile page's contribution count adds PRs/issues/reviews and
-private activity on top of that, and the per-project tables below are
-all-time and repos-I-don't-own only — three different, narrower slices of
-the same activity, not three inconsistent counts of the same thing.
+Rendered live from the GitHub API by
+[github-stats-extended](https://github.com/stats-organization/github-stats-extended)
+— not typed in, moves on its own (checked live 2026-09-05, still serving).
 
 ---
 
