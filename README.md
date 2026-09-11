@@ -106,6 +106,11 @@ actually matters, each one a link, not a claim:
   claiming on my own. I'm a Starmaker Stellar Ambassador; the program
   was recently restructured and tier confirmations are still going out, so
   I'm not citing a specific level until that settles.
+- **3 hackathon wins outside this six-project portfolio, each with a
+  public tweet confirming it** — ActivaChain (ETH Uruguay 2025, with
+  Monserrat), CreatorChain (1st + 3rd place, ETH Mexico Monterrey 2025),
+  and BioShield Insurance (FDA Track, DeSci Builders Hackathon 2025, also
+  with Monserrat). Full detail and links near the bottom.
 
 ---
 
@@ -382,10 +387,11 @@ clearly attributable to a single one:
 ## Hackathons outside the portfolio
 
 Not part of the six-project portfolio above — separate weekend builds.
-No GitHub repo for any of the three — source isn't public. Two have a
-public results announcement naming the winner directly (below); the
-third doesn't, and is disclosed as self-reported rather than omitted,
-same standard as everywhere else in this profile.
+No GitHub repo for any of the three — source isn't public. Two have the
+event's own announcement naming the winner directly; the third only has
+my own tweet from the time, not an organizer confirmation — disclosed as
+such rather than blurred together, same standard as everywhere else in
+this profile.
 
 - **[ActivaChain](https://activachain.com)** — won ETH Uruguay 2025, built
   with [Monserrat](https://github.com/M0nsxx). Confirmed by [the event's
@@ -400,9 +406,12 @@ same standard as everywhere else in this profile.
   [for the second](https://x.com/ethereum_mexico/status/1989005129178099826).
   Solo build.
 - **[BioShield Insurance](https://bioshield-insurance.vercel.app/)** — won
-  the FDA track at Infinita City's DeSci Builder Hackathon 2025. Solo
-  build. No public results page or announcement found for this one —
-  self-reported.
+  the FDA Track at the DeSci Builders Hackathon (Gitcoin × Infinita City
+  × Próspera, Honduras, 2025), built with
+  [Monserrat](https://github.com/M0nsxx). Deployed across Solana, Base,
+  and Optimism. Self-reported — [my own
+  tweet](https://x.com/vaiossx/status/1972064428091924681) at the time,
+  not an organizer announcement.
 
 ---
 
