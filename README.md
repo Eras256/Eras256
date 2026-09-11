@@ -11,9 +11,9 @@ Six projects, four chains, each for a specific reason:
 
 | Project(s) | Chain | Why there |
 | --- | --- | --- |
-| Periplo, Nirium, Contextio | Stellar | Payments: [$0.0007667 average transaction cost](https://stellar.org/) and 24/7 settlement, cheap enough for agent-scale micropayments, plus the SCF funding program this portfolio started in |
 | Kumply | Avalanche | Compliance for regulated institutions: purpose-built [Evergreen Subnets](https://www.avax.network/about/blog/avalanche-launches-evergreen-for-institutional-blockchain-deployments/) give KYC, permissioned validators, and controlled access — the same track that had [Progmat migrate $2B+ in security tokens](https://www.avax.network/institutions) in Feb 2026 and 29 institutions (Franklin Templeton, VanEck, WisdomTree among them) formalize the [Avalanche Payments Collective](https://www.avax.network/about/blog/avalanche-payments-collective) in Q2 2026, compliance named as one of its explicit categories |
 | Vouch402 | Base | Where the x402 agent-payment volume already is: an independent census puts [98.44% of all published x402 resources on Base](https://github.com/arturete58-sys/x402-observatory/blob/main/report-01-census.md), and [Base itself](https://www.base.org/) claims to be "the leading blockchain across the metrics that matter most" for onchain payments |
+| Periplo, Nirium, Contextio | Stellar | Payments: [$0.0007667 average transaction cost](https://stellar.org/) and 24/7 settlement, cheap enough for agent-scale micropayments, plus the SCF funding program this portfolio started in |
 | Prova | Solana | [Sub-second finality, ~$0.0004–0.0005 per transaction](https://solana.com/docs/core/fees) — the cost profile a high-frequency agent-receipt layer actually needs |
 
 Each one stays where it started until real demand justifies expanding it
@@ -119,14 +119,48 @@ says "this one's Nirium's, not Periplo's," that's the reason.
 
 | Project | What it actually is |
 | --- | --- |
+| **[Kumply](https://github.com/kumplyprotocol/Kumply)** · [kumply.xyz](https://kumply.xyz) | On-chain KYC/KYB/KYA compliance attestations for Avalanche — no personal data stored on-chain, just `(tier, expiry, issuer, revocation status)`. Contracts live and verified on Fuji testnet (full read/write) and Avalanche mainnet C-Chain ([`AttestationStore`](https://snowtrace.io/address/0xa116261Ed3a848A9E1cd34923D5A0442D1455F71), read-only beta). 164 tests on every push. Apache-2.0. |
+| **Vouch402** · [vouch402.xyz](https://www.vouch402.xyz) | x402-metered on-chain risk intelligence for agents on Base, with a built-in proof-of-fulfillment attestation layer. Full quote-to-attestation flow run end-to-end on **Base mainnet**, not just testnet: [settled payment](https://basescan.org/tx/0x6e44081aa3f05c73f6c9c32dc456f0231c3a690a33159765917ff096d138659c), [fulfillment attestation](https://basescan.org/tx/0xe2b5002c923bd9b49afce698f9d0f7ebef66d24f8c1eafd22c0a64e7c5f7ebb7), [EAS schema](https://base.easscan.org/schema/view/0xfbd6000caf2aaa6f7e269c74b45a0f891ddfe3381356d8ebaefc46b1a524abac). Client packages on npm: [`vouch402-sdk`](https://www.npmjs.com/package/vouch402-sdk), [`vouch402`](https://www.npmjs.com/package/vouch402) (CLI), [`vouch402-mcp-server`](https://www.npmjs.com/package/vouch402-mcp-server). Source repo is private. |
 | **[Periplo](https://github.com/Eras256/Periplo)** · [periplo.xyz](https://periplo.xyz) | An x402 payment facilitator for Stellar with a "Bazaar" discovery catalog, so an agent can find a payable service it has never seen before. Facilitator is live on `stellar:testnet` — [`GET /supported`](https://periplo-testnet.fly.dev/supported) responds without setup. Apache-2.0, TypeScript + Soroban. |
 | **[Nirium](https://github.com/Eras256/Nirium)** · [nirium.xyz](https://nirium.xyz) | Autonomous treasury and machine-to-machine payments on Stellar — Soroban contracts in Rust, an x402 + MPP payment layer, and MCP integration. Non-custodial: the client's wallet signs, or a scoped `RebalanceManager` role that by contract design can't withdraw or move funds; Nirium itself never holds a key that can. Apache-2.0. |
 | **[nirium-sdk](https://github.com/nirium-protocol/nirium-sdk)** | The TypeScript and Python packages plus CLI behind Nirium — x402 `pay`/`serve`, MPP session budgets, IPFS audit anchoring. Also where Nirium runs its own GrantFox bounty program (see below). Apache-2.0. |
 | **[Contextio](https://github.com/contextio/Contextio)** · [contextio.xyz](https://contextio.xyz) | An AI agent that moves treasury and payroll funds for companies in Brazil, Argentina, and Colombia, binding every action to a verifiable Legal Context Protocol (LCP) document. Live on Stellar testnet (full autonomy) and mainnet (deliberately narrower: read-only data plus self-custody actions only, invitation-only while contracts await external audit). SEP-53 wallet sign-in. Originally a Stellar PULSO Hackathon submission, now aimed at the SCF Integration Track. Migrated from a personal repo to the `contextio` org. |
 | **[nirium-pollar-adapter](https://github.com/nirium-protocol/nirium-pollar-adapter)** · [npm](https://www.npmjs.com/package/nirium-pollar-adapter) | Adapter that lets a wallet onboarded through the Pollar SDK pay x402 requests and anchor audit receipts. Published to npm, running against Stellar mainnet. MIT. |
-| **[Kumply](https://github.com/kumplyprotocol/Kumply)** · [kumply.xyz](https://kumply.xyz) | On-chain KYC/KYB/KYA compliance attestations for Avalanche — no personal data stored on-chain, just `(tier, expiry, issuer, revocation status)`. Contracts live and verified on Fuji testnet (full read/write) and Avalanche mainnet C-Chain ([`AttestationStore`](https://snowtrace.io/address/0xa116261Ed3a848A9E1cd34923D5A0442D1455F71), read-only beta). 164 tests on every push. Apache-2.0. |
-| **Vouch402** · [vouch402.xyz](https://www.vouch402.xyz) | x402-metered on-chain risk intelligence for agents on Base, with a built-in proof-of-fulfillment attestation layer. Full quote-to-attestation flow run end-to-end on **Base mainnet**, not just testnet: [settled payment](https://basescan.org/tx/0x6e44081aa3f05c73f6c9c32dc456f0231c3a690a33159765917ff096d138659c), [fulfillment attestation](https://basescan.org/tx/0xe2b5002c923bd9b49afce698f9d0f7ebef66d24f8c1eafd22c0a64e7c5f7ebb7), [EAS schema](https://base.easscan.org/schema/view/0xfbd6000caf2aaa6f7e269c74b45a0f891ddfe3381356d8ebaefc46b1a524abac). Client packages on npm: [`vouch402-sdk`](https://www.npmjs.com/package/vouch402-sdk), [`vouch402`](https://www.npmjs.com/package/vouch402) (CLI), [`vouch402-mcp-server`](https://www.npmjs.com/package/vouch402-mcp-server). Source repo is private. |
 | **[Prova](https://github.com/Prova-Solana/Prova)** · [theprova.xyz](https://www.theprova.xyz) | Cryptographic, on-chain receipts for AI agent actions on Solana — one `attest()` call, one Ed25519-sealed record, verifiable without trusting the operator's own logs. **Solana devnet today**, not mainnet — stated plainly since the site's own copy could be read otherwise. SDKs (`prova-agent-sdk` etc.) published on npm at `0.1.7`. Apache-2.0. |
+
+---
+
+## Kumply, Vouch402, Prova — upstream contributions
+
+**Kumply (Avalanche)** — three open bug reports against a third-party
+community skills repo, [Ayomisco/avaxskills](https://github.com/Ayomisco/avaxskills),
+found while building on top of it: [#2](https://github.com/Ayomisco/avaxskills/issues/2)
+(a subnet-deployment skill cites CLI commands that don't exist in the real
+`ava-labs/avalanche-cli`), [#3](https://github.com/Ayomisco/avaxskills/issues/3)
+(a precompiles skill has the wrong genesis key name for `TxAllowList`),
+[#4](https://github.com/Ayomisco/avaxskills/issues/4) (a wagmi skill cites
+an outdated version and a deprecated hook). All still open. Same pattern
+as the Instaward one above: KUMPLY's application to Avalanche's Team1
+Mini Grants program went in through a real channel, not cold — I'm an
+official Team1 LatAm collaborator. Applied, decision still pending; not
+claiming an award that hasn't happened.
+
+**Vouch402 (Base)** — [base/skills#152](https://github.com/base/skills/pull/152),
+an open PR adding a Vouch402 plugin listing to Base's own community skills
+catalog, same genre as the `stellar-dev-skill` PRs below. Also
+[eas-sdk#132](https://github.com/ethereum-attestation-service/eas-sdk/issues/132)
+(closed, fixed — detail below) and
+[foundry-rs/foundry#16209](https://github.com/foundry-rs/foundry/issues/16209)
+(`cast wallet new <name>` still fails with a bare account name, open),
+both found auditing tooling Vouch402 depends on. Both KUMPLY and Vouch402
+are currently in active review — Avalanche's Team1 Mini Grants and Base
+Batches respectively — decisions still pending on both, not claimed as
+awards here.
+
+**Prova (Solana)** — [otter-sec/anchor#4960](https://github.com/otter-sec/anchor/pull/4960),
+an open PR bumping `heck` 0.3 → 0.5 to drop an unbounded `edition2024`
+dependency landmine in the Anchor framework Prova's on-chain program is
+built on. Not merged yet.
 
 ---
 
@@ -278,39 +312,6 @@ Periplo and Nirium have.
 
 ---
 
-## Elsewhere — Kumply, Vouch402, Prova
-
-Same standard as above, smaller footprint since these are newer:
-
-**Kumply (Avalanche)** — three open bug reports against a third-party
-community skills repo, [Ayomisco/avaxskills](https://github.com/Ayomisco/avaxskills),
-found while building on top of it: [#2](https://github.com/Ayomisco/avaxskills/issues/2)
-(a subnet-deployment skill cites CLI commands that don't exist in the real
-`ava-labs/avalanche-cli`), [#3](https://github.com/Ayomisco/avaxskills/issues/3)
-(a precompiles skill has the wrong genesis key name for `TxAllowList`),
-[#4](https://github.com/Ayomisco/avaxskills/issues/4) (a wagmi skill cites
-an outdated version and a deprecated hook). All still open. Same pattern
-as the Instaward one above: KUMPLY's application to Avalanche's Team1
-Mini Grants program went in through a real channel, not cold — I'm an
-official Team1 LatAm collaborator. Applied, decision still pending; not
-claiming an award that hasn't happened.
-
-**Vouch402 (Base)** — [base/skills#152](https://github.com/base/skills/pull/152),
-an open PR adding a Vouch402 plugin listing to Base's own community skills
-catalog, same genre as the `stellar-dev-skill` PRs above. Also
-[eas-sdk#132](https://github.com/ethereum-attestation-service/eas-sdk/issues/132)
-(closed, fixed — detail above) and
-[foundry-rs/foundry#16209](https://github.com/foundry-rs/foundry/issues/16209)
-(`cast wallet new <name>` still fails with a bare account name, open),
-both found auditing tooling Vouch402 depends on.
-
-**Prova (Solana)** — [otter-sec/anchor#4960](https://github.com/otter-sec/anchor/pull/4960),
-an open PR bumping `heck` 0.3 → 0.5 to drop an unbounded `edition2024`
-dependency landmine in the Anchor framework Prova's on-chain program is
-built on. Not merged yet.
-
----
-
 ## Other dependency bug reports
 
 Found using these libraries for Periplo, Nirium, or Contextio, but not
@@ -322,22 +323,22 @@ clearly attributable to a single one:
 
 ## Stack
 
-![Stellar](https://img.shields.io/badge/Stellar-000000?style=flat-square&logo=stellar&logoColor=white)
-![Soroban](https://img.shields.io/badge/Soroban-1f6feb?style=flat-square)
 ![Avalanche](https://img.shields.io/badge/Avalanche-E84142?style=flat-square&logo=avalanche&logoColor=white)
 ![Base](https://img.shields.io/badge/Base-0052FF?style=flat-square&logo=coinbase&logoColor=white)
+![Stellar](https://img.shields.io/badge/Stellar-000000?style=flat-square&logo=stellar&logoColor=white)
+![Soroban](https://img.shields.io/badge/Soroban-1f6feb?style=flat-square)
 ![Solana](https://img.shields.io/badge/Solana-9945FF?style=flat-square&logo=solana&logoColor=white)
 ![x402](https://img.shields.io/badge/x402-teal?style=flat-square)
+![Solidity](https://img.shields.io/badge/Solidity-363636?style=flat-square&logo=solidity&logoColor=white)
 ![Rust](https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
-![Solidity](https://img.shields.io/badge/Solidity-363636?style=flat-square&logo=solidity&logoColor=white)
 
 **Protocols** — x402, MPP (Charge and Channel), SEP-41 / SAC, SEP-43,
 SEP-53, CAP-71 delegated auth, MCP, EAS (Ethereum Attestation Service)
-**Chains** — Stellar/Soroban (Periplo, Nirium, Contextio), Avalanche
-(Kumply), Base (Vouch402), Solana (Prova)
+**Chains** — Avalanche (Kumply), Base (Vouch402), Stellar/Soroban
+(Periplo, Nirium, Contextio), Solana (Prova)
 
 ---
 
