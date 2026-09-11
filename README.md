@@ -71,6 +71,16 @@ actually matters, each one a link, not a claim:
   ([@lbeder](https://github.com/lbeder)) 2026-08-27, fixed in
   [eas-sdk 2.10.0](https://www.npmjs.com/package/@ethereum-attestation-service/eas-sdk/v/2.10.0) —
   I verified the fix against that release myself before treating it as closed.
+- **A 32-day mainnet outage on a facilitator four other integrators also
+  depend on got fixed, and I verified it myself before saying so** —
+  [OpenZeppelin/relayer-plugin-x402-facilitator#47](https://github.com/OpenZeppelin/relayer-plugin-x402-facilitator/issues/47):
+  a stale RPC URL on OZ's hosted pubnet facilitator silently broke
+  sponsored x402 payments from ~2026-08-10 to 2026-09-11. Confirmed the
+  fix with a real $0.05 mainnet payment, not just a 200 response —
+  [tx `bf9a1ca6...` on Horizon](https://horizon.stellar.org/transactions/bf9a1ca6b9b157c7010f0774107e4140f8a7b0e3c6c0227908936447de9aac24),
+  `successful: true`, ledger 64382007. Also got two account addresses
+  backwards in my first write-up and posted a public correction the same
+  day instead of leaving it wrong.
 - **Real, currently active roles across all three ecosystems this
   portfolio touches beyond Stellar-native work** — official **Team1
   LatAm collaborator** (Avalanche, ecosystem-wide, not tied to Kumply
@@ -173,7 +183,8 @@ catalog, same genre as the `stellar-dev-skill` PRs below. Also
 [eas-sdk#132](https://github.com/ethereum-attestation-service/eas-sdk/issues/132)
 (closed, fixed — detail below) and
 [foundry-rs/foundry#16209](https://github.com/foundry-rs/foundry/issues/16209)
-(`cast wallet new <name>` still fails with a bare account name, open),
+(`cast wallet new <name>` failed with a bare account name — closed
+2026-09-09, fixed by [@riba2534 in #16219](https://github.com/foundry-rs/foundry/pull/16219)),
 both found auditing tooling Vouch402 depends on. Both KUMPLY and Vouch402
 are currently in active review — Avalanche's Team1 Mini Grants and Base
 Batches respectively — decisions still pending on both, not claimed as
@@ -193,7 +204,7 @@ attendance.
 
 ## Periplo — upstream contributions
 
-Snapshot below is a live re-check as of **2026-09-05**; the search links at
+Snapshot below is a live re-check as of **2026-09-11**; the search links at
 the bottom always supersede it. Full first-hand narrative with transaction
 hashes and reproduction steps lives in
 [`Eras256/Periplo`'s own README](https://github.com/Eras256/Periplo#readme).
@@ -214,20 +225,31 @@ hashes and reproduction steps lives in
 | [#3215](https://github.com/x402-foundation/x402/pull/3215) — derive one wildcard pattern per namespace, not one per registration | `x402-foundation/x402` | [#3172](https://github.com/x402-foundation/x402/issues/3172) |
 | [#3138](https://github.com/x402-foundation/x402/pull/3138) — use the raw resource URL as canonical for opaque-origin schemes | `x402-foundation/x402` | [#3121](https://github.com/x402-foundation/x402/issues/3121) |
 | [#3098](https://github.com/x402-foundation/x402/pull/3098) — `upto` scheme implementation spec for Stellar | `x402-foundation/x402` | [#3097](https://github.com/x402-foundation/x402/issues/3097) |
-| [#1672](https://github.com/stellar/js-stellar-sdk/pull/1672) — walk every CAP-71 delegate node, not just the top level | `stellar/js-stellar-sdk` | [#1655](https://github.com/stellar/js-stellar-sdk/issues/1655). Blocked/mergeable pending review; nudged 2026-08-31 that this is no longer theoretical now that v17.0.0/v17.0.1 made CAP-71 v2 the default on both ends of the auth flow. |
-| [#844](https://github.com/OpenZeppelin/stellar-contracts/pull/844) — drop the Lazy-mode expiration check that validates the wrong value | `OpenZeppelin/stellar-contracts` | [#840](https://github.com/OpenZeppelin/stellar-contracts/issues/840) — this one is Nirium's, not Periplo's; see the Nirium section below. Was mergeable and CI-green since Aug 24; picked up a merge conflict since (`CONFLICTING`/`DIRTY` as of 2026-09-05) — needs a rebase, still no maintainer response to the Aug 31 nudge. |
+| [#1672](https://github.com/stellar/js-stellar-sdk/pull/1672) — walk every CAP-71 delegate node, not just the top level | `stellar/js-stellar-sdk` | [#1655](https://github.com/stellar/js-stellar-sdk/issues/1655). Open, `mergeable_state: dirty` as of 2026-09-11 (needs a rebase) — nudged 2026-08-31 that this is no longer theoretical now that v17.0.0/v17.0.1 made CAP-71 v2 the default on both ends of the auth flow, still no maintainer response. |
 | [#4960](https://github.com/otter-sec/anchor/pull/4960) — bump `heck` 0.3 → 0.5 to drop the unbounded edition2024 landmine | `otter-sec/anchor` | Unrelated dependency fix, not tied to either product |
+
+Separately, weighed in on
+[x402#3134](https://github.com/x402-foundation/x402/pull/3134#issuecomment-5638937401) —
+a PR by @Iam0TI defining the `upto` scheme for Stellar, where an
+independent implementor (@davedumto) asked whether a new
+convergence document (crediting rail402, this PR, #3098, Rialto, openx402,
+and LumenGate) should land as its own file, as edits inside #3134, or not
+at all. Recommended folding it into #3134 instead of fragmenting — same
+consolidation logic already used for `UPTO-CONVERGENCE.md` here — and
+added the concrete case for why `scheme: "upto"` alone won't distinguish
+`contract` vs `smartAccount` profiles once both exist on the same network.
 
 ### Bug reports that landed
 
 - **[x402#3171](https://github.com/x402-foundation/x402/issues/3171)** — `paymentRequirementsMatchAccepted` threw on a missing/null `payload.accepted`. I found and reported it; the code fix was written by [@JasonColapietro](https://github.com/JasonColapietro) in [#3180](https://github.com/x402-foundation/x402/pull/3180), merged 2026-08-17. The merged patch is his work, not mine — my part was the report.
+- **[x402#3169](https://github.com/x402-foundation/x402/issues/3169)** — `isValidRouteTemplate`'s traversal/scheme-injection checks decoded `routeTemplate` only once, so double percent-encoding bypassed both. I filed it 2026-08-15 with a full repro; fixed by [@ygd58 in #3213](https://github.com/x402-foundation/x402/pull/3213), merged 2026-09-09. A duplicate attempt at the same fix, [#3422](https://github.com/x402-foundation/x402/pull/3422), was closed in favor of #3213. Not my patch — my part was the report and the nudge.
 - **[x402#3270](https://github.com/x402-foundation/x402/issues/3270)** — `HTTPFacilitatorClient.settle()/verify()` decoded the `EXTENSION-RESPONSES` header and then discarded it. I fixed this on Periplo's own side the same day rather than waiting on upstream. **Closed 2026-08-31** — not the way it first looked like it would close. The actual fix was the maintainer's own separate PR, [#3306](https://github.com/x402-foundation/x402/pull/3306) (Python, @phdargen), introducing a dedicated `extension_responses`/`extensionResponses` field instead of reusing `extensions` — explicitly rejecting that shape (which my own workaround used, and so did the two community PRs this finding first prompted) as leaking a server-only sidechannel into buyer-facing data. [#3278](https://github.com/x402-foundation/x402/pull/3278) (TypeScript, @Bartok9) was revised to match before merging separately; [#3301](https://github.com/x402-foundation/x402/pull/3301) (Go, @wnjoon) and [PhilBot402/x402#4](https://github.com/PhilBot402/x402/pull/4) (Python, draft) remain open, likely needing the same adjustment. My own `/settle` still uses the old shape — migrating once `@x402/core` actually ships the new field (not yet: `latest` is still `2.24.0`, predating this fix).
 - **[eas-sdk#132](https://github.com/ethereum-attestation-service/eas-sdk/issues/132)** — `getUIDsFromAttestReceipt` trusted log `topic0` without checking the emitter address, found while auditing the library Vouch402 calls for every attestation it emits. Vouch402 itself isn't affected (no resolver, no `multiAttest()` calls) — a library-level finding, not a gap in that project. *Closed as completed* by the maintainer 2026-08-27, fixed in [eas-sdk 2.10.0](https://www.npmjs.com/package/@ethereum-attestation-service/eas-sdk/v/2.10.0).
 - **[OpenZeppelin/stellar-contracts#839](https://github.com/OpenZeppelin/stellar-contracts/issues/839)** — hit `UnreachableCodeReached` combining `Signer::Delegated` with a `CallContract` rule, and opened this not sure yet whether it was our construction or a real library gap. **Closed 2026-09-02, resolution: ours.** With help from the maintainer (@brozorec) clarifying `execute()`'s self-authorization is meant only for self-admin operations, hand-constructing both auth entries (the smart account's own plus the delegate's) authorizes and confirms correctly on-chain — no library fix needed, the trap was in how we were building the auth entry, not the library.
 
 ### Still open, awaiting maintainer response
 
-`x402-foundation/x402` — [#3121](https://github.com/x402-foundation/x402/issues/3121), [#3148](https://github.com/x402-foundation/x402/issues/3148), [#3169](https://github.com/x402-foundation/x402/issues/3169); `stellar/js-stellar-sdk` — [#1681](https://github.com/stellar/js-stellar-sdk/issues/1681), [#1683](https://github.com/stellar/js-stellar-sdk/issues/1683).
+`x402-foundation/x402` — [#3121](https://github.com/x402-foundation/x402/issues/3121), [#3148](https://github.com/x402-foundation/x402/issues/3148); `stellar/js-stellar-sdk` — [#1681](https://github.com/stellar/js-stellar-sdk/issues/1681), [#1683](https://github.com/stellar/js-stellar-sdk/issues/1683).
 
 ---
 
@@ -239,8 +261,8 @@ hashes and reproduction steps lives in
 | --- | --- | --- |
 | [#96](https://github.com/stellar/stellar-dev-skill/pull/96) — add Nirium to community skills | `stellar/stellar-dev-skill` | Merged 2026-08-15 |
 | [#97](https://github.com/stellar/stellar-dev-skill/pull/97) — production patterns for x402 + MPP | `stellar/stellar-dev-skill` | **Merged 2026-09-05**, by @kaankacar, after ~16 real review rounds across 21 days. An earlier version, [#14](https://github.com/stellar/stellar-dev-skill/pull/14), was closed unmerged and superseded by this one |
-| [#844](https://github.com/OpenZeppelin/stellar-contracts/pull/844) — fix(fee-abstraction): drop Lazy-mode expiration check that validates the wrong value | `OpenZeppelin/stellar-contracts` | Open, fixes [#840](https://github.com/OpenZeppelin/stellar-contracts/issues/840). Was mergeable and CI-green since Aug 24; picked up a merge conflict since (needs a rebase, as of 2026-09-05), still no maintainer response to the Aug 31 nudge |
-| [#47](https://github.com/OpenZeppelin/relayer-plugin-x402-facilitator/issues/47) — mainnet sponsor/relayer account silent 500+ hours | `OpenZeppelin/relayer-plugin-x402-facilitator` | Open. As of 2026-09-05 this is four independent integrators (Nirium's own fee-payer, AgentPayments.fi, NovaCorpAI, and Lexirieru/stellarouter) converging on the same finding from four directions, with no OZ response yet |
+| [#844](https://github.com/OpenZeppelin/stellar-contracts/pull/844) — fix(fee-abstraction): drop Lazy-mode expiration check that validates the wrong value | `OpenZeppelin/stellar-contracts` | **Closed 2026-09-07, unmerged — correctly rejected.** [#840](https://github.com/OpenZeppelin/stellar-contracts/issues/840)'s premise was wrong: `expiration_ledger` isn't validating the allowance's state at all, it's the caller-supplied deadline for the `collect_fee` call itself within the atomic fee-forwarding operation — the same pattern as a DEX's `deadline` parameter. Maintainer (@brozorec) walked through why across two follow-up replies; the finding doesn't hold |
+| [#47](https://github.com/OpenZeppelin/relayer-plugin-x402-facilitator/issues/47) — mainnet sponsor/relayer account silent, then a stale-RPC outage | `OpenZeppelin/relayer-plugin-x402-facilitator` | **Resolved 2026-09-11**, ~32 days after it started (~2026-08-10). Root cause: OZ's hosted pubnet facilitator was pointed at an outdated RPC URL. Fixed by OZ, confirmed by me with a real mainnet payment against my own service — full detail in Highlights above. Four independent integrators had converged on this finding before OZ responded. |
 | [#58](https://github.com/stellar/stellar-mpp-sdk/issues/58) — allow an external SEP-43 signer instead of a raw secret key | `stellar/stellar-mpp-sdk` | Open |
 | [#30](https://github.com/pollar-xyz/pollar-apps/pull/30) — Nirium x402 adapter demo (`apps/nirium`) | `pollar-xyz/pollar-apps` | **Merged 2026-08-31**, by @aleregex |
 
@@ -374,8 +396,7 @@ SEP-53, CAP-71 delegated auth, MCP, EAS (Ethereum Attestation Service)
 - Small PRs, one root cause each, with the reproduction in the description.
 - If I file a bug in a dependency, I try to open the fix alongside it when I
   can —
-  [#3187 → #3228](https://github.com/x402-foundation/x402/pull/3228),
-  [#840 → #844](https://github.com/OpenZeppelin/stellar-contracts/pull/844).
+  [#3187 → #3228](https://github.com/x402-foundation/x402/pull/3228).
   When someone else beats me to the fix, I say so and name them —
   [#3171 → #3180 by @JasonColapietro](https://github.com/x402-foundation/x402/pull/3180),
   [#3270 → #3306 by @phdargen](https://github.com/x402-foundation/x402/pull/3306) — the maintainer's own fix, rejecting the field shape my own workaround used.
@@ -391,7 +412,7 @@ SEP-53, CAP-71 delegated auth, MCP, EAS (Ethereum Attestation Service)
 
 ## Search these live yourself
 
-Snapshot above is accurate as of **2026-09-05**; these always supersede it:
+Snapshot above is accurate as of **2026-09-11**; these always supersede it:
 [all my PRs](https://github.com/search?q=author%3AEras256+is%3Apr&type=pullrequests)
 ·
 [all my issues](https://github.com/search?q=author%3AEras256+is%3Aissue&type=issues)
