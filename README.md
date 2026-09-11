@@ -3,9 +3,9 @@
 I build infrastructure for the agent economy — payment rails, service
 discovery, identity attestations, and audit trails for autonomous agents
 transacting with real money. Built with my cofounder,
-**[Monserrat Mendoza](https://github.com/M0nsxx)** — product and UX across
-every project below, expanding into marketing, and now shipping real code
-too (see the Nirium section for two merged PRs that are hers).
+**[Monserrat Mendoza](https://github.com/M0nsxx)** — UX/UI across every
+project below, and backend dev too (see the Nirium section for five
+merged PRs that are hers).
 
 Six projects, four chains, each for a specific reason:
 
@@ -295,17 +295,26 @@ evidence than a bare link:
 | [#51](https://github.com/nirium-protocol/nirium/issues/51) — GitHub Action to verify a Nirium audit-CID in CI | [#80](https://github.com/nirium-protocol/nirium/pull/80), merged | @Simultech369 — external |
 | [#65](https://github.com/nirium-protocol/nirium/issues/65) — audit trail forensic export bridge | [#69](https://github.com/nirium-protocol/nirium/pull/69), merged | @Santia2004 — external |
 
-Two more from that same list are worth pulling out separately rather than
-folding into "external bounty deliveries," because they aren't that —
+Five more from that same list are worth pulling out separately rather
+than folding into "external bounty deliveries," because they aren't that —
 they're my cofounder's own first shipped code for this project, done
 through the same GrantFox process rather than around it:
-[#44](https://github.com/nirium-protocol/nirium/issues/44) (CLI
-`pay`/`serve` commands) via
-[#62](https://github.com/nirium-protocol/nirium/pull/62), and
+[#50](https://github.com/nirium-protocol/nirium/issues/50) ("Deploy to
+Vercel" x402 API template) via
+[#58](https://github.com/nirium-protocol/nirium/pull/58),
+[#37](https://github.com/nirium-protocol/nirium/issues/37) (`nirium
+doctor` CLI preflight diagnostic) via
+[#59](https://github.com/nirium-protocol/nirium/pull/59),
 [#45](https://github.com/nirium-protocol/nirium/issues/45) (resilient
 reconnecting WebSocket signals client) via
-[#61](https://github.com/nirium-protocol/nirium/pull/61) — both merged,
-both by [Monserrat Mendoza](https://github.com/M0nsxx).
+[#61](https://github.com/nirium-protocol/nirium/pull/61),
+[#38](https://github.com/nirium-protocol/nirium/issues/38) (standalone
+offline audit-CID/Ed25519 attestation verifier) via
+[#60](https://github.com/nirium-protocol/nirium/pull/60), and
+[#44](https://github.com/nirium-protocol/nirium/issues/44) (CLI
+`pay`/`serve` commands) via
+[#62](https://github.com/nirium-protocol/nirium/pull/62) — all five
+merged, all by [Monserrat Mendoza](https://github.com/M0nsxx).
 
 One more worth naming separately because it isn't a bounty at all: **[#81](https://github.com/nirium-protocol/nirium/issues/81)** was a real fail-open vulnerability in the Next.js x402 example (any `X-PAYMENT` header granted access, valid or not), reported by an outside party and fixed the same way as everything above — a merged PR, [#84](https://github.com/nirium-protocol/nirium/pull/84).
 
