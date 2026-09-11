@@ -93,7 +93,7 @@ actually matters, each one a link, not a claim:
   real credential, not luck: Instawards require active participation in a
   local [Stellar Ambassador Chapter](https://stellar.gitbook.io/ambassador-program) —
   that's [the program's own stated eligibility rule](https://github.com/stellar/scf-handbook/blob/main/scf-awards/instawards/official-rules.md), not something I'm
-  claiming on my own. I'm a Starmaker-tier Stellar Ambassador; the program
+  claiming on my own. I'm a Starmaker Stellar Ambassador; the program
   was recently restructured and tier confirmations are still going out, so
   I'm not citing a specific level until that settles.
 
