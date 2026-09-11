@@ -155,12 +155,16 @@ application to Team1 Mini Grants went in through a real channel, not
 cold. Applied, decision still pending; not claiming an award that hasn't
 happened. Also shipped
 [AgentHub Protocol](https://www.npmjs.com/package/@vaiosx44/agenthub-sdk)
-for Avalanche's Hack2Build: Payments x402 hackathon — x402 micropayments
-(ERC-4337 smart accounts), on-chain agent reputation (ERC-8004), and a
-service marketplace with DeFi integrations (Trader Joe, Benqi, Aave V3).
-Real, SDK published on npm, contracts deployed to Fuji testnet — and
-dormant since January 2026, stated plainly rather than presented as
-active alongside Kumply.
+for Avalanche's Hack2Build: Payments x402 hackathon — real x402
+micropayment code (client, facilitator, middleware), on-chain agent
+reputation (the `AgentRegistry` contract's own docstring calls it
+"ERC-8004 compliant"), and real DeFi integration code for Trader Joe,
+Benqi, and Aave V3. SDK published on npm, contracts deployed to Fuji
+testnet — and dormant since January 2026, stated plainly rather than
+presented as active alongside Kumply. Its original hackathon description
+also claimed ERC-4337 smart accounts; no account-abstraction dependency
+or file exists anywhere in the repo, so that specific claim is dropped
+here rather than repeated unverified.
 
 **Vouch402 (Base)** — [base/skills#152](https://github.com/base/skills/pull/152),
 an open PR adding a Vouch402 plugin listing to Base's own community skills
