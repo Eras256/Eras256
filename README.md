@@ -4,8 +4,9 @@ I build infrastructure for the agent economy — payment rails, service
 discovery, identity attestations, and audit trails for autonomous agents
 transacting with real money. Built with my cofounder,
 **[Monserrat Mendoza](https://github.com/M0nsxx)** — UX/UI across every
-project below, and backend dev too (see the Nirium section for five
-merged PRs that are hers).
+project below, and backend dev too: five merged PRs in Nirium, plus real
+fixes she's now shipped directly in Kumply and Vouch402 as well — full
+detail on [her own profile](https://github.com/M0nsxx/M0nsxx).
 
 Six projects, four chains, each for a specific reason:
 
