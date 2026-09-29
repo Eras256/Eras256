@@ -112,6 +112,28 @@ actually matters, each one a link, not a claim:
   Monserrat), CreatorChain (1st + 3rd place, ETH Mexico Monterrey 2025),
   and BioShield Insurance (FDA Track, DeSci Builders Hackathon 2025, also
   with Monserrat). Full detail and links near the bottom.
+- **A protocol I've never worked at merged four of my PRs in one sitting
+  and thanked me by name** —
+  [Trustless-Work/agentic-escrow-research#1](https://github.com/Trustless-Work/agentic-escrow-research/pull/1)
+  through
+  [#4](https://github.com/Trustless-Work/agentic-escrow-research/pull/4),
+  all merged within 27 minutes on 2026-09-21, real bounded-authority
+  payment patterns — one of them,
+  [#3](https://github.com/Trustless-Work/agentic-escrow-research/pull/3),
+  by [Monserrat](https://github.com/M0nsxx). Their own account posted:
+  "We just merged our first 4 community contributions 🙏 @vaiossx
+  @smithserrat @Niriumstellar."
+- **Selected to build at HackMeridian Lisbon 2026** (Stellar's Meridian
+  Conference hackathon, Oct 25–26) — ahead of it, found and fixed two
+  real bugs getting our own Unity x402 integration running for the first
+  time in-editor:
+  [#87](https://github.com/nirium-protocol/nirium/pull/87) (a
+  compile-breaking API call) and
+  [#88](https://github.com/nirium-protocol/nirium/pull/88), by
+  [Monserrat](https://github.com/M0nsxx) (a wrong settlement-header
+  check). Not a mockup: a playable WebGL build with a real x402 payment
+  settling on Stellar testnet,
+  [tx `53436eb5…`](https://stellar.expert/explorer/testnet/tx/53436eb549600517d9c6e098cee6776db2be5fb48e3c6d9020db9b5fea384c60).
 
 ---
 
@@ -210,7 +232,7 @@ attendance.
 
 ## Periplo — upstream contributions
 
-Snapshot below is a live re-check as of **2026-09-11**; the search links at
+Snapshot below is a live re-check as of **2026-09-28**; the search links at
 the bottom always supersede it. Full first-hand narrative with transaction
 hashes and reproduction steps lives in
 [`Eras256/Periplo`'s own README](https://github.com/Eras256/Periplo#readme).
@@ -231,7 +253,6 @@ hashes and reproduction steps lives in
 | [#3215](https://github.com/x402-foundation/x402/pull/3215) — derive one wildcard pattern per namespace, not one per registration | `x402-foundation/x402` | [#3172](https://github.com/x402-foundation/x402/issues/3172) |
 | [#3138](https://github.com/x402-foundation/x402/pull/3138) — use the raw resource URL as canonical for opaque-origin schemes | `x402-foundation/x402` | [#3121](https://github.com/x402-foundation/x402/issues/3121) |
 | [#3098](https://github.com/x402-foundation/x402/pull/3098) — `upto` scheme implementation spec for Stellar | `x402-foundation/x402` | [#3097](https://github.com/x402-foundation/x402/issues/3097) |
-| [#1672](https://github.com/stellar/js-stellar-sdk/pull/1672) — walk every CAP-71 delegate node, not just the top level | `stellar/js-stellar-sdk` | [#1655](https://github.com/stellar/js-stellar-sdk/issues/1655). Open, `mergeable_state: dirty` as of 2026-09-11 (needs a rebase) — nudged 2026-08-31 that this is no longer theoretical now that v17.0.0/v17.0.1 made CAP-71 v2 the default on both ends of the auth flow, still no maintainer response. |
 | [#4960](https://github.com/otter-sec/anchor/pull/4960) — bump `heck` 0.3 → 0.5 to drop the unbounded edition2024 landmine | `otter-sec/anchor` | Unrelated dependency fix, not tied to either product |
 
 Separately, weighed in on
@@ -252,10 +273,11 @@ added the concrete case for why `scheme: "upto"` alone won't distinguish
 - **[x402#3270](https://github.com/x402-foundation/x402/issues/3270)** — `HTTPFacilitatorClient.settle()/verify()` decoded the `EXTENSION-RESPONSES` header and then discarded it. I fixed this on Periplo's own side the same day rather than waiting on upstream. **Closed 2026-08-31** — not the way it first looked like it would close. The actual fix was the maintainer's own separate PR, [#3306](https://github.com/x402-foundation/x402/pull/3306) (Python, @phdargen), introducing a dedicated `extension_responses`/`extensionResponses` field instead of reusing `extensions` — explicitly rejecting that shape (which my own workaround used, and so did the two community PRs this finding first prompted) as leaking a server-only sidechannel into buyer-facing data. [#3278](https://github.com/x402-foundation/x402/pull/3278) (TypeScript, @Bartok9) was revised to match before merging separately; [#3301](https://github.com/x402-foundation/x402/pull/3301) (Go, @wnjoon) and [PhilBot402/x402#4](https://github.com/PhilBot402/x402/pull/4) (Python, draft) remain open, likely needing the same adjustment. My own `/settle` still uses the old shape — migrating once `@x402/core` actually ships the new field (not yet: `latest` is still `2.24.0`, predating this fix).
 - **[eas-sdk#132](https://github.com/ethereum-attestation-service/eas-sdk/issues/132)** — `getUIDsFromAttestReceipt` trusted log `topic0` without checking the emitter address, found while auditing the library Vouch402 calls for every attestation it emits. Vouch402 itself isn't affected (no resolver, no `multiAttest()` calls) — a library-level finding, not a gap in that project. *Closed as completed* by the maintainer 2026-08-27, fixed in [eas-sdk 2.10.0](https://www.npmjs.com/package/@ethereum-attestation-service/eas-sdk/v/2.10.0).
 - **[OpenZeppelin/stellar-contracts#839](https://github.com/OpenZeppelin/stellar-contracts/issues/839)** — hit `UnreachableCodeReached` combining `Signer::Delegated` with a `CallContract` rule, and opened this not sure yet whether it was our construction or a real library gap. **Closed 2026-09-02, resolution: ours.** With help from the maintainer (@brozorec) clarifying `execute()`'s self-authorization is meant only for self-admin operations, hand-constructing both auth entries (the smart account's own plus the delegate's) authorizes and confirms correctly on-chain — no library fix needed, the trap was in how we were building the auth entry, not the library.
+- **[js-stellar-sdk#1655](https://github.com/stellar/js-stellar-sdk/issues/1655)** — `needsNonInvokerSigningBy()`/`signAuthEntries()` only see the top-level node of a CAP-71 delegate credential, so an outstanding delegate signature never gets reported. I filed it and opened my own fix, [#1672](https://github.com/stellar/js-stellar-sdk/pull/1672) — closed unmerged 2026-09-26, superseded by the maintainer's own [#1747](https://github.com/stellar/js-stellar-sdk/pull/1747) (merged 2026-09-28), which does it better. Two related issues from the same investigation are closed now too: [#1683](https://github.com/stellar/js-stellar-sdk/issues/1683) via the maintainer's [#1742](https://github.com/stellar/js-stellar-sdk/pull/1742), and [#1681](https://github.com/stellar/js-stellar-sdk/issues/1681).
 
 ### Still open, awaiting maintainer response
 
-`x402-foundation/x402` — [#3121](https://github.com/x402-foundation/x402/issues/3121), [#3148](https://github.com/x402-foundation/x402/issues/3148); `stellar/js-stellar-sdk` — [#1681](https://github.com/stellar/js-stellar-sdk/issues/1681), [#1683](https://github.com/stellar/js-stellar-sdk/issues/1683).
+`x402-foundation/x402` — [#3121](https://github.com/x402-foundation/x402/issues/3121), [#3148](https://github.com/x402-foundation/x402/issues/3148).
 
 ---
 
@@ -271,6 +293,7 @@ added the concrete case for why `scheme: "upto"` alone won't distinguish
 | [#47](https://github.com/OpenZeppelin/relayer-plugin-x402-facilitator/issues/47) — mainnet sponsor/relayer account silent, then a stale-RPC outage | `OpenZeppelin/relayer-plugin-x402-facilitator` | **Resolved 2026-09-11**, ~32 days after it started (~2026-08-10). Root cause: OZ's hosted pubnet facilitator was pointed at an outdated RPC URL. Fixed by OZ, confirmed by me with a real mainnet payment against my own service — full detail in Highlights above. Four independent integrators had converged on this finding before OZ responded. |
 | [#58](https://github.com/stellar/stellar-mpp-sdk/issues/58) — allow an external SEP-43 signer instead of a raw secret key | `stellar/stellar-mpp-sdk` | Open |
 | [#30](https://github.com/pollar-xyz/pollar-apps/pull/30) — Nirium x402 adapter demo (`apps/nirium`) | `pollar-xyz/pollar-apps` | **Merged 2026-08-31**, by @aleregex |
+| [#1](https://github.com/Trustless-Work/agentic-escrow-research/pull/1)–[#4](https://github.com/Trustless-Work/agentic-escrow-research/pull/4) — bounded-authority milestone payouts, treasury rebalance via a missing destination parameter, direct x402 payment, agent-facing tool-schema evidence | `Trustless-Work/agentic-escrow-research` | **Merged 2026-09-21**, all four within 27 minutes — three by me, [#3](https://github.com/Trustless-Work/agentic-escrow-research/pull/3) by Monserrat — publicly credited by Trustless Work's own account |
 
 ### GrantFox bounty program (`nirium-protocol/nirium`)
 
@@ -458,7 +481,7 @@ SEP-53, CAP-71 delegated auth, MCP, EAS (Ethereum Attestation Service)
 
 ## Search these live yourself
 
-Snapshot above is accurate as of **2026-09-11**; these always supersede it:
+Snapshot above is accurate as of **2026-09-28**; these always supersede it:
 [all my PRs](https://github.com/search?q=author%3AEras256+is%3Apr&type=pullrequests)
 ·
 [all my issues](https://github.com/search?q=author%3AEras256+is%3Aissue&type=issues)
