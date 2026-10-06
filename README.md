@@ -16,6 +16,7 @@ Six projects, four chains, each for a specific reason:
 | Vouch402 | Base | Where the x402 agent-payment volume already is: an independent census puts [98.44% of all published x402 resources on Base](https://github.com/arturete58-sys/x402-observatory/blob/main/report-01-census.md), and [Base itself](https://www.base.org/) claims to be "the leading blockchain across the metrics that matter most" for onchain payments |
 | Prova | Solana | [Sub-second finality, ~$0.0004–0.0005 per transaction](https://solana.com/docs/core/fees) — the cost profile a high-frequency agent-receipt layer actually needs |
 | Periplo, Nirium, Contextio | Stellar | Payments: [$0.0007667 average transaction cost](https://stellar.org/) and 24/7 settlement, cheap enough for agent-scale micropayments, plus the SCF funding program this portfolio started in |
+| Votalo | Monad | [800ms finality and 10,000 TPS](https://monad.xyz/developers/hackathons/metropolis) — fast and cheap enough for a group's vote to settle instantly; the native P256 precompile verifies a passkey signature on-chain without a smart-account contract |
 
 Each one stays where it started until real demand justifies expanding it
 elsewhere. Contextio's mainnet is deliberately narrower than its testnet
@@ -175,6 +176,8 @@ says "this one's Nirium's, not Periplo's," that's the reason.
 | **[nirium](https://github.com/nirium-protocol/nirium)** | The TypeScript and Python packages plus CLI behind Nirium — x402 `pay`/`serve`, MPP session budgets, IPFS audit anchoring. Also where Nirium runs its own GrantFox bounty program (see below). Apache-2.0. |
 | **[Contextio](https://github.com/contextio/Contextio)** · [contextio.xyz](https://contextio.xyz) | An AI agent that moves treasury and payroll funds for companies in Brazil, Argentina, and Colombia, binding every action to a verifiable Legal Context Protocol (LCP) document. Live on Stellar testnet (full autonomy) and mainnet (deliberately narrower: read-only data plus self-custody actions only, invitation-only while contracts await external audit). SEP-53 wallet sign-in. Originally a Stellar PULSO Hackathon submission, now aimed at the SCF Integration Track. Migrated from a personal repo to the `contextio` org. |
 | **[nirium-pollar-adapter](https://github.com/nirium-protocol/nirium-pollar-adapter)** · [npm](https://www.npmjs.com/package/nirium-pollar-adapter) | Adapter that lets a wallet onboarded through the Pollar SDK pay x402 requests and anchor audit receipts. Published to npm, running against Stellar mainnet. MIT. |
+| **[Pullcord](https://github.com/Pullcord/Pullcord)** | A notification layer for Stellar apps: a small package an app embeds to alert its own users when they receive a payment, via signed webhook or Telegram. Pullcord only notifies — never signs, moves funds, or acts on a user's behalf. Early, testnet only, nothing deployed yet. Built with Monse. |
+| **[Votalo](https://github.com/votalo-xyz/votalo)** · [votalo.xyz](https://www.votalo.xyz) | Group decision-making from a shared link, no wallet or seed phrase: each vote is an EIP-712 signature from a per-group key derived from the voter's own passkey (WebAuthn PRF), recorded on **Monad testnet**. Built for the Metropolis hackathon. Live and deployed, built with Monse. |
 
 ---
 
@@ -294,6 +297,11 @@ added the concrete case for why `scheme: "upto"` alone won't distinguish
 | [#58](https://github.com/stellar/stellar-mpp-sdk/issues/58) — allow an external SEP-43 signer instead of a raw secret key | `stellar/stellar-mpp-sdk` | Open |
 | [#30](https://github.com/pollar-xyz/pollar-apps/pull/30) — Nirium x402 adapter demo (`apps/nirium`) | `pollar-xyz/pollar-apps` | **Merged 2026-08-31**, by @aleregex |
 | [#1](https://github.com/Trustless-Work/agentic-escrow-research/pull/1)–[#4](https://github.com/Trustless-Work/agentic-escrow-research/pull/4) — bounded-authority milestone payouts, treasury rebalance via a missing destination parameter, direct x402 payment, agent-facing tool-schema evidence | `Trustless-Work/agentic-escrow-research` | **Merged 2026-09-21**, all four within 27 minutes — three by me, [#3](https://github.com/Trustless-Work/agentic-escrow-research/pull/3) by Monserrat — publicly credited by Trustless Work's own account |
+| [#9](https://github.com/Trustless-Work/agentic-escrow-research/pull/9) — research note: fail-closed payment and delivery gates, two real production bugs found and fixed | `Trustless-Work/agentic-escrow-research` | **Open**, not yet merged, filed 2026-10-05 |
+
+### Policy hook design credit (`nirium-protocol/nirium`)
+
+A real design collaboration, not a GrantFox bounty: [issue #96](https://github.com/nirium-protocol/nirium/issues/96) (opened by me — a gap between "authorized to act" and "should this action execute") was designed and tested by [@CodeDeityX](https://github.com/CodeDeityX), who built the public reproducibility harness and mapped the real cases. Merged as [#98](https://github.com/nirium-protocol/nirium/pull/98) — `nirium@0.16.0`, now on npm, ships an optional `policy` hook on `initX402()` that can ALLOW, DENY, or pass through a payment before it's signed.
 
 ### GrantFox bounty program (`nirium-protocol/nirium`)
 
