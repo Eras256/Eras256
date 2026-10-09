@@ -1,187 +1,79 @@
 # `Eras256`
 
-I build infrastructure for the agent economy — payment rails, service
-discovery, identity attestations, and audit trails for autonomous agents
-transacting with real money. Built with my cofounder,
-**[Monserrat Mendoza](https://github.com/M0nsxx)** — UX/UI across every
-project below, and backend dev too: five merged PRs in Nirium, plus real
-fixes she's now shipped directly in Kumply and Vouch402 as well — full
-detail on [her own profile](https://github.com/M0nsxx/M0nsxx).
+I build payment and trust infrastructure for AI agents — one product per
+network, each built for what that network does best, not one idea
+copy-pasted five times.
 
-Six projects, four chains, each for a specific reason:
+| Product | What it does | Network | Status |
+| --- | --- | --- | --- |
+| **[Nirium](https://nirium.xyz)** | Autonomous treasury + machine-to-machine (x402/MPP) payments | Stellar | Mainnet (non-custodial roles), invite-only |
+| **[Vouch402](https://www.vouch402.xyz)** | x402-metered risk checks for agents, with on-chain attestations | Base | Mainnet, full flow settled |
+| **[Kumply](https://kumply.xyz)** | On-chain KYC/KYB/KYA compliance attestations | Avalanche | Fuji testnet (full) · mainnet (read-only beta) |
+| **[Periplo](https://periplo.xyz)** | x402 payment facilitator + discovery catalog for agents | Stellar | Testnet |
+| **[Contextio](https://contextio.xyz)** | Treasury/payroll agent for LatAm companies, bound to a signed legal-context document | Stellar | Testnet (full) · mainnet (invite-only, pre-audit) |
+| **[Prova](https://www.theprova.xyz)** | Signed on-chain receipts for AI agent actions | Solana | Devnet |
+| **[Votalo](https://www.votalo.xyz)** | Passkey-signed group voting, no wallet | Monad | Testnet |
 
-| Project(s) | Chain | Why there |
-| --- | --- | --- |
-| Kumply | Avalanche | Compliance for regulated institutions: purpose-built [Evergreen Subnets](https://www.avax.network/about/blog/avalanche-launches-evergreen-for-institutional-blockchain-deployments/) give KYC, permissioned validators, and controlled access — the same track that had [Progmat migrate $2B+ in security tokens](https://www.avax.network/institutions) in Feb 2026 and 29 institutions (Franklin Templeton, VanEck, WisdomTree among them) formalize the [Avalanche Payments Collective](https://www.avax.network/about/blog/avalanche-payments-collective) in Q2 2026, compliance named as one of its explicit categories |
-| Vouch402 | Base | Where the x402 agent-payment volume already is: an independent census puts [98.44% of all published x402 resources on Base](https://github.com/arturete58-sys/x402-observatory/blob/main/report-01-census.md), and [Base itself](https://www.base.org/) claims to be "the leading blockchain across the metrics that matter most" for onchain payments |
-| Prova | Solana | [Sub-second finality, ~$0.0004–0.0005 per transaction](https://solana.com/docs/core/fees) — the cost profile a high-frequency agent-receipt layer actually needs |
-| Periplo, Nirium, Contextio | Stellar | Payments: [$0.0007667 average transaction cost](https://stellar.org/) and 24/7 settlement, cheap enough for agent-scale micropayments, plus the SCF funding program this portfolio started in |
-| Votalo | Monad | [800ms finality and 10,000 TPS](https://monad.xyz/developers/hackathons/metropolis) — fast and cheap enough for a group's vote to settle instantly; the native P256 precompile verifies a passkey signature on-chain without a smart-account contract |
+Built with my cofounder, **[Monserrat Mendoza](https://github.com/M0nsxx)**
+— Dev Lead, five merged PRs in Nirium plus real fixes now shipped
+directly in Kumply and Vouch402 too; full detail on
+[her own profile](https://github.com/M0nsxx/M0nsxx).
 
-Each one stays where it started until real demand justifies expanding it
-elsewhere. Contextio's mainnet is deliberately narrower than its testnet
-build, and Prova hasn't gone to mainnet at all yet — still Solana devnet
-only. Same reason for both: gated on evidence, not on a roadmap slide. If
-that expansion ever happens, the
-preference is to stay inside these same four networks first — where the
-tooling, the relationships, and the compliance homework are already done
-— over opening a fifth network cold. That's a stated preference, gated on
-both real demand and actual strategic fit, not a promise of when or
-whether it happens.
-
-Most of my public work is either a protocol implementation I maintain or a
-bug I found in something I depend on and then sent a patch for. Everything
-below links to the actual issue, PR, or running service — no claim here
-that you can't click and check yourself. Where something is still open or
-unmerged, it's marked as such, not implied to be done.
-
-I write it this dense on purpose. Every project below moves someone else's
-funds or blocks their transaction, so I'd rather you check the receipts
-than take my word for anything. If a claim here can't be clicked and
-verified, it doesn't belong here.
+Each product stays on its own network until real demand says otherwise —
+Contextio's mainnet is narrower than its testnet build, Prova hasn't
+left devnet. That's a gate on evidence, not a roadmap slide.
 
 ---
 
-## Highlights
+## Proof, not claims
 
-Skip the rest if you only have 90 seconds — this is the material that
-actually matters, each one a link, not a claim:
+Everything below is a link you can check yourself. Where something's
+still open or unmerged, it says so.
 
-- **Found and fixed a crash in x402's own official conformance suite**,
+- Found and fixed a crash in **x402's own official conformance suite**,
   merged upstream the same week —
   [x402-foundation/x402#3228](https://github.com/x402-foundation/x402/pull/3228).
-- **A skill PR survived ~16 real review rounds across 21 days before
-  merging** —
-  [stellar/stellar-dev-skill#97](https://github.com/stellar/stellar-dev-skill/pull/97) —
-  because I kept addressing feedback instead of abandoning it.
-- **When I was wrong, I said so and closed my own issue against myself**:
+- A skill PR survived **~16 real review rounds across 21 days** before
+  merging —
+  [stellar/stellar-dev-skill#97](https://github.com/stellar/stellar-dev-skill/pull/97).
+- Found a **security vulnerability** in the exact library Vouch402 calls
+  for every attestation it emits, fixed by the maintainer —
+  [eas-sdk#132](https://github.com/ethereum-attestation-service/eas-sdk/issues/132).
+- A **32-day mainnet outage** on a shared facilitator got fixed; verified
+  it myself with a real $0.05 payment, not a 200 response —
+  [OpenZeppelin/relayer-plugin-x402-facilitator#47](https://github.com/OpenZeppelin/relayer-plugin-x402-facilitator/issues/47).
+- A protocol I'd never worked at merged **4 of my PRs in one sitting**
+  and thanked me by name —
+  [Trustless-Work/agentic-escrow-research#1–#4](https://github.com/Trustless-Work/agentic-escrow-research/pull/1).
+- When I was wrong, I said so and closed my own issue against myself —
   [OpenZeppelin/stellar-contracts#839](https://github.com/OpenZeppelin/stellar-contracts/issues/839)
-  turned out to be a construction bug in my own code, not a library gap —
-  confirmed with the maintainer's help, not asserted.
-- **Kumply's compliance contracts are live and verified on Avalanche**,
-  Fuji testnet and mainnet C-Chain read-only beta —
-  [`AttestationStore`](https://snowtrace.io/address/0xa116261Ed3a848A9E1cd34923D5A0442D1455F71)
-  on Snowtrace, source at
-  [kumplyprotocol/Kumply](https://github.com/kumplyprotocol/Kumply) — the
-  one non-Stellar project in this profile with its own paper trail.
-- **Found a real security vulnerability in the exact library Vouch402
-  depends on for every attestation it emits** —
-  [ethereum-attestation-service/eas-sdk#132](https://github.com/ethereum-attestation-service/eas-sdk/issues/132):
-  `getUIDsFromAttestReceipt` trusted a log's `topic0` without checking the
-  emitter address, letting a malicious resolver inject spoofed UIDs into a
-  `multiAttest()` batch. Closed as completed by the maintainer
-  ([@lbeder](https://github.com/lbeder)) 2026-08-27, fixed in
-  [eas-sdk 2.10.0](https://www.npmjs.com/package/@ethereum-attestation-service/eas-sdk/v/2.10.0) —
-  I verified the fix against that release myself before treating it as closed.
-- **A 32-day mainnet outage on a facilitator four other integrators also
-  depend on got fixed, and I verified it myself before saying so** —
-  [OpenZeppelin/relayer-plugin-x402-facilitator#47](https://github.com/OpenZeppelin/relayer-plugin-x402-facilitator/issues/47):
-  a stale RPC URL on OZ's hosted pubnet facilitator silently broke
-  sponsored x402 payments from ~2026-08-10 to 2026-09-11. Confirmed the
-  fix with a real $0.05 mainnet payment, not just a 200 response —
-  [tx `bf9a1ca6...` on Horizon](https://horizon.stellar.org/transactions/bf9a1ca6b9b157c7010f0774107e4140f8a7b0e3c6c0227908936447de9aac24),
-  `successful: true`, ledger 64382007. Also got two account addresses
-  backwards in my first write-up and posted a public correction the same
-  day instead of leaving it wrong.
-- **Real, currently active roles across all three ecosystems this
-  portfolio touches beyond Stellar-native work** — official **Team1
-  LatAm collaborator** (Avalanche, ecosystem-wide, not tied to Kumply
-  specifically) and **Based Developer Ambassador** (Base, a real Discord
-  role, not an application in progress) — plus the **Starmaker Stellar
-  Ambassador** credential below that the Instawards themselves
-  depend on. None of these are pending.
-- **Every contract I ship is non-custodial by construction** — the
-  client's own wallet signs, or a role that by contract design cannot move
-  funds, never a key of mine that can. Detail and a real example under
-  "How I work" below.
-- **981 commits across these seven repos over 219 straight days**
-  (1 Feb – 8 Sep 2026), pulled from `git log`, not typed in: 20.8% of them
-  land on a weekend, 12.1% between 10pm and 6am local time. There's a real
-  gap from 3am–6am — not claiming literal around-the-clock, the data just
-  doesn't say that.
-- **Two Stellar Community Fund Instawards, both delivered against real
-  milestones**, not just awarded — the track record the rest of this
-  profile's execution claims actually rest on. These exist because of a
-  real credential, not luck: Instawards require active participation in a
-  local [Stellar Ambassador Chapter](https://stellar.gitbook.io/ambassador-program) —
-  that's [the program's own stated eligibility rule](https://github.com/stellar/scf-handbook/blob/main/scf-awards/instawards/official-rules.md), not something I'm
-  claiming on my own. I'm a Starmaker Stellar Ambassador; the program
-  was recently restructured and tier confirmations are still going out, so
-  I'm not citing a specific level until that settles.
-- **3 hackathon wins outside this six-project portfolio, each with a
-  public tweet confirming it** — ActivaChain (ETH Uruguay 2025, with
-  Monserrat), CreatorChain (1st + 3rd place, ETH Mexico Monterrey 2025),
-  and BioShield Insurance (FDA Track, DeSci Builders Hackathon 2025, also
-  with Monserrat). Full detail and links near the bottom.
-- **A protocol I've never worked at merged four of my PRs in one sitting
-  and thanked me by name** —
-  [Trustless-Work/agentic-escrow-research#1](https://github.com/Trustless-Work/agentic-escrow-research/pull/1)
-  through
-  [#4](https://github.com/Trustless-Work/agentic-escrow-research/pull/4),
-  all merged within 27 minutes on 2026-09-21, real bounded-authority
-  payment patterns — one of them,
-  [#3](https://github.com/Trustless-Work/agentic-escrow-research/pull/3),
-  by [Monserrat](https://github.com/M0nsxx). Their own account posted:
-  "We just merged our first 4 community contributions 🙏 @vaiossx
-  @smithserrat @Niriumstellar."
-- **Selected to build at HackMeridian Lisbon 2026** (Stellar's Meridian
-  Conference hackathon, Oct 25–26) — ahead of it, found and fixed two
-  real bugs getting our own Unity x402 integration running for the first
-  time in-editor:
-  [#87](https://github.com/nirium-protocol/nirium/pull/87) (a
-  compile-breaking API call) and
-  [#88](https://github.com/nirium-protocol/nirium/pull/88), by
-  [Monserrat](https://github.com/M0nsxx) (a wrong settlement-header
-  check). Not a mockup: a playable WebGL build with a real x402 payment
-  settling on Stellar testnet,
-  [tx `53436eb5…`](https://stellar.expert/explorer/testnet/tx/53436eb549600517d9c6e098cee6776db2be5fb48e3c6d9020db9b5fea384c60).
+  turned out to be my own construction bug, not a library gap.
+- **Two Stellar Community Fund Instawards**, delivered against real
+  milestones — gated on being an active
+  [Stellar Ambassador](https://stellar.gitbook.io/ambassador-program), the
+  program's own stated eligibility rule, not something I'm claiming on
+  my own.
+- Every contract I ship is **non-custodial by construction** — the
+  client's own wallet signs, or a role that by contract design can't
+  move funds. Never a key of mine that can.
 
----
+<details>
+<summary><strong>Full receipts</strong> — every PR, issue, and bounty, by project</summary>
 
-## Activity
+Most of my public work is either a protocol implementation I maintain or
+a bug I found in something I depend on, then a patch for it. Where a fix
+landed as someone else's PR, that's named — the report was mine, not the
+patch.
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api?username=Eras256&show_icons=true&show=reviews,prs_merged,prs_merged_percentage&rank_icon=percentile&theme=dark">
-  <img alt="Commits, pull requests, merged PRs, reviews and issues for Eras256" src="https://github-stats-extended.vercel.app/api?username=Eras256&show_icons=true&show=reviews,prs_merged,prs_merged_percentage&rank_icon=percentile">
-</picture>
+Three Stellar products below (Periplo, Nirium, Contextio) share real
+upstream dependencies — same protocols, sometimes the literal same bug —
+so each fix is attributed to the specific project it came from, not
+merged into one pile.
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/top-langs/?username=Eras256&layout=compact&langs_count=6&theme=dark">
-  <img alt="Most used languages for Eras256" src="https://github-stats-extended.vercel.app/api/top-langs/?username=Eras256&layout=compact&langs_count=6">
-</picture>
+Snapshot re-verified live against the GitHub API on **2026-10-09**; the
+search links at the bottom always supersede it.
 
-Rendered live from the GitHub API by
-[github-stats-extended](https://github.com/stats-organization/github-stats-extended)
-— not typed in, moves on its own (checked live 2026-09-05, still serving).
-
----
-
-## What I'm building
-
-Kumply, Vouch402, and Prova each stand on their own, one project per
-chain. Periplo, Nirium, and Contextio are three separate Stellar
-products, not three names for one thing — but they share real upstream dependencies
-(same protocols, sometimes the literal same bug), so the contribution
-tables further down attribute each fix to the specific project it came
-from instead of merging them into one undifferentiated pile. If a note
-says "this one's Nirium's, not Periplo's," that's the reason.
-
-| Project | What it actually is |
-| --- | --- |
-| **[Kumply](https://github.com/kumplyprotocol/Kumply)** · [kumply.xyz](https://kumply.xyz) | On-chain KYC/KYB/KYA compliance attestations for Avalanche — no personal data stored on-chain, just `(tier, expiry, issuer, revocation status)`. Contracts live and verified on Fuji testnet (full read/write) and Avalanche mainnet C-Chain ([`AttestationStore`](https://snowtrace.io/address/0xa116261Ed3a848A9E1cd34923D5A0442D1455F71), read-only beta). 164 tests on every push. Apache-2.0. |
-| **Vouch402** · [vouch402.xyz](https://www.vouch402.xyz) | x402-metered on-chain risk intelligence for agents on Base, with a built-in proof-of-fulfillment attestation layer. Full quote-to-attestation flow run end-to-end on **Base mainnet**, not just testnet: [settled payment](https://basescan.org/tx/0x6e44081aa3f05c73f6c9c32dc456f0231c3a690a33159765917ff096d138659c), [fulfillment attestation](https://basescan.org/tx/0xe2b5002c923bd9b49afce698f9d0f7ebef66d24f8c1eafd22c0a64e7c5f7ebb7), [EAS schema](https://base.easscan.org/schema/view/0xfbd6000caf2aaa6f7e269c74b45a0f891ddfe3381356d8ebaefc46b1a524abac). Client packages on npm: [`vouch402-sdk`](https://www.npmjs.com/package/vouch402-sdk), [`vouch402`](https://www.npmjs.com/package/vouch402) (CLI), [`vouch402-mcp-server`](https://www.npmjs.com/package/vouch402-mcp-server). Source at [`Vouch402/Vouchx402`](https://github.com/Vouch402/Vouchx402), now public. |
-| **[Prova](https://github.com/Prova-Solana/Prova)** · [theprova.xyz](https://www.theprova.xyz) | Cryptographic, on-chain receipts for AI agent actions on Solana — one `attest()` call, one Ed25519-sealed record, verifiable without trusting the operator's own logs. **Solana devnet today**, not mainnet — stated plainly since the site's own copy could be read otherwise. SDKs (`prova-agent-sdk` etc.) published on npm at `0.1.7`. Apache-2.0. Built through two Colosseum hackathon cycles: [Prova](https://colosseum.com/arena/projects/explore/prova-1), and earlier [Oraculo](https://colosseum.com/arena/projects/explore/oraculo) at the Solana Cypherpunk Hackathon (Sep-Oct 2025), plus WayLearn's Solana Foundation-backed Solana Latam Labs Program (Jun-Aug 2026), taking 1st place in Mexico at the Dev3Pack Global Hackathon along the way. |
-| **[Periplo](https://github.com/Eras256/Periplo)** · [periplo.xyz](https://periplo.xyz) | An x402 payment facilitator for Stellar with a "Bazaar" discovery catalog, so an agent can find a payable service it has never seen before. Facilitator is live on `stellar:testnet` — [`GET /supported`](https://periplo-testnet.fly.dev/supported) responds without setup. Apache-2.0, TypeScript + Soroban. |
-| **[Nirium](https://github.com/Eras256/Nirium)** · [nirium.xyz](https://nirium.xyz) | Autonomous treasury and machine-to-machine payments on Stellar — Soroban contracts in Rust, an x402 + MPP payment layer, and MCP integration. Non-custodial: the client's wallet signs, or a scoped `RebalanceManager` role that by contract design can't withdraw or move funds; Nirium itself never holds a key that can. Apache-2.0. |
-| **[nirium](https://github.com/nirium-protocol/nirium)** | The TypeScript and Python packages plus CLI behind Nirium — x402 `pay`/`serve`, MPP session budgets, IPFS audit anchoring. Also where Nirium runs its own GrantFox bounty program (see below). Apache-2.0. |
-| **[Contextio](https://github.com/contextio/Contextio)** · [contextio.xyz](https://contextio.xyz) | An AI agent that moves treasury and payroll funds for companies in Brazil, Argentina, and Colombia, binding every action to a verifiable Legal Context Protocol (LCP) document. Live on Stellar testnet (full autonomy) and mainnet (deliberately narrower: read-only data plus self-custody actions only, invitation-only while contracts await external audit). SEP-53 wallet sign-in. Originally a Stellar PULSO Hackathon submission, now aimed at the SCF Integration Track. Migrated from a personal repo to the `contextio` org. |
-| **[nirium-pollar-adapter](https://github.com/nirium-protocol/nirium-pollar-adapter)** · [npm](https://www.npmjs.com/package/nirium-pollar-adapter) | Adapter that lets a wallet onboarded through the Pollar SDK pay x402 requests and anchor audit receipts. Published to npm, running against Stellar mainnet. MIT. |
-| **[Pullcord](https://github.com/Pullcord/Pullcord)** | A notification layer for Stellar apps: a small package an app embeds to alert its own users when they receive a payment, via signed webhook or Telegram. Pullcord only notifies — never signs, moves funds, or acts on a user's behalf. Early, testnet only, nothing deployed yet. Built with Monse. |
-| **[Votalo](https://github.com/votalo-xyz/votalo)** · [votalo.xyz](https://www.votalo.xyz) | Group decision-making from a shared link, no wallet or seed phrase: each vote is an EIP-712 signature from a per-group key derived from the voter's own passkey (WebAuthn PRF), recorded on **Monad testnet**. Built for the Metropolis hackathon. Live and deployed, built with Monse. |
-
----
-
-## Kumply, Vouch402, Prova — upstream contributions
+### Kumply, Vouch402, Prova — upstream contributions
 
 **Kumply (Avalanche)** — three open bug reports against a third-party
 community skills repo, [Ayomisco/avaxskills](https://github.com/Ayomisco/avaxskills),
@@ -192,139 +84,98 @@ found while building on top of it: [#2](https://github.com/Ayomisco/avaxskills/i
 [#4](https://github.com/Ayomisco/avaxskills/issues/4) (a wagmi skill cites
 an outdated version and a deprecated hook). All still open. I'm an
 official **Team1 LatAm collaborator** — an Avalanche-ecosystem-wide role,
-not something tied to a single project — which is why KUMPLY's
-application to Team1 Mini Grants went in through a real channel, not
-cold. Applied, decision still pending; not claiming an award that hasn't
-happened. Also shipped
+not tied to a single project. Also shipped
 [AgentHub Protocol](https://www.npmjs.com/package/@vaiosx44/agenthub-sdk)
 for Avalanche's Hack2Build: Payments x402 hackathon — real x402
-micropayment code (client, facilitator, middleware), on-chain agent
-reputation (the `AgentRegistry` contract's own docstring calls it
-"ERC-8004 compliant"), and real DeFi integration code for Trader Joe,
-Benqi, and Aave V3. SDK published on npm, contracts deployed to Fuji
-testnet — and dormant since January 2026, stated plainly rather than
-presented as active alongside Kumply. Its original hackathon description
-also claimed ERC-4337 smart accounts; no account-abstraction dependency
-or file exists anywhere in the repo, so that specific claim is dropped
-here rather than repeated unverified.
+micropayment code, on-chain agent reputation, and DeFi integration code
+for Trader Joe, Benqi, and Aave V3. SDK published on npm, contracts
+deployed to Fuji testnet — dormant since January 2026, stated plainly
+rather than presented as active.
 
 **Vouch402 (Base)** — [base/skills#152](https://github.com/base/skills/pull/152),
-an open PR adding a Vouch402 plugin listing to Base's own community skills
-catalog, same genre as the `stellar-dev-skill` PRs below. Also
-[eas-sdk#132](https://github.com/ethereum-attestation-service/eas-sdk/issues/132)
-(closed, fixed — detail below) and
+an open PR adding a Vouch402 listing to Base's own community skills
+catalog. Also [eas-sdk#132](https://github.com/ethereum-attestation-service/eas-sdk/issues/132)
+(closed, fixed) and
 [foundry-rs/foundry#16209](https://github.com/foundry-rs/foundry/issues/16209)
 (`cast wallet new <name>` failed with a bare account name — closed
 2026-09-09, fixed by [@riba2534 in #16219](https://github.com/foundry-rs/foundry/pull/16219)),
-both found auditing tooling Vouch402 depends on. Both KUMPLY and Vouch402
-are currently in active review — Avalanche's Team1 Mini Grants and Base
-Batches respectively — decisions still pending on both, not claimed as
-awards here. Separately, I hold the **Based Developer Ambassador** role
-in Base's own Discord — a real, currently active role, not an
-application in progress.
+both found auditing tooling Vouch402 depends on. I hold the **Based
+Developer Ambassador** role in Base's own Discord — real and active.
 
 **Prova (Solana)** — [otter-sec/anchor#4960](https://github.com/otter-sec/anchor/pull/4960),
-an open PR bumping `heck` 0.3 → 0.5 to drop an unbounded `edition2024`
-dependency landmine in the Anchor framework Prova's on-chain program is
-built on. Not merged yet. Separately, applied for a Superteam/Solana
-Foundation scholarship (flights, stay, event access, mentor access) to
-attend **Breakpoint 2026** — decision pending, not claimed as confirmed
-attendance.
+bumping `heck` 0.3 → 0.5 to drop an unbounded `edition2024` dependency
+landmine in the Anchor framework Prova's on-chain program is built on —
+**merged 2026-09-30** by @jamie-osec.
 
----
+### Periplo — upstream contributions
 
-## Periplo — upstream contributions
+Full first-hand narrative with transaction hashes and reproduction steps
+lives in [`Eras256/Periplo`'s own README](https://github.com/Eras256/Periplo#readme).
 
-Snapshot below is a live re-check as of **2026-09-28**; the search links at
-the bottom always supersede it. Full first-hand narrative with transaction
-hashes and reproduction steps lives in
-[`Eras256/Periplo`'s own README](https://github.com/Eras256/Periplo#readme).
-
-### Merged
+**Merged**
 
 | PR | Repo | Merged |
 | --- | --- | --- |
 | [#3228](https://github.com/x402-foundation/x402/pull/3228) — scope EVM/SVM client signer derivation to the selected `--families`, fixing a crash in the official e2e conformance suite | `x402-foundation/x402` | 2026-08-31 — authored by me, merged by @phdargen. Closes [#3187](https://github.com/x402-foundation/x402/issues/3187), which I also filed. An earlier attempt, [#3219](https://github.com/x402-foundation/x402/pull/3219), was closed unmerged and superseded by this one. |
 | [#103](https://github.com/stellar/stellar-dev-skill/pull/103) — point `ECOSYSTEM_CARDS` `copyValue` at raw content, not GitHub's blob HTML page | `stellar/stellar-dev-skill` | 2026-08-28, by @kaankacar |
 | [#3306](https://github.com/x402-foundation/x402/pull/3306) — add a dedicated `extension_responses`/`extensionResponses` field instead of leaking `EXTENSION-RESPONSES` data via the buyer-facing `extensions` field | `x402-foundation/x402` | 2026-08-31, by @phdargen. Closes [#3270](https://github.com/x402-foundation/x402/issues/3270), which I filed. Not my code — full detail below. |
-| [#97](https://github.com/stellar/stellar-dev-skill/pull/97) — production patterns for x402 + MPP | `stellar/stellar-dev-skill` | 2026-09-05, by @kaankacar — this one's Nirium's, not Periplo's; see the Nirium section below |
+| [#97](https://github.com/stellar/stellar-dev-skill/pull/97) — production patterns for x402 + MPP | `stellar/stellar-dev-skill` | 2026-09-05, by @kaankacar — this one's Nirium's, not Periplo's |
 
-### Open fix PRs
+**Open fix PRs**
 
 | PR | Repo | Fixes |
 | --- | --- | --- |
 | [#3215](https://github.com/x402-foundation/x402/pull/3215) — derive one wildcard pattern per namespace, not one per registration | `x402-foundation/x402` | [#3172](https://github.com/x402-foundation/x402/issues/3172) |
 | [#3138](https://github.com/x402-foundation/x402/pull/3138) — use the raw resource URL as canonical for opaque-origin schemes | `x402-foundation/x402` | [#3121](https://github.com/x402-foundation/x402/issues/3121) |
 | [#3098](https://github.com/x402-foundation/x402/pull/3098) — `upto` scheme implementation spec for Stellar | `x402-foundation/x402` | [#3097](https://github.com/x402-foundation/x402/issues/3097) |
-| [#4960](https://github.com/otter-sec/anchor/pull/4960) — bump `heck` 0.3 → 0.5 to drop the unbounded edition2024 landmine | `otter-sec/anchor` | Unrelated dependency fix, not tied to either product |
 
-Separately, weighed in on
-[x402#3134](https://github.com/x402-foundation/x402/pull/3134#issuecomment-5638937401) —
-a PR by @Iam0TI defining the `upto` scheme for Stellar, where an
-independent implementor (@davedumto) asked whether a new
-convergence document (crediting rail402, this PR, #3098, Rialto, openx402,
-and LumenGate) should land as its own file, as edits inside #3134, or not
-at all. Recommended folding it into #3134 instead of fragmenting — same
-consolidation logic already used for `UPTO-CONVERGENCE.md` here — and
-added the concrete case for why `scheme: "upto"` alone won't distinguish
-`contract` vs `smartAccount` profiles once both exist on the same network.
+**Bug reports that landed**
 
-### Bug reports that landed
+- **[x402#3171](https://github.com/x402-foundation/x402/issues/3171)** — `paymentRequirementsMatchAccepted` threw on a missing/null `payload.accepted`. I found and reported it; fixed by [@JasonColapietro in #3180](https://github.com/x402-foundation/x402/pull/3180), merged 2026-08-17.
+- **[x402#3169](https://github.com/x402-foundation/x402/issues/3169)** — `isValidRouteTemplate`'s traversal/scheme-injection checks decoded `routeTemplate` only once, so double percent-encoding bypassed both. Filed with full repro; fixed by [@ygd58 in #3213](https://github.com/x402-foundation/x402/pull/3213), merged 2026-09-09.
+- **[x402#3270](https://github.com/x402-foundation/x402/issues/3270)** — `HTTPFacilitatorClient.settle()/verify()` decoded the `EXTENSION-RESPONSES` header and discarded it. Fixed on Periplo's own side the same day; the actual upstream fix was the maintainer's own [#3306](https://github.com/x402-foundation/x402/pull/3306) (Python, @phdargen), introducing a dedicated field instead of reusing `extensions` — rejecting the shape my own workaround used. My `/settle` still uses the old shape pending a migration to the new field, now available since `@x402/core` has moved to `2.28.0`.
+- **[eas-sdk#132](https://github.com/ethereum-attestation-service/eas-sdk/issues/132)** — `getUIDsFromAttestReceipt` trusted log `topic0` without checking the emitter address. Closed as completed by the maintainer 2026-08-27, fixed in [eas-sdk 2.10.0](https://www.npmjs.com/package/@ethereum-attestation-service/eas-sdk/v/2.10.0).
+- **[OpenZeppelin/stellar-contracts#839](https://github.com/OpenZeppelin/stellar-contracts/issues/839)** — hit `UnreachableCodeReached` combining `Signer::Delegated` with a `CallContract` rule. Closed 2026-09-02, resolution: ours — a construction bug in how the auth entries were built, not a library gap.
+- **[js-stellar-sdk#1655](https://github.com/stellar/js-stellar-sdk/issues/1655)** — `needsNonInvokerSigningBy()`/`signAuthEntries()` only see the top-level node of a CAP-71 delegate credential. Filed with my own fix, [#1672](https://github.com/stellar/js-stellar-sdk/pull/1672) (closed unmerged), superseded by the maintainer's own [#1747](https://github.com/stellar/js-stellar-sdk/pull/1747) (merged 2026-09-28).
 
-- **[x402#3171](https://github.com/x402-foundation/x402/issues/3171)** — `paymentRequirementsMatchAccepted` threw on a missing/null `payload.accepted`. I found and reported it; the code fix was written by [@JasonColapietro](https://github.com/JasonColapietro) in [#3180](https://github.com/x402-foundation/x402/pull/3180), merged 2026-08-17. The merged patch is his work, not mine — my part was the report.
-- **[x402#3169](https://github.com/x402-foundation/x402/issues/3169)** — `isValidRouteTemplate`'s traversal/scheme-injection checks decoded `routeTemplate` only once, so double percent-encoding bypassed both. I filed it 2026-08-15 with a full repro; fixed by [@ygd58 in #3213](https://github.com/x402-foundation/x402/pull/3213), merged 2026-09-09. A duplicate attempt at the same fix, [#3422](https://github.com/x402-foundation/x402/pull/3422), was closed in favor of #3213. Not my patch — my part was the report and the nudge.
-- **[x402#3270](https://github.com/x402-foundation/x402/issues/3270)** — `HTTPFacilitatorClient.settle()/verify()` decoded the `EXTENSION-RESPONSES` header and then discarded it. I fixed this on Periplo's own side the same day rather than waiting on upstream. **Closed 2026-08-31** — not the way it first looked like it would close. The actual fix was the maintainer's own separate PR, [#3306](https://github.com/x402-foundation/x402/pull/3306) (Python, @phdargen), introducing a dedicated `extension_responses`/`extensionResponses` field instead of reusing `extensions` — explicitly rejecting that shape (which my own workaround used, and so did the two community PRs this finding first prompted) as leaking a server-only sidechannel into buyer-facing data. [#3278](https://github.com/x402-foundation/x402/pull/3278) (TypeScript, @Bartok9) was revised to match before merging separately; [#3301](https://github.com/x402-foundation/x402/pull/3301) (Go, @wnjoon) and [PhilBot402/x402#4](https://github.com/PhilBot402/x402/pull/4) (Python, draft) remain open, likely needing the same adjustment. My own `/settle` still uses the old shape — migrating once `@x402/core` actually ships the new field (not yet: `latest` is still `2.24.0`, predating this fix).
-- **[eas-sdk#132](https://github.com/ethereum-attestation-service/eas-sdk/issues/132)** — `getUIDsFromAttestReceipt` trusted log `topic0` without checking the emitter address, found while auditing the library Vouch402 calls for every attestation it emits. Vouch402 itself isn't affected (no resolver, no `multiAttest()` calls) — a library-level finding, not a gap in that project. *Closed as completed* by the maintainer 2026-08-27, fixed in [eas-sdk 2.10.0](https://www.npmjs.com/package/@ethereum-attestation-service/eas-sdk/v/2.10.0).
-- **[OpenZeppelin/stellar-contracts#839](https://github.com/OpenZeppelin/stellar-contracts/issues/839)** — hit `UnreachableCodeReached` combining `Signer::Delegated` with a `CallContract` rule, and opened this not sure yet whether it was our construction or a real library gap. **Closed 2026-09-02, resolution: ours.** With help from the maintainer (@brozorec) clarifying `execute()`'s self-authorization is meant only for self-admin operations, hand-constructing both auth entries (the smart account's own plus the delegate's) authorizes and confirms correctly on-chain — no library fix needed, the trap was in how we were building the auth entry, not the library.
-- **[js-stellar-sdk#1655](https://github.com/stellar/js-stellar-sdk/issues/1655)** — `needsNonInvokerSigningBy()`/`signAuthEntries()` only see the top-level node of a CAP-71 delegate credential, so an outstanding delegate signature never gets reported. I filed it and opened my own fix, [#1672](https://github.com/stellar/js-stellar-sdk/pull/1672) — closed unmerged 2026-09-26, superseded by the maintainer's own [#1747](https://github.com/stellar/js-stellar-sdk/pull/1747) (merged 2026-09-28), which does it better. Two related issues from the same investigation are closed now too: [#1683](https://github.com/stellar/js-stellar-sdk/issues/1683) via the maintainer's [#1742](https://github.com/stellar/js-stellar-sdk/pull/1742), and [#1681](https://github.com/stellar/js-stellar-sdk/issues/1681).
+Still open, awaiting maintainer response: `x402-foundation/x402`
+[#3121](https://github.com/x402-foundation/x402/issues/3121),
+[#3148](https://github.com/x402-foundation/x402/issues/3148).
 
-### Still open, awaiting maintainer response
+### Nirium — upstream contributions and GrantFox bounty program
 
-`x402-foundation/x402` — [#3121](https://github.com/x402-foundation/x402/issues/3121), [#3148](https://github.com/x402-foundation/x402/issues/3148).
-
----
-
-## Nirium — upstream contributions and GrantFox bounty program
-
-### Upstream, to repos Nirium doesn't own
+**Upstream, to repos Nirium doesn't own**
 
 | Item | Repo | Status |
 | --- | --- | --- |
 | [#96](https://github.com/stellar/stellar-dev-skill/pull/96) — add Nirium to community skills | `stellar/stellar-dev-skill` | Merged 2026-08-15 |
-| [#97](https://github.com/stellar/stellar-dev-skill/pull/97) — production patterns for x402 + MPP | `stellar/stellar-dev-skill` | **Merged 2026-09-05**, by @kaankacar, after ~16 real review rounds across 21 days. An earlier version, [#14](https://github.com/stellar/stellar-dev-skill/pull/14), was closed unmerged and superseded by this one |
-| [#844](https://github.com/OpenZeppelin/stellar-contracts/pull/844) — fix(fee-abstraction): drop Lazy-mode expiration check that validates the wrong value | `OpenZeppelin/stellar-contracts` | **Closed 2026-09-07, unmerged — correctly rejected.** [#840](https://github.com/OpenZeppelin/stellar-contracts/issues/840)'s premise was wrong: `expiration_ledger` isn't validating the allowance's state at all, it's the caller-supplied deadline for the `collect_fee` call itself within the atomic fee-forwarding operation — the same pattern as a DEX's `deadline` parameter. Maintainer (@brozorec) walked through why across two follow-up replies; the finding doesn't hold |
-| [#47](https://github.com/OpenZeppelin/relayer-plugin-x402-facilitator/issues/47) — mainnet sponsor/relayer account silent, then a stale-RPC outage | `OpenZeppelin/relayer-plugin-x402-facilitator` | **Resolved 2026-09-11**, ~32 days after it started (~2026-08-10). Root cause: OZ's hosted pubnet facilitator was pointed at an outdated RPC URL. Fixed by OZ, confirmed by me with a real mainnet payment against my own service — full detail in Highlights above. Four independent integrators had converged on this finding before OZ responded. |
+| [#97](https://github.com/stellar/stellar-dev-skill/pull/97) — production patterns for x402 + MPP | `stellar/stellar-dev-skill` | Merged 2026-09-05, by @kaankacar, after ~16 real review rounds |
+| [#47](https://github.com/OpenZeppelin/relayer-plugin-x402-facilitator/issues/47) — mainnet sponsor/relayer account silent, then a stale-RPC outage | `OpenZeppelin/relayer-plugin-x402-facilitator` | Resolved by OZ 2026-09-11, confirmed by me with a real mainnet payment |
 | [#58](https://github.com/stellar/stellar-mpp-sdk/issues/58) — allow an external SEP-43 signer instead of a raw secret key | `stellar/stellar-mpp-sdk` | Open |
-| [#30](https://github.com/pollar-xyz/pollar-apps/pull/30) — Nirium x402 adapter demo (`apps/nirium`) | `pollar-xyz/pollar-apps` | **Merged 2026-08-31**, by @aleregex |
-| [#1](https://github.com/Trustless-Work/agentic-escrow-research/pull/1)–[#4](https://github.com/Trustless-Work/agentic-escrow-research/pull/4) — bounded-authority milestone payouts, treasury rebalance via a missing destination parameter, direct x402 payment, agent-facing tool-schema evidence | `Trustless-Work/agentic-escrow-research` | **Merged 2026-09-21**, all four within 27 minutes — three by me, [#3](https://github.com/Trustless-Work/agentic-escrow-research/pull/3) by Monserrat — publicly credited by Trustless Work's own account |
-| [#9](https://github.com/Trustless-Work/agentic-escrow-research/pull/9) — research note: fail-closed payment and delivery gates, two real production bugs found and fixed | `Trustless-Work/agentic-escrow-research` | **Open**, not yet merged, filed 2026-10-05 |
+| [#30](https://github.com/pollar-xyz/pollar-apps/pull/30) — Nirium x402 adapter demo (`apps/nirium`) | `pollar-xyz/pollar-apps` | Merged 2026-08-31, by @aleregex |
+| [#1](https://github.com/Trustless-Work/agentic-escrow-research/pull/1)–[#4](https://github.com/Trustless-Work/agentic-escrow-research/pull/4) — bounded-authority milestone payouts, treasury rebalance via a missing destination parameter, direct x402 payment, agent-facing tool-schema evidence | `Trustless-Work/agentic-escrow-research` | Merged 2026-09-21, all four within 27 minutes — three by me, #3 by Monserrat |
+| [#9](https://github.com/Trustless-Work/agentic-escrow-research/pull/9) — research note: fail-closed payment and delivery gates, two real production bugs found and fixed | `Trustless-Work/agentic-escrow-research` | Open, filed 2026-10-05 |
 
-### Policy hook design credit (`nirium-protocol/nirium`)
+A real design collaboration, not a bounty: [issue #96](https://github.com/nirium-protocol/nirium/issues/96)
+(opened by me) was designed and tested by [@CodeDeityX](https://github.com/CodeDeityX),
+who built the public reproducibility harness. Merged as
+[#98](https://github.com/nirium-protocol/nirium/pull/98) — `nirium@0.16.0`,
+now on npm, ships an optional `policy` hook on `initX402()`.
 
-A real design collaboration, not a GrantFox bounty: [issue #96](https://github.com/nirium-protocol/nirium/issues/96) (opened by me — a gap between "authorized to act" and "should this action execute") was designed and tested by [@CodeDeityX](https://github.com/CodeDeityX), who built the public reproducibility harness and mapped the real cases. Merged as [#98](https://github.com/nirium-protocol/nirium/pull/98) — `nirium@0.16.0`, now on npm, ships an optional `policy` hook on `initX402()` that can ALLOW, DENY, or pass through a payment before it's signed.
-
-### GrantFox bounty program (`nirium-protocol/nirium`)
-
-This is Nirium's own repo, so these are bounties Nirium posted, not upstream
-contributions Nirium made elsewhere. Full live audit as of **2026-09-05**:
-**44 issues** across three campaigns, 42 real bounty asks (2 unlabeled
-resource suggestions aren't bounties) — 20 delivered inside `nirium`
-itself, 2 delivered externally and still awaiting that project's own
-review, 4 closed and administratively recreated under a later campaign,
-16 closed without delivery.
+**GrantFox bounty program** (`nirium-protocol/nirium`, Nirium's own
+repo — these are bounties Nirium posted). As of 2026-09-05: 44 issues
+across three campaigns, 42 real bounty asks — 20 delivered inside
+`nirium` itself, 2 delivered externally and awaiting that project's own
+review, 4 closed and administratively recreated, 16 closed without
+delivery.
 
 <details>
-<summary>Full breakdown — every delivery, who opened it, and the two that are my cofounder's</summary>
+<summary>Full bounty breakdown — every delivery, who opened it, and the five that are my cofounder's</summary>
 
-- **20 delivered**, each with a merged PR inside `nirium` itself.
-- **2 delivered externally**, as real PRs against the target repo, both
-  still open and awaiting that project's own review: [#75 → Fundable-Protocol/fundable-sdk#8](https://github.com/Fundable-Protocol/fundable-sdk/pull/8) and [#76 → wejoona/api#23](https://github.com/wejoona/api/pull/23). Both were opened by the same bounty contributor, **@Santia2004** — not by this account.
-- **4 were closed and administratively recreated** under a later campaign, same ask, new issue number: [#29→#43](https://github.com/nirium-protocol/nirium/issues/43), [#30→#44](https://github.com/nirium-protocol/nirium/issues/44), [#31→#45](https://github.com/nirium-protocol/nirium/issues/45), [#32→#46](https://github.com/nirium-protocol/nirium/issues/46).
-- **16 closed without any delivery.**
+- **2 delivered externally**: [#75 → Fundable-Protocol/fundable-sdk#8](https://github.com/Fundable-Protocol/fundable-sdk/pull/8) and [#76 → wejoona/api#23](https://github.com/wejoona/api/pull/23), both opened by **@Santia2004**, not by this account.
+- **4 administratively recreated** under a later campaign, same ask: [#29→#43](https://github.com/nirium-protocol/nirium/issues/43), [#30→#44](https://github.com/nirium-protocol/nirium/issues/44), [#31→#45](https://github.com/nirium-protocol/nirium/issues/45), [#32→#46](https://github.com/nirium-protocol/nirium/issues/46).
 
-A few of the stronger merged deliveries, cited by bounty issue alongside the
-PR that closed it and who actually opened that PR, since that's better
-evidence than a bare link:
+A few of the stronger merged deliveries:
 
 | Bounty issue | Delivering PR | Author |
 | --- | --- | --- |
@@ -332,118 +183,61 @@ evidence than a bare link:
 | [#51](https://github.com/nirium-protocol/nirium/issues/51) — GitHub Action to verify a Nirium audit-CID in CI | [#80](https://github.com/nirium-protocol/nirium/pull/80), merged | @Simultech369 — external |
 | [#65](https://github.com/nirium-protocol/nirium/issues/65) — audit trail forensic export bridge | [#69](https://github.com/nirium-protocol/nirium/pull/69), merged | @Santia2004 — external |
 
-Five more from that same list are worth pulling out separately rather
-than folding into "external bounty deliveries," because they aren't that —
-they're my cofounder's own first shipped code for this project, done
-through the same GrantFox process rather than around it:
-[#50](https://github.com/nirium-protocol/nirium/issues/50) ("Deploy to
-Vercel" x402 API template) via
-[#58](https://github.com/nirium-protocol/nirium/pull/58),
-[#37](https://github.com/nirium-protocol/nirium/issues/37) (`nirium
-doctor` CLI preflight diagnostic) via
-[#59](https://github.com/nirium-protocol/nirium/pull/59),
-[#45](https://github.com/nirium-protocol/nirium/issues/45) (resilient
-reconnecting WebSocket signals client) via
-[#61](https://github.com/nirium-protocol/nirium/pull/61),
-[#38](https://github.com/nirium-protocol/nirium/issues/38) (standalone
-offline audit-CID/Ed25519 attestation verifier) via
-[#60](https://github.com/nirium-protocol/nirium/pull/60), and
-[#44](https://github.com/nirium-protocol/nirium/issues/44) (CLI
-`pay`/`serve` commands) via
-[#62](https://github.com/nirium-protocol/nirium/pull/62) — all five
-merged, all by [Monserrat Mendoza](https://github.com/M0nsxx).
+Five more are my cofounder's own first shipped code for this project,
+through the same GrantFox process:
+[#50](https://github.com/nirium-protocol/nirium/issues/50) via [#58](https://github.com/nirium-protocol/nirium/pull/58),
+[#37](https://github.com/nirium-protocol/nirium/issues/37) via [#59](https://github.com/nirium-protocol/nirium/pull/59),
+[#45](https://github.com/nirium-protocol/nirium/issues/45) via [#61](https://github.com/nirium-protocol/nirium/pull/61),
+[#38](https://github.com/nirium-protocol/nirium/issues/38) via [#60](https://github.com/nirium-protocol/nirium/pull/60),
+and [#44](https://github.com/nirium-protocol/nirium/issues/44) via [#62](https://github.com/nirium-protocol/nirium/pull/62)
+— all by [Monserrat Mendoza](https://github.com/M0nsxx).
 
-One more worth naming separately because it isn't a bounty at all: **[#81](https://github.com/nirium-protocol/nirium/issues/81)** was a real fail-open vulnerability in the Next.js x402 example (any `X-PAYMENT` header granted access, valid or not), reported by an outside party and fixed the same way as everything above — a merged PR, [#84](https://github.com/nirium-protocol/nirium/pull/84).
-
-Separately, [nirium-pollar-adapter#1](https://github.com/nirium-protocol/nirium-pollar-adapter/pull/1) (deferred wallet funding) merged 2026-08-29, and [nirium#68](https://github.com/nirium-protocol/nirium/pull/68) (restore `viem` as a direct dependency) merged 2026-08-26 — both real fixes by this account, not bounty deliveries.
+One more worth naming because it isn't a bounty at all:
+**[#81](https://github.com/nirium-protocol/nirium/issues/81)** was a real
+fail-open vulnerability in the Next.js x402 example, reported by an
+outside party and fixed via a merged PR, [#84](https://github.com/nirium-protocol/nirium/pull/84).
+Separately, [nirium#108](https://github.com/nirium-protocol/nirium/pull/108)
+(`pay` no longer accepts a secret key as a CLI argument, fixing a
+shell-history/process-list leak) merged 2026-10-09.
 
 </details>
 
----
+### Contextio
 
-## Contextio
+Moved from a personal repo to its own org — `Eras256/Contextio` now
+resolves to [`contextio/Contextio`](https://github.com/contextio/Contextio).
+Runs its own bounty-style program (not GrantFox-labeled): five open
+issues, none delivered yet, two with competing external PRs open and
+unreviewed. Upstream, three merged PRs added/refined its community-skill
+listing on `stellar/stellar-dev-skill`
+([#98](https://github.com/stellar/stellar-dev-skill/pull/98),
+[#101](https://github.com/stellar/stellar-dev-skill/pull/101),
+[#102](https://github.com/stellar/stellar-dev-skill/pull/102)).
+Beyond that, no upstream contribution from this account to any other
+external repo specifically for Contextio — said plainly, not padded.
 
-Contextio moved from a personal repo (`Eras256/Contextio`) to its own org,
-`contextio` — `Eras256/Contextio` now resolves to
-[`contextio/Contextio`](https://github.com/contextio/Contextio). The planner
-logic behind its treasury/payroll rebalance decisions was extracted into a
-separate private repo, `contextio/contextio-agent-planner`, consumed by the
-main repo as a private git dependency.
-
-**Contextio also runs a bounty-style program**, though not GrantFox-labeled
-like Nirium's: five open issues in `contextio/Contextio`, all opened by this
-account, none delivered yet — two already have competing external PRs
-open and unreviewed.
-
-<details>
-<summary>All five issues and the two open external PRs</summary>
-
-[#1](https://github.com/contextio/Contextio/issues/1) (Python client parity),
-[#2](https://github.com/contextio/Contextio/issues/2) (Go client parity),
-[#3](https://github.com/contextio/Contextio/issues/3) (standalone offline LCP
-conformance verifier),
-[#4](https://github.com/contextio/Contextio/issues/4) (GitHub Action to
-verify a published LCP document in CI), and
-[#5](https://github.com/contextio/Contextio/issues/5) (CONTRIBUTING.md).
-Issue #5 already has two competing external submissions, both open and
-unreviewed: [#6](https://github.com/contextio/Contextio/pull/6) by
-@mayankbohara0-dev and [#7](https://github.com/contextio/Contextio/pull/7)
-by @CharoenwitKunna.
-
-</details>
-
-**Upstream, to `stellar/stellar-dev-skill`** (not owned by Contextio): three
-merged PRs adding and refining the Contextio SDK's community-skill listing —
-[#98](https://github.com/stellar/stellar-dev-skill/pull/98),
-[#101](https://github.com/stellar/stellar-dev-skill/pull/101), and
-[#102](https://github.com/stellar/stellar-dev-skill/pull/102), all merged
-2026-08-15.
-
-**Beyond that, I found no upstream contribution from this account to any
-other external repo specifically for Contextio.** Said plainly rather than
-padded: Contextio's public footprint on this account is its own repo plus
-that one skill listing, not a wider trail of dependency fixes the way
-Periplo and Nirium have.
-
----
-
-## Other dependency bug reports
-
-Found using these libraries for Periplo, Nirium, or Contextio, but not
-clearly attributable to a single one:
+### Other dependency bug reports
 
 - **[Creit-Tech/Stellar-Wallets-Kit#105](https://github.com/Creit-Tech/Stellar-Wallets-Kit/issues/105)** — `signMessage()`'s JSDoc says SEP-43 hex, Freighter returns base64. Open.
 
----
+### Hackathons outside the portfolio
 
-## Hackathons outside the portfolio
+Separate weekend builds, no public repo for any of the three. Two have
+the event's own announcement naming the winner; the third only has my
+own tweet — disclosed as such, same standard as everywhere else here.
 
-Not part of the six-project portfolio above — separate weekend builds.
-No GitHub repo for any of the three — source isn't public. Two have the
-event's own announcement naming the winner directly; the third only has
-my own tweet from the time, not an organizer confirmation — disclosed as
-such rather than blurred together, same standard as everywhere else in
-this profile.
-
-- **[ActivaChain](https://activachain.com)** — won ETH Uruguay 2025, built
-  with [Monserrat](https://github.com/M0nsxx). Confirmed by [the event's
-  own tweet](https://x.com/EthereumUruguay/status/1968785973749170227):
-  "Felicitaciones @ActivaChain! Nos representarán en Devconnect" —
-  the top prize was a ticket + travel to Devconnect (Nov 2025).
-- **[CreatorChain](https://creatorchain-mx.vercel.app/)** — 1st place,
-  "Creatividad y Economías de Creadores" track, **and** 3rd place,
-  "Innovación en Arbitrum" track, both at ETH Mexico Monterrey 2025
-  (2025-11-13) — confirmed by [the event's own announcement for the
-  first](https://x.com/ethereum_mexico/status/1989005140838265067) and
-  [for the second](https://x.com/ethereum_mexico/status/1989005129178099826).
+- **[ActivaChain](https://activachain.com)** — won ETH Uruguay 2025, with
+  Monserrat. [Confirmed](https://x.com/EthereumUruguay/status/1968785973749170227)
+  by the event.
+- **[CreatorChain](https://creatorchain-mx.vercel.app/)** — 1st +
+  3rd place at ETH Mexico Monterrey 2025. [Confirmed](https://x.com/ethereum_mexico/status/1989005140838265067).
   Solo build.
 - **[BioShield Insurance](https://bioshield-insurance.vercel.app/)** — won
-  the FDA Track at the DeSci Builders Hackathon (Gitcoin × Infinita City
-  × Próspera, Honduras, 2025), built with
-  [Monserrat](https://github.com/M0nsxx). Deployed across Solana, Base,
-  and Optimism. Self-reported — [my own
-  tweet](https://x.com/vaiossx/status/1972064428091924681) at the time,
-  not an organizer announcement.
+  the FDA Track at DeSci Builders Hackathon 2025, with Monserrat. Deployed
+  across Solana, Base, and Optimism. Self-reported, [my own tweet](https://x.com/vaiossx/status/1972064428091924681)
+  at the time.
+
+</details>
 
 ---
 
@@ -459,51 +253,28 @@ this profile.
 ![Rust](https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
 
-**Protocols** — x402, MPP (Charge and Channel), SEP-41 / SAC, SEP-43,
-SEP-53, CAP-71 delegated auth, MCP, EAS (Ethereum Attestation Service)
-**Chains** — Avalanche (Kumply), Base (Vouch402), Stellar/Soroban
-(Periplo, Nirium, Contextio), Solana (Prova)
+**Protocols** — x402, MPP, SEP-41/SAC, SEP-43, SEP-53, CAP-71 delegated
+auth, MCP, EAS
 
----
-
-## How I work
-
-- Small PRs, one root cause each, with the reproduction in the description.
-- If I file a bug in a dependency, I try to open the fix alongside it when I
-  can —
-  [#3187 → #3228](https://github.com/x402-foundation/x402/pull/3228).
-  When someone else beats me to the fix, I say so and name them —
-  [#3171 → #3180 by @JasonColapietro](https://github.com/x402-foundation/x402/pull/3180),
-  [#3270 → #3306 by @phdargen](https://github.com/x402-foundation/x402/pull/3306) — the maintainer's own fix, rejecting the field shape my own workaround used.
-- When I'm not sure whether it's my bug or theirs, I say so in the issue
-  rather than asserting a diagnosis I can't back
-  ([#839](https://github.com/OpenZeppelin/stellar-contracts/issues/839) is
-  an example).
-- Every contract I ship is non-custodial by construction: the client signs,
-  or a role that by contract design can't move funds — never a key of ours
-  that can.
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api?username=Eras256&show_icons=true&show=reviews,prs_merged,prs_merged_percentage&rank_icon=percentile&theme=dark">
+  <img alt="Commits, pull requests, merged PRs, reviews and issues for Eras256" src="https://github-stats-extended.vercel.app/api?username=Eras256&show_icons=true&show=reviews,prs_merged,prs_merged_percentage&rank_icon=percentile">
+</picture>
 
 ---
 
 ## Search these live yourself
 
-Snapshot above is accurate as of **2026-09-28**; these always supersede it:
-[all my PRs](https://github.com/search?q=author%3AEras256+is%3Apr&type=pullrequests)
+[All my PRs](https://github.com/search?q=author%3AEras256+is%3Apr&type=pullrequests)
 ·
 [all my issues](https://github.com/search?q=author%3AEras256+is%3Aissue&type=issues)
 ·
-[nirium's full bounty board](https://github.com/nirium-protocol/nirium/issues?q=is%3Aissue)
+[Nirium's bounty board](https://github.com/nirium-protocol/nirium/issues?q=is%3Aissue)
 ·
 [Contextio's open issues](https://github.com/contextio/Contextio/issues)
 
----
-
-## Reach me
-
-Open an issue on any repo above, or start with
+**Reach me** — open an issue on any repo above, or
 [periplo.xyz](https://periplo.xyz) · [nirium.xyz](https://nirium.xyz) ·
-[contextio.xyz](https://contextio.xyz)
-
-X: [@vaiossx](https://x.com/vaiossx) · Discord: `vaiossx`
+[contextio.xyz](https://contextio.xyz) · X:
+[@vaiossx](https://x.com/vaiossx) · Discord: `vaiossx`
