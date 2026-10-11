@@ -30,26 +30,31 @@ left devnet. That's a gate on evidence, not a roadmap slide.
 Everything below is a link you can check yourself. Where something's
 still open or unmerged, it says so.
 
-- Found and fixed a crash in **x402's own official conformance suite**,
-  merged upstream the same week —
+- **Periplo:** found and fixed a crash in **x402's own official
+  conformance suite**, merged upstream the same week —
   [x402-foundation/x402#3228](https://github.com/x402-foundation/x402/pull/3228).
-- A skill PR survived **~16 real review rounds across 21 days** before
-  merging —
-  [stellar/stellar-dev-skill#97](https://github.com/stellar/stellar-dev-skill/pull/97).
-- Found a **security vulnerability** in the exact library Vouch402 calls
-  for every attestation it emits, fixed by the maintainer —
-  [eas-sdk#132](https://github.com/ethereum-attestation-service/eas-sdk/issues/132).
-- A **32-day mainnet outage** on a shared facilitator got fixed; verified
-  it myself with a real $0.05 payment, not a 200 response —
+- **Nirium:** a **32-day mainnet outage** on a shared facilitator got
+  fixed; verified it myself with a real $0.05 payment, not a 200
+  response —
   [OpenZeppelin/relayer-plugin-x402-facilitator#47](https://github.com/OpenZeppelin/relayer-plugin-x402-facilitator/issues/47).
-- A protocol I'd never worked at merged **4 of my PRs in one sitting**
-  and thanked me by name —
+- **Nirium:** a protocol we'd never worked with merged **4 of our PRs in
+  one sitting** (three mine, one my cofounder's) as research evidence
+  for its agentic-payments work —
   [Trustless-Work/agentic-escrow-research#1–#4](https://github.com/Trustless-Work/agentic-escrow-research/pull/1).
-- When I was wrong, I said so and closed my own issue against myself —
+- **Vouch402:** found a **security vulnerability** in the exact library
+  Vouch402 calls for every attestation it emits, fixed by the
+  maintainer —
+  [eas-sdk#132](https://github.com/ethereum-attestation-service/eas-sdk/issues/132).
+- **Prova:** removed an unbounded dependency landmine from **Anchor**,
+  the Solana program framework Prova is built on; merged by the
+  maintainer —
+  [anchor#4960](https://github.com/otter-sec/anchor/pull/4960).
+- **Periplo:** when I was wrong, I said so and closed my own issue
+  against myself —
   [OpenZeppelin/stellar-contracts#839](https://github.com/OpenZeppelin/stellar-contracts/issues/839)
   turned out to be my own construction bug, not a library gap.
-- **Two Stellar Community Fund Instawards**, delivered against real
-  milestones — gated on being an active
+- **Nirium:** **two Stellar Community Fund Instawards**, delivered
+  against real milestones — gated on being an active
   [Stellar Ambassador](https://stellar.gitbook.io/ambassador-program), the
   program's own stated eligibility rule, not something I'm claiming on
   my own.
