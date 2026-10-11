@@ -45,6 +45,15 @@ still open or unmerged, it says so.
   Vouch402 calls for every attestation it emits, fixed by the
   maintainer —
   [eas-sdk#132](https://github.com/ethereum-attestation-service/eas-sdk/issues/132).
+- **Kumply:** before activating its Avalanche L1, I checked our
+  validator manager against ava-labs' real ICM source and **caught our
+  own bug**: a missing 4-byte length prefix meant the conversion ID would
+  never match what the P-Chain signs, and our 27 tests missed it because
+  the mock had the same error. Fixed and redeployed —
+  [writeup](https://github.com/kumplyprotocol/Kumply/blob/main/docs/audits/avalanche-ecosystem-audit-2026-08-17.md).
+  Its contracts run on C-Chain mainnet as a read-only beta, source
+  verified —
+  [AttestationStore](https://snowtrace.io/address/0xa116261Ed3a848A9E1cd34923D5A0442D1455F71).
 - **Prova:** removed an unbounded dependency landmine from **Anchor**,
   the Solana program framework Prova is built on; merged by the
   maintainer —
