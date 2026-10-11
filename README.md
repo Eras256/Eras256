@@ -6,7 +6,7 @@ Each piece runs on the network that fits it.
 
 | What it does for an agent | Product | Network | Status |
 | --- | --- | --- | --- |
-| **Pays, gets paid, keeps proof** | **[Nirium](https://nirium.xyz)**: x402 pay-gates for any API, an audit trail that pins a hash (and optionally who signed it) to IPFS, and a treasury agent that moves idle funds into tokenized CETES | Stellar | Mainnet, the client signs every fund movement · testnet runs the full agent loop |
+| **Pays, gets paid, keeps proof** | **[Nirium](https://nirium.xyz)**: x402 pay-gates for any API, an audit trail that pins a hash (and optionally who signed it) to IPFS, and a treasury agent that moves idle funds into tokenized CETES | Stellar | Partly on mainnet: x402 payments, the audit trail, and the treasury on a third-party DeFindex vault · Nirium's own vault contract stays on testnet until it has an external audit |
 | **Finds a paid service and settles it** | **[Periplo](https://periplo.xyz)**: x402 facilitator with a Bazaar discovery catalog and an `upto` scheme on Soroban | Stellar | Testnet, with an outside seller in the catalog |
 | **Checks who it's paying** | **[Vouch402](https://www.vouch402.xyz)**: pay-per-call risk data on any address, plus EAS attestations that a paid service was delivered | Base | Mainnet, full flow settled |
 | **Proves who's behind it** | **[Kumply](https://kumply.xyz)**: KYC/KYB/KYA tiers as on-chain attestations, no personal data on-chain, and an L1 where validators must hold one | Avalanche | Fuji testnet (full) · mainnet read-only beta · L1 registered on Fuji, not active yet |
