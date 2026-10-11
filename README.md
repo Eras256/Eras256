@@ -250,17 +250,20 @@ own tweet — disclosed as such, same standard as everywhere else here.
 
 ![Avalanche](https://img.shields.io/badge/Avalanche-E84142?style=flat-square&logo=avalanche&logoColor=white)
 ![Base](https://img.shields.io/badge/Base-0052FF?style=flat-square&logo=coinbase&logoColor=white)
+![Monad](https://img.shields.io/badge/Monad-836EF9?style=flat-square)
+![Solana](https://img.shields.io/badge/Solana-9945FF?style=flat-square&logo=solana&logoColor=white)
 ![Stellar](https://img.shields.io/badge/Stellar-000000?style=flat-square&logo=stellar&logoColor=white)
 ![Soroban](https://img.shields.io/badge/Soroban-1f6feb?style=flat-square)
-![Solana](https://img.shields.io/badge/Solana-9945FF?style=flat-square&logo=solana&logoColor=white)
-![x402](https://img.shields.io/badge/x402-teal?style=flat-square)
+![Anchor](https://img.shields.io/badge/Anchor-1E3A8A?style=flat-square)
 ![Solidity](https://img.shields.io/badge/Solidity-363636?style=flat-square&logo=solidity&logoColor=white)
 ![Rust](https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
+![x402](https://img.shields.io/badge/x402-teal?style=flat-square)
 
 **Protocols** — x402, MPP, SEP-41/SAC, SEP-43, SEP-53, CAP-71 delegated
-auth, MCP, EAS
+auth, MCP, EAS, EIP-712, WebAuthn passkeys
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api?username=Eras256&show_icons=true&show=reviews,prs_merged,prs_merged_percentage&rank_icon=percentile&theme=dark">
