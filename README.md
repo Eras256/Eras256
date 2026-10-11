@@ -1,18 +1,27 @@
 # `Eras256`
 
-I build payment and trust infrastructure for AI agents — one product per
-network, each built for what that network does best, not one idea
-copy-pasted five times.
+I build payment and trust infrastructure for AI agents. My main work is
+on Stellar: three products, each solving a different piece. A few other
+builds live on other networks, each on the one that fits it, not one
+idea copy-pasted across chains.
 
 | Product | What it does | Network | Status |
 | --- | --- | --- | --- |
 | **[Nirium](https://nirium.xyz)** | Autonomous treasury + machine-to-machine (x402/MPP) payments | Stellar | Mainnet (non-custodial roles), invite-only |
+| **[Contextio](https://contextio.xyz)** | Treasury/payroll agent for LatAm companies, bound to a signed legal-context document | Stellar | Testnet (full) · mainnet (invite-only, pre-audit) |
+| **[Periplo](https://periplo.xyz)** | x402 payment facilitator + discovery catalog for agents | Stellar | Testnet |
+
+<details>
+<summary>Other networks: four more builds</summary>
+
+| Product | What it does | Network | Status |
+| --- | --- | --- | --- |
 | **[Vouch402](https://www.vouch402.xyz)** | x402-metered risk checks for agents, with on-chain attestations | Base | Mainnet, full flow settled |
 | **[Kumply](https://kumply.xyz)** | On-chain KYC/KYB/KYA compliance attestations | Avalanche | Fuji testnet (full) · mainnet (read-only beta) |
-| **[Periplo](https://periplo.xyz)** | x402 payment facilitator + discovery catalog for agents | Stellar | Testnet |
-| **[Contextio](https://contextio.xyz)** | Treasury/payroll agent for LatAm companies, bound to a signed legal-context document | Stellar | Testnet (full) · mainnet (invite-only, pre-audit) |
 | **[Prova](https://www.theprova.xyz)** | Signed on-chain receipts for AI agent actions | Solana | Devnet |
 | **[Votalo](https://www.votalo.xyz)** | Passkey-signed group voting, no wallet | Monad | Testnet |
+
+</details>
 
 Built with my cofounder, **[Monserrat Mendoza](https://github.com/M0nsxx)**
 — Dev Lead, five merged PRs in Nirium plus real fixes now shipped
