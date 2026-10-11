@@ -7,15 +7,15 @@ did. Each piece runs on the network that fits it.
 | For an agent, it… | Product | Network | Status |
 | --- | --- | --- | --- |
 | **Pays** | **[Nirium](https://nirium.xyz)**: treasury + x402/MPP payments | Stellar | Mainnet (non-custodial roles), invite-only |
-| | **[Periplo](https://periplo.xyz)**: x402 facilitator + discovery catalog | Stellar | Testnet |
+| **Pays** | **[Periplo](https://periplo.xyz)**: x402 facilitator + discovery catalog | Stellar | Testnet |
 | **Gets checked before anyone trusts it** | **[Vouch402](https://www.vouch402.xyz)**: x402-metered risk checks, on-chain attestations | Base | Mainnet, full flow settled |
-| | **[Kumply](https://kumply.xyz)**: KYC/KYB/KYA compliance attestations | Avalanche | Fuji testnet (full) · mainnet (read-only beta) |
+| **Gets checked before anyone trusts it** | **[Kumply](https://kumply.xyz)**: KYC/KYB/KYA compliance attestations | Avalanche | Fuji testnet (full) · mainnet (read-only beta) |
 | **Follows its owner's rules** | **[Contextio](https://contextio.xyz)**: payroll/treasury bound to a signed legal document | Stellar | Testnet (full) · mainnet (invite-only, pre-audit) |
 | **Proves what it did** | **[Prova](https://www.theprova.xyz)**: signed on-chain receipts | Solana | Devnet |
 | Side build | **[Votalo](https://www.votalo.xyz)**: passkey group voting, no wallet | Monad | Testnet |
 
 Built with my cofounder, **[Monserrat Mendoza](https://github.com/M0nsxx)**
-— Dev Lead, five merged PRs in Nirium plus real fixes now shipped
+— Dev Lead, six merged PRs in Nirium plus real fixes now shipped
 directly in Kumply and Vouch402 too; full detail on
 [her own profile](https://github.com/M0nsxx/M0nsxx).
 
