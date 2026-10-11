@@ -281,19 +281,23 @@ event itself. The third only has my own tweet, so take it as that.
 
 ## Stack
 
-![Avalanche](https://img.shields.io/badge/Avalanche-E84142?style=flat-square&logo=avalanche&logoColor=white)
-![Base](https://img.shields.io/badge/Base-0052FF?style=flat-square&logo=coinbase&logoColor=white)
-![Monad](https://img.shields.io/badge/Monad-836EF9?style=flat-square)
-![Solana](https://img.shields.io/badge/Solana-9945FF?style=flat-square&logo=solana&logoColor=white)
-![Stellar](https://img.shields.io/badge/Stellar-000000?style=flat-square&logo=stellar&logoColor=white)
-![Soroban](https://img.shields.io/badge/Soroban-1f6feb?style=flat-square)
-![Anchor](https://img.shields.io/badge/Anchor-1E3A8A?style=flat-square)
-![Solidity](https://img.shields.io/badge/Solidity-363636?style=flat-square&logo=solidity&logoColor=white)
-![Rust](https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
-![x402](https://img.shields.io/badge/x402-teal?style=flat-square)
+<p>
+  <img src="https://img.shields.io/badge/Avalanche-E84142?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTExIDMuNSAyIDIwaDYuNmw2LTEwLjZ6Ii8%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTE2LjYgMTEuNiAxMiAyMGg5LjJ6Ii8%2BPC9zdmc%2B" alt="Avalanche" height="40">
+  <img src="https://img.shields.io/badge/Base-0052FF?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiIGZpbGw9IiNmZmYiLz48cmVjdCB4PSIwIiB5PSIxMC42IiB3aWR0aD0iMTMuNSIgaGVpZ2h0PSIyLjgiIGZpbGw9IiMwMDUyRkYiLz48L3N2Zz4%3D" alt="Base" height="40">
+  <img src="https://img.shields.io/badge/Monad-836EF9?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHJlY3QgeD0iNS41IiB5PSI1LjUiIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMyIgcng9IjMuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjMiIHRyYW5zZm9ybT0icm90YXRlKDQ1IDEyIDEyKSIvPjwvc3ZnPg%3D%3D" alt="Monad" height="40">
+  <img src="https://img.shields.io/badge/Solana-9945FF?style=for-the-badge&logo=solana&logoColor=white" alt="Solana" height="40">
+  <img src="https://img.shields.io/badge/Stellar-000000?style=for-the-badge&logo=stellar&logoColor=white" alt="Stellar" height="40">
+</p>
+<p>
+  <img src="https://img.shields.io/badge/Soroban-1F6FEB?style=for-the-badge&logo=stellar&logoColor=white" alt="Soroban" height="30">
+  <img src="https://img.shields.io/badge/Anchor-1E3A8A?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI%2BPGNpcmNsZSBjeD0iMTIiIGN5PSI1IiByPSIyLjIiLz48cGF0aCBkPSJNMTIgNy4yVjIxTTcuNSAxMC41aDlNNCAxMy41YTggOCAwIDAgMCAxNiAwIi8%2BPC9zdmc%2B" alt="Anchor" height="30">
+  <img src="https://img.shields.io/badge/Solidity-363636?style=for-the-badge&logo=solidity&logoColor=white" alt="Solidity" height="30">
+  <img src="https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white" alt="Rust" height="30">
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" height="30">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" height="30">
+  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js" height="30">
+  <img src="https://img.shields.io/badge/x402-0F766E?style=for-the-badge" alt="x402" height="30">
+</p>
 
 **Protocols:** x402, MPP, SEP-41/SAC, SEP-43, SEP-53, CAP-71 delegated
 auth, MCP, EAS, EIP-712, WebAuthn passkeys
