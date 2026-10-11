@@ -322,6 +322,7 @@ event itself. The third only has my own tweet, so take it as that.
 
 <p><strong>Agent payments</strong><br>
   <img src="https://img.shields.io/badge/x402-0F766E?style=for-the-badge" alt="x402" height="30">
+  <img src="https://img.shields.io/badge/MPP-374151?style=for-the-badge" alt="MPP" height="30">
   <img src="https://img.shields.io/badge/MCP-000000?style=for-the-badge&logo=modelcontextprotocol&logoColor=white" alt="MCP" height="30">
   <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white" alt="LangChain" height="30">
   <img src="https://img.shields.io/badge/IPFS-65C2CB?style=for-the-badge&logo=ipfs&logoColor=white" alt="IPFS" height="30">
