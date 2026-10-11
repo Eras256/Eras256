@@ -316,6 +316,8 @@ auth, MCP, EAS, EIP-712, WebAuthn passkeys
 [Contextio's open issues](https://github.com/contextio/Contextio/issues)
 
 **Contact:** open an issue on any repo above, or
-[periplo.xyz](https://periplo.xyz) · [nirium.xyz](https://nirium.xyz) ·
-[contextio.xyz](https://contextio.xyz) · X:
+[nirium.xyz](https://nirium.xyz) · [periplo.xyz](https://periplo.xyz) ·
+[vouch402.xyz](https://www.vouch402.xyz) · [kumply.xyz](https://kumply.xyz) ·
+[contextio.xyz](https://contextio.xyz) · [theprova.xyz](https://www.theprova.xyz) ·
+[votalo.xyz](https://www.votalo.xyz) · X:
 [@vaiossx](https://x.com/vaiossx) · Discord: `vaiossx`
