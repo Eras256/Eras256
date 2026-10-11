@@ -6,13 +6,13 @@ Each piece runs on the network that fits it.
 
 | What it does for an agent | Product | Network | Status |
 | --- | --- | --- | --- |
-| **Pays** | **[Nirium](https://nirium.xyz)**: treasury + x402/MPP payments | Stellar | Mainnet (non-custodial roles), invite-only |
-| **Pays** | **[Periplo](https://periplo.xyz)**: x402 facilitator + discovery catalog | Stellar | Testnet |
-| **Gets checked before anyone trusts it** | **[Vouch402](https://www.vouch402.xyz)**: x402-metered risk checks, on-chain attestations | Base | Mainnet, full flow settled |
-| **Gets checked before anyone trusts it** | **[Kumply](https://kumply.xyz)**: KYC/KYB/KYA compliance attestations | Avalanche | Fuji testnet (full) · mainnet (read-only beta) |
-| **Follows its owner's rules** | **[Contextio](https://contextio.xyz)**: payroll/treasury bound to a signed legal document | Stellar | Testnet (full) · mainnet (invite-only, pre-audit) |
-| **Proves what it did** | **[Prova](https://www.theprova.xyz)**: signed on-chain receipts | Solana | Devnet |
-| Side build | **[Votalo](https://www.votalo.xyz)**: passkey group voting, no wallet | Monad | Testnet |
+| **Pays, gets paid, keeps proof** | **[Nirium](https://nirium.xyz)**: x402 pay-gates for any API, an audit trail that pins a hash (and optionally who signed it) to IPFS, and a treasury agent that moves idle funds into tokenized CETES | Stellar | Mainnet, the client signs every fund movement · testnet runs the full agent loop |
+| **Finds a paid service and settles it** | **[Periplo](https://periplo.xyz)**: x402 facilitator with a Bazaar discovery catalog and an `upto` scheme on Soroban | Stellar | Testnet, with an outside seller in the catalog |
+| **Checks who it's paying** | **[Vouch402](https://www.vouch402.xyz)**: pay-per-call risk data on any address, plus EAS attestations that a paid service was delivered | Base | Mainnet, full flow settled |
+| **Proves who's behind it** | **[Kumply](https://kumply.xyz)**: KYC/KYB/KYA tiers as on-chain attestations, no personal data on-chain, and an L1 where validators must hold one | Avalanche | Fuji testnet (full) · mainnet read-only beta · L1 registered on Fuji, not active yet |
+| **Moves company money under signed terms** | **[Contextio](https://contextio.xyz)**: treasury and payroll agent for LatAm companies, every action tied to a signed legal document (LCP) | Stellar | Testnet (full agent) · mainnet invite-only, read-only and self-custody, contracts pending audit |
+| **Proves what it did** | **[Prova](https://www.theprova.xyz)**: one `attest()` call, one Ed25519-signed receipt on-chain through an Anchor program | Solana | Devnet |
+| Side build | **[Votalo](https://www.votalo.xyz)**: group voting with a passkey, no wallet; every vote is an EIP-712 signature | Monad | Testnet |
 
 Built with my cofounder **[Monserrat Mendoza](https://github.com/M0nsxx)**,
 Dev Lead. She has six merged PRs in Nirium and has shipped fixes in Kumply
