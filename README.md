@@ -10,11 +10,11 @@ Based in Mexico.
 
 - **x402 (the HTTP payments protocol):** found and fixed a crash in the
   official e2e conformance suite
-  ([#3228](https://github.com/x402-foundation/x402/pull/3228), merged) and
+  ([#3228](https://github.com/x402-foundation/x402/pull/3228), merged),
   added a missing check in the facilitator safety checks
-  ([#3336](https://github.com/x402-foundation/x402/pull/3336), merged).
-  Also reported [#3270](https://github.com/x402-foundation/x402/issues/3270),
-  fixed by the maintainer in #3306.
+  ([#3336](https://github.com/x402-foundation/x402/pull/3336), merged),
+  and closed a gap that let settlement amounts exceed their declared cap
+  ([#3338](https://github.com/x402-foundation/x402/pull/3338), merged).
 - **Stellar:** production patterns for x402 and MPP in the official Stellar
   dev skill ([#97](https://github.com/stellar/stellar-dev-skill/pull/97),
   merged after about 16 review rounds), and a fix for two invalid mainnet
