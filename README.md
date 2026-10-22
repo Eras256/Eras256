@@ -124,10 +124,6 @@ event itself. The third only has my own tweet, so take it as that.
 **Protocols:** x402, MPP, SEP-41/SAC, SEP-43, SEP-53, CAP-71 delegated
 auth, MCP, EAS, EIP-712, WebAuthn passkeys
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api?username=Eras256&show_icons=true&show=reviews,prs_merged,prs_merged_percentage&rank_icon=percentile&theme=dark">
-  <img alt="Commits, pull requests, merged PRs, reviews and issues for Eras256" src="https://github-stats-extended.vercel.app/api?username=Eras256&show_icons=true&show=reviews,prs_merged,prs_merged_percentage&rank_icon=percentile">
-</picture>
 
 ---
 
