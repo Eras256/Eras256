@@ -74,11 +74,6 @@ event itself. The third only has my own tweet, so take it as that.
   <img src="https://img.shields.io/badge/Stellar%20SDK-000000?style=for-the-badge&logo=stellar&logoColor=white" alt="Stellar SDK" height="30">
   <img src="https://img.shields.io/badge/OpenZeppelin%20Stellar-4E5EE4?style=for-the-badge&logo=openzeppelin&logoColor=white" alt="OpenZeppelin Stellar" height="30">
   <img src="https://img.shields.io/badge/Stellar%20Wallets%20Kit-000000?style=for-the-badge&logo=stellar&logoColor=white" alt="Stellar Wallets Kit" height="30">
-  <img src="https://img.shields.io/badge/Pollar-000000?style=for-the-badge&logo=stellar&logoColor=white" alt="Pollar" height="30">
-  <img src="https://img.shields.io/badge/DeFindex-000000?style=for-the-badge&logo=stellar&logoColor=white" alt="DeFindex" height="30">
-  <img src="https://img.shields.io/badge/Blend-000000?style=for-the-badge&logo=stellar&logoColor=white" alt="Blend" height="30">
-  <img src="https://img.shields.io/badge/Etherfuse-000000?style=for-the-badge&logo=stellar&logoColor=white" alt="Etherfuse" height="30">
-  <img src="https://img.shields.io/badge/Trustless%20Work-000000?style=for-the-badge&logo=stellar&logoColor=white" alt="Trustless Work" height="30">
 </p>
 
 <p><strong>EVM: Ethereum, Base, Avalanche, Monad</strong><br>
@@ -105,6 +100,11 @@ event itself. The third only has my own tweet, so take it as that.
   <img src="https://img.shields.io/badge/MCP-000000?style=for-the-badge&logo=modelcontextprotocol&logoColor=white" alt="MCP" height="30">
   <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white" alt="LangChain" height="30">
   <img src="https://img.shields.io/badge/IPFS-65C2CB?style=for-the-badge&logo=ipfs&logoColor=white" alt="IPFS" height="30">
+</p>
+
+<p><strong>3D and games</strong><br>
+  <img src="https://img.shields.io/badge/Blender-E87D0D?style=for-the-badge&logo=blender&logoColor=white" alt="Blender" height="30">
+  <img src="https://img.shields.io/badge/Unity-000000?style=for-the-badge&logo=unity&logoColor=white" alt="Unity" height="30">
 </p>
 
 <p><strong>Languages and apps</strong><br>
