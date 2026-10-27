@@ -8,6 +8,8 @@ Based in Mexico.
 
 ## Open source, with links you can check
 
+**18 pull requests merged into repos I don't control** — [full list, filtered and verifiable](https://github.com/search?q=author%3AEras256+is%3Apr+is%3Amerged+repo%3Ax402-foundation%2Fx402+repo%3Astellar%2Fstellar-dev-skill+repo%3Astellar%2Fstellar-mpp-sdk+repo%3Apollar-xyz%2Fpollar-apps+repo%3ATrustless-Work%2Fagentic-escrow-research&type=pullrequests).
+
 - **x402 (the HTTP payments protocol):** found and fixed a crash in the
   official e2e conformance suite
   ([#3228](https://github.com/x402-foundation/x402/pull/3228), merged),
@@ -45,8 +47,9 @@ that can't move funds by design.
 Weekend builds. Two wins were announced by the
 event itself. The third only has my own tweet, so take it as that.
 
-- **[ActivaChain](https://activachain.com):** won ETH Uruguay 2025, with
-  Monserrat. [Announced](https://x.com/EthereumUruguay/status/1968785973749170227)
+- **[ActivaChain](https://activachain.com):** 1st place, ETH Uruguay 2025
+  hackathon, with Monserrat; prize included the trip to Devconnect.
+  [Announced](https://x.com/EthereumUruguay/status/1968730843498610713)
   by the event.
 - **[CreatorChain](https://creatorchain-mx.vercel.app/):** 1st and 3rd
   place at ETH Mexico Monterrey 2025.
