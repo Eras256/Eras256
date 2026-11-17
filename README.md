@@ -91,8 +91,7 @@ event itself. The third only has my own tweet, so take it as that.
   [Announced](https://x.com/ethereum_mexico/status/1989005140838265067).
   Solo build.
 - **[BioShield Insurance](https://bioshield-insurance.vercel.app/):** won
-  the FDA Track at DeSci Builders Hackathon 2025, with Monserrat. Deployed
-  on Solana, Base and Optimism. Source: [my own tweet](https://x.com/vaiossx/status/1972064428091924681).
+  the FDA Track at DeSci Builders Hackathon 2025, with Monserrat. Source: [my own tweet](https://x.com/vaiossx/status/1972064428091924681).
 
 ---
 
