@@ -1,6 +1,7 @@
 # Giovanny Amador (`Eras256`)
 
-I build payment and verification infrastructure for AI agents: how an
+Co-founder of [Nirium](https://nirium.xyz). I build payment and verification
+infrastructure for AI agents: how an
 agent pays for a service, how it checks who it is paying, and how it proves
 what it did. Mostly TypeScript, Rust and Soroban.
 
@@ -12,6 +13,8 @@ Based in Mexico.
 Stellar for apps, backends and AI agents. Charge or pay per request in USDC
 (x402) and leave a receipt anyone can verify, without trusting us.
 Open source and non-custodial: the user's own key signs every payment.
+I co-founded it with [Monserrat Mendoza](https://github.com/M0nsxx), who
+co-maintains and publishes all four packages.
 
 - Packages: [`nirium`](https://www.npmjs.com/package/nirium) (npm and
   [PyPI](https://pypi.org/project/nirium/)),
