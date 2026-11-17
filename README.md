@@ -86,7 +86,7 @@ Weekend builds. Two wins were announced by the
 event itself. The third only has my own tweet, so take it as that.
 
 - **ActivaChain:** 1st place, ETH Uruguay 2025
-  hackathon, with Monserrat; prize included the trip to Devconnect.
+  hackathon, in a team of six with Monserrat; prize included the trip to Devconnect.
   [Announced](https://x.com/EthereumUruguay/status/1968730843498610713)
   by the event.
 - **[CreatorChain](https://creatorchain-mx.vercel.app/):** 1st and 3rd
