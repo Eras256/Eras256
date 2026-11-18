@@ -30,7 +30,7 @@ co-maintains and publishes all four packages.
 
 ## Open source, with links you can check
 
-**27 pull requests merged into projects I don't maintain**:
+**28 pull requests merged into projects I don't maintain**:
 [see them all](https://github.com/search?q=author%3AEras256%20is%3Apr%20is%3Amerged%20repo%3Ax402-foundation/x402%20repo%3Astellar/stellar-dev-skill%20repo%3Astellar/stellar-mpp-sdk%20repo%3Aotter-sec/anchor%20repo%3Awevm/viem%20repo%3ATrustless-Work/agentic-escrow-research%20repo%3ASorobanAgents/agentrail%20repo%3Apollar-xyz/pollar-apps&type=pullrequests).
 
 - **x402 (the HTTP payments protocol), 6 merged:** closed a gap that let
@@ -62,8 +62,9 @@ co-maintains and publishes all four packages.
   [agentic-escrow-research](https://github.com/Trustless-Work/agentic-escrow-research) repo.
 - **Pollar:** a demo app for paying x402 APIs from a Pollar social-login
   wallet ([pollar-apps#30](https://github.com/pollar-xyz/pollar-apps/pull/30)).
-- **AgentRail:** optional public receipts for agent spends and
-  proof-of-task ([#68](https://github.com/SorobanAgents/agentrail/pull/68)).
+- **AgentRail, 2 merged:** optional public receipts for agent spends and
+  proof-of-task ([#68](https://github.com/SorobanAgents/agentrail/pull/68)), and an
+  opt-in `--receipt` flag in their demo ([#70](https://github.com/SorobanAgents/agentrail/pull/70)).
 - **OpenZeppelin:** a shared mainnet facilitator was down for 32 days. I
   reported it and confirmed the fix with a real payment, not just a 200
   response
