@@ -30,7 +30,7 @@ co-maintains and publishes all four packages.
 
 ## Open source, with links you can check
 
-**28 pull requests merged into projects I don't maintain**:
+**29 pull requests merged into projects I don't maintain**:
 [see them all](https://github.com/search?q=author%3AEras256%20is%3Apr%20is%3Amerged%20repo%3Ax402-foundation/x402%20repo%3Astellar/stellar-dev-skill%20repo%3Astellar/stellar-mpp-sdk%20repo%3Aotter-sec/anchor%20repo%3Awevm/viem%20repo%3ATrustless-Work/agentic-escrow-research%20repo%3ASorobanAgents/agentrail%20repo%3Apollar-xyz/pollar-apps&type=pullrequests).
 
 - **x402 (the HTTP payments protocol), 6 merged:** closed a gap that let
@@ -46,7 +46,7 @@ co-maintains and publishes all four packages.
   ([#3336](https://github.com/x402-foundation/x402/pull/3336)) and documented
   an unsupported Stellar setting where it is configured
   ([#3339](https://github.com/x402-foundation/x402/pull/3339)).
-- **Stellar, 8 merged:** production patterns for x402 and MPP in the official
+- **Stellar, 9 merged:** production patterns for x402 and MPP in the official
   Stellar dev skill ([#97](https://github.com/stellar/stellar-dev-skill/pull/97),
   merged after about 16 review rounds), a correction to its own MPP
   production claim ([#150](https://github.com/stellar/stellar-dev-skill/pull/150)),
