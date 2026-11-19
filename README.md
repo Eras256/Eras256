@@ -14,7 +14,7 @@ Stellar for apps, backends and AI agents. Charge or pay per request in USDC
 (x402) and leave a receipt anyone can verify, without trusting us.
 Open source and non-custodial: the user's own key signs every payment.
 I co-founded it with [Monserrat Mendoza](https://github.com/M0nsxx), who
-co-maintains and publishes all four packages.
+co-owns and publishes all four packages, on npm and on PyPI.
 
 - Packages: [`nirium`](https://www.npmjs.com/package/nirium) (npm and
   [PyPI](https://pypi.org/project/nirium/)),
