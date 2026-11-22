@@ -27,6 +27,12 @@ co-owns and publishes all four packages, on npm and on PyPI.
   [July](https://stellar.expert/explorer/public/tx/7784ad6eb2b27ace75ce2fe4b7290fb1b8241da425331bfbda2e939b47759b7e)).
 - Every claim, with its transaction hash:
   [EVIDENCE.md](https://github.com/nirium-protocol/nirium/blob/main/EVIDENCE.md).
+- Open to outside contributors: 38 pull requests from people outside the
+  team merged so far, through Stellar Wave (Drips) and GrantFox
+  ([live list](https://nirium.xyz/stats)).
+- Teaching: with Monserrat I run [Código 402](https://nirium.xyz/blog/codigo-402-agentes-que-pagan),
+  a free Spanish-language bootcamp with BAF where developers build an API
+  that charges per use and an agent that pays on its own, on Stellar testnet.
 
 ## Open source, with links you can check
 
@@ -84,7 +90,8 @@ that can't move funds by design.
 ## Hackathons
 
 Weekend builds. Two wins were announced by the
-event itself. The third only has my own tweet, so take it as that.
+event itself and one was reported by the press. The last one only has my own
+tweet, so take it as that.
 
 - **ActivaChain:** 1st place, ETH Uruguay 2025
   hackathon, in a team of six with Monserrat; prize included the trip to Devconnect.
@@ -94,6 +101,9 @@ event itself. The third only has my own tweet, so take it as that.
   place at ETH Mexico Monterrey 2025.
   [Announced](https://x.com/ethereum_mexico/status/1989005140838265067). Built with two
   other teammates.
+- **Sui Loop:** 3rd place at the FinTech World Cup México 2026 national
+  qualifiers, behind Linko and Network Bank.
+  [Reported](https://ecosistemastartup.com/?p=69334) by the press.
 - **[BioShield Insurance](https://bioshield-insurance.vercel.app/):** won
   the FDA Track at DeSci Builders Hackathon 2025, with Monserrat. Source: [my own tweet](https://x.com/vaiossx/status/1972064428091924681).
 
