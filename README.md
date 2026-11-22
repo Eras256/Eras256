@@ -30,9 +30,6 @@ co-owns and publishes all four packages, on npm and on PyPI.
 - Open to outside contributors: 38 pull requests from people outside the
   team merged so far, through Stellar Wave (Drips) and GrantFox
   ([live list](https://nirium.xyz/stats)).
-- Teaching: with Monserrat I run [Código 402](https://nirium.xyz/blog/codigo-402-agentes-que-pagan),
-  a free Spanish-language bootcamp with BAF where developers build an API
-  that charges per use and an agent that pays on its own, on Stellar testnet.
 
 ## Open source, with links you can check
 
