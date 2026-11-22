@@ -102,7 +102,7 @@ tweet, so take it as that.
   [Announced](https://x.com/ethereum_mexico/status/1989005140838265067). Built with two
   other teammates.
 - **Sui Loop:** 3rd place at the FinTech World Cup México 2026 national
-  qualifiers, behind Linko and Network Bank.
+  qualifiers (March 2026), behind Linko and Network Bank, with Monserrat.
   [Reported](https://ecosistemastartup.com/?p=69334) by the press.
 - **[BioShield Insurance](https://bioshield-insurance.vercel.app/):** won
   the FDA Track at DeSci Builders Hackathon 2025, with Monserrat. Source: [my own tweet](https://x.com/vaiossx/status/1972064428091924681).
