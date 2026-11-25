@@ -27,7 +27,7 @@ co-owns and publishes all four packages, on npm and on PyPI.
   [July](https://stellar.expert/explorer/public/tx/7784ad6eb2b27ace75ce2fe4b7290fb1b8241da425331bfbda2e939b47759b7e)).
 - Every claim, with its transaction hash:
   [EVIDENCE.md](https://github.com/nirium-protocol/nirium/blob/main/EVIDENCE.md).
-- Open to outside contributors: 49 pull requests from people outside the
+- Open to outside contributors: 50 pull requests from people outside the
   team merged so far, through Stellar Wave (Drips) and GrantFox
   ([live list](https://nirium.xyz/stats)).
 
